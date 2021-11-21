@@ -1,0 +1,47 @@
+.home-page,.about-page{
+    display: grid;
+    grid-template-columns: 7.5rem minmax( auto, $desktop-breakpoint ) 7.5rem;
+    grid-template-rows: 400px 300px 247px;
+    section{
+        grid-column: 2/3;
+    };
+}
+// Responsive
+@include for-wide-layout {
+    .home-page,.about-page{
+            justify-content: center;
+    }
+}
+@include for-normal-layout {
+    .home-page,.about-page{
+    grid-template-columns:
+    3.75rem
+    minmax(auto)
+    3.75rem;
+    }
+}
+@include for-tablet-layout {
+    .home-page,.about-page{
+        grid-template-columns: 
+        3.75rem
+        minmax(auto, 53rem)
+        3.75rem;
+    }
+    .home-page{
+        grid-template-rows: 340px 300px 200px;
+    }
+    .about-page{
+            grid-template-rows: 401px 200px 330px;
+    }
+}
+@include for-mobile-layout {
+    .home-page,.about-page{
+        grid-template-columns: 1.9rem minmax( auto, 26.7rem ) 1.9rem;
+    }
+    .home-page{
+        grid-template-rows:215px 505px 380px;
+    }
+    .about-page{
+        grid-template-rows: 220px 330px 340px;
+   }
+}

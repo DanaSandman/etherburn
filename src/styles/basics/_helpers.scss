@@ -1,0 +1,26 @@
+// FLEX HELPERS
+.flex {
+    display: flex;
+    > *.full {
+        flex: 1;
+    }
+    &.column {
+        flex-direction: column;
+    }
+    &.justify-center {
+        justify-content: center;
+    }
+    &.align-center {
+        align-items: center;
+    }
+    &.space-between {
+        justify-content: space-between;
+    }
+}
+// COLORS
+.secondary-color{
+    color: $secondary-color;
+}
+.primary-color{
+    color: $primary-color;
+}
