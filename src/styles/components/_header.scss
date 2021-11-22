@@ -1,6 +1,12 @@
+.header{
+    display: flex;
+}
 .header-logo{
     width: 6.9rem;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
 }
 .header-title{
+    margin-top: 2.5rem;
     color: darksalmon;
 }

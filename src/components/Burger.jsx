@@ -3,7 +3,7 @@ import styled from "styled-components";
 const StyledBurger = styled.button`
   position: absolute;
   top: 5%;
-  left: 2rem;
+  right: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -30,7 +30,7 @@ const StyledBurger = styled.button`
     }
     :nth-child(2) {
       opacity: ${({open}) => open ? '0' : '1'};
-      transform: ${({open}) => open ? 'translateX(20px)' : 'translateX(0)'};
+      transform: ${({open}) => open ? 'translateX(-20px)' : 'translateX(0)'};
     }
     :nth-child(3) {
       transform: ${({open}) => open ? 'rotate(-45deg)' : 'rotate(0)'};

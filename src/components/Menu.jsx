@@ -4,15 +4,29 @@ const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #ff9292;
-  transform: ${({open}) => open ? 'translateX(0)' : 'translateX(-100%)'};
+  background:#979798;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
+  transition-delay: 0.15s;
+  transform: ${({open}) => open ? 'translateX(85vw)' : 'translateX(-100%)'};
   height: 100vh;
-  text-align: left;
+  width: 15%;
+  text-align: center;
   position: absolute;
   top: 0;
   left: 0;
-  transition: transform 0.3s ease-in-out;
+
+  @media (max-width: 750px) {
+    transform: ${({open}) => open ? 'translateX(75vw)' : 'translateX(-100%)'};
+    width: 25%
+  }
   @media (max-width: 576px) {
+    transform: ${({open}) => open ? 'translateX(0)' : 'translateX(-100%)'};
     width: 100%;
   }
   a {
@@ -22,12 +36,20 @@ const StyledMenu = styled.nav`
     color: #fff;
     text-decoration: none;
     transition: color 0.3s linear;
+    @media (max-width: 1000px) {
+        font-size: 1.5rem;
+        text-align: center;
+      }
+    @media (max-width: 750px) {
+        font-size: 1.3rem;
+        text-align: center;
+    }
     @media (max-width: 576px) {
       font-size: 1.5rem;
       text-align: center;
     }
     &:hover {
-      color: #a811e3;
+      color: #f4188d;
     }
   }
   div {
@@ -85,9 +107,9 @@ export const MENU_ITEMS = [
         ]
     }
 
-]
+];
 
-const Menu = ({open}) => {
+const Menu = ({open, setOpen}) => {
     const renderMenuItem = (item, index) => {
         switch (item.type) {
             case PRIMARY_ITEM:
@@ -112,10 +134,9 @@ const Menu = ({open}) => {
     }
 
     return (
-        <StyledMenu open={open}>
+        <StyledMenu open={open}  onClick={() => setOpen(!open)}>
             {MENU_ITEMS.map(renderMenuItem)}
         </StyledMenu>
     )
-}
-
+};
 export default Menu;
