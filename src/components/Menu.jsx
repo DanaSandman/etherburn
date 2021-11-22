@@ -4,7 +4,8 @@ const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background:#979798;
+  justify-content: space-evenly;
+  background:rgb(255, 255, 255);
   box-shadow:
   0 2.8px 2.2px rgba(0, 0, 0, 0.034),
   0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -13,9 +14,9 @@ const StyledMenu = styled.nav`
   0 41.8px 33.4px rgba(0, 0, 0, 0.086),
   0 100px 80px rgba(0, 0, 0, 0.12);
   transition-delay: 0.15s;
-  transform: ${({open}) => open ? 'translateX(85vw)' : 'translateX(-100%)'};
+  transform: ${({open}) => open ? 'translateX(73vw)' : 'translateX(-100%)'};
   height: 100vh;
-  width: 15%;
+  width: 29%;
   text-align: center;
   position: absolute;
   top: 0;
@@ -31,9 +32,8 @@ const StyledMenu = styled.nav`
   }
   a {
     font-size: 2rem;
-    padding: 1rem 2rem;
     font-weight: bold;
-    color: #fff;
+    color: rgb(36, 36, 36);
     text-decoration: none;
     transition: color 0.3s linear;
     @media (max-width: 1000px) {
@@ -53,8 +53,6 @@ const StyledMenu = styled.nav`
     }
   }
   div {
-    position: absolute;
-    width: 100%;
     padding-bottom: 20%;
     bottom: 0;
   }
@@ -62,6 +60,7 @@ const StyledMenu = styled.nav`
 const StyledMenuIcons = styled.div`
   display: inline;
   text-align: center;
+  padding:25px;
   bottom: 0;
   a {
     font-size: 2rem;

@@ -14,7 +14,7 @@ export function Header() {
             <Link to="/home">
             <img className="header-logo" src={logo} alt="ETHERBURN logo"/>
             </Link>
-            <span className="header-title">Units Protocol</span>
+            <span className="header-title">Ether Burn</span>
             <Burger open={open} setOpen={setOpen} />
             <Menu open={open} setOpen={setOpen} />
         </div>

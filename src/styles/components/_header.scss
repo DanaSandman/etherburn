@@ -1,5 +1,9 @@
 .header{
     display: flex;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    width: 100vw;
+    box-shadow: rgb(149 157 165 / 20%) 0px 2px 20px 1px;
 }
 .header-logo{
     width: 6.9rem;

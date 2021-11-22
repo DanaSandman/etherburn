@@ -1,15 +1,20 @@
 .home-page{
-    background-color: aquamarine;
+    h2{
+        color: rgb(37, 37, 37);
+    }
+   padding-top: 5rem;
+    background-color: rgb(255, 255, 255);
     .hero-section{
-        background-color: burlywood;
-        h1{
-            color: blueviolet;
+        background-color: rgb(255, 255, 255);
+        .hero-img{
+            width: 500px;
+            text-align: center;
         }
     }
     .home-section2{
-        background-color: darkgoldenrod;
+        background-color: rgb(255, 255, 255);
     }
     .home-section3{
-        background-color: darkorchid;
+        background-color: rgb(255, 255, 255);
     }
 }
