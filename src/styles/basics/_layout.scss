@@ -1,7 +1,7 @@
 .home-page,.about-page{
     display: grid;
     grid-template-columns: 7.5rem minmax( auto, $desktop-breakpoint ) 7.5rem;
-    grid-template-rows: 800px 300px 247px;
+    grid-template-rows: 700px 700px 247px;
     section{
         grid-column: 2/3;
     };

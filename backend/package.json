@@ -1,0 +1,30 @@
+{
+    "name": "server",
+    "version": "1.0.0",
+    "engines": {
+        "node": "14.x"
+    },
+    "description": "production ready server",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "start-dev": "set NODE_ENV=development && nodemon server.js"
+    },
+    "author": "Me",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.21.4",
+        "bcrypt": "^5.0.0",
+        "cors": "^2.8.5",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1",
+        "express-session": "^1.16.2",
+        "express-socket.io-session": "^1.3.5",
+        "mongodb": "^3.2.7",
+        "regexp": "^1.0.0",
+        "socket.io": "^2.2.0"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.14"
+    }
+}

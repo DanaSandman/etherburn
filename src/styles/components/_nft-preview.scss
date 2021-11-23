@@ -1,0 +1,22 @@
+
+.nft-preview{
+    margin: 0 1rem 0 1rem;
+    a{
+        text-decoration: none;
+    }
+    .content-img-card{
+        .nft-img{
+            width: 300px;
+            height: 300px;
+        }
+    }
+    .content-card{
+        padding: .625rem;
+        * {
+            color: rgb(36, 36, 36);
+        }
+        .nft-title{
+            margin-bottom: .625rem;
+        }
+    }
+}

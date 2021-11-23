@@ -1,5 +1,6 @@
 .header{
     display: flex;
+    justify-content: space-between;
     background-color: rgb(255, 255, 255);
     position: fixed;
     width: 100vw;
@@ -8,9 +9,8 @@
 .header-logo{
     width: 6.9rem;
     margin-top: 0.5rem;
-    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 .header-title{
-    margin-top: 2.5rem;
-    color: darksalmon;
+    color: rgb(255, 0, 174)
 }
