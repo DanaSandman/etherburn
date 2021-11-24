@@ -1,0 +1,16 @@
+.item{
+    width: 20rem;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 1rem;
+    box-shadow: inset -1px 1px 0px 2.5px rgb(0 0 0 / 3%);
+    border-radius: 1rem;
+}
+
+.alice-carousel__stage{
+    li{
+        .alice-carousel__stage-item{
+            width: 15rem !important;
+        }
+    }
+}

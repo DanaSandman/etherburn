@@ -3,8 +3,9 @@
     justify-content: space-between;
     background-color: rgb(255, 255, 255);
     position: fixed;
+    z-index: 5;
     width: 100vw;
-    box-shadow: rgb(149 157 165 / 20%) 0px 2px 20px 1px;
+    box-shadow: rgb(0 0 0 / 3%) 0px 2px 0px 0px;
 }
 .header-logo{
     width: 6.9rem;

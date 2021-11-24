@@ -1,6 +1,7 @@
 import React from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
+import { NftPreview } from "../nft/NftPreview.jsx";
 
 const responsive = {
   0: { items: 1 },
@@ -8,25 +9,29 @@ const responsive = {
   1024: { items: 3 },
 };
 
-const items = [
-  <div className="item primary-color" data-value="1">
-    1
-  </div>,
-  <div className="item secondary-color" data-value="2">
-    2
-  </div>,
-  <div className="item primary-color" data-value="3">
-    3
-  </div>,
-  <div className="item secondary-color" data-value="4">
-    4
-  </div>,
-  <div className="item primary-color" data-value="5">
-    5
-  </div>,
-];
+let gNfts = [];
+export function NftList({ nfts }) {
+  console.log("carousel list", nfts);
+  gNfts = nfts;
+  return (
+    <div>
+      <Carousel nfts={gNfts} />
+    </div>
+  );
+}
 
-export function Carousel() {
+export function Carousel(gNfts) {
+  const items = [];
+  gNfts.nfts.map((nft) => {
+    var i = 0;
+    items.push(
+      <div className="item" data-value={`"${i}"`}>
+        <NftPreview nft={nft}/>
+      </div>
+    );
+    return items;
+  });
+
   return (
     <AliceCarousel
       mouseTracking
