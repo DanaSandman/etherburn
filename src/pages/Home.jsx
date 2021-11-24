@@ -6,6 +6,7 @@ import { loadNfts } from "../store/nft/nft.action.js";
 
 //Cmps
 import { NftList } from '../components/nft/NftList.jsx';
+import { Carousel } from '../components/util/Carousel.jsx';
 //Img
 import HeroImg from "../assets/img/Logo.png";
 
@@ -13,10 +14,14 @@ export function Home() {
 
   const dispatch = useDispatch();
   const  nfts  = useSelector((state) => state.nftModule);
+  let dataCarousel = [];
+
   console.log('home nts', nfts.nfts);
   useEffect(() => {
     dispatch(loadNfts());
+    dataCarousel = nfts;
   }, []);
+
 
   return (
       <div className="home-page">
@@ -31,6 +36,7 @@ export function Home() {
         </section>
         <section className='home-section3'>
           <h2>section3</h2>
+          <Carousel />
         </section>
       </div>
   );
