@@ -4,7 +4,9 @@ const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: rgb(255, 255, 255);
+  justify-content: flex-start;
+  padding-top: 6rem;
+  background: rgb(255 255 255 / 92%);
   transform: ${({open}) => open ? 'translateX(0)' : 'translateX(-100%)'};
   height: 100vh;
   text-align: left;
@@ -20,7 +22,6 @@ const StyledMenu = styled.nav`
    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
    0 100px 80px rgba(0, 0, 0, 0.12);
    transition: transform 0.3s ease-in-out;
-
   @media (max-width: 576px) {
     width: 100%;
   }

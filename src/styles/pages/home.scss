@@ -12,9 +12,12 @@
             margin: auto;
             width: 350px;
         }
-        p{
+        .content-hero{
             width: 80%;
             margin: auto;
+            h2{
+                margin-bottom: 3.125rem;
+            }
         }
     }
     .cards-carousel-section{
@@ -22,22 +25,101 @@
             margin-top: 35px;
         }
     }
-    .table-collection-data-section{
-        margin: auto;
-        text-align: center;
-        align-items: center;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-       *{
-        color: rgb(36, 36, 36);
-       }
-       >*{
-        box-shadow: inset -1px 1px 0px 2.5px rgb(0 0 0 / 3%);
-        border-radius: 0.5rem;
-        padding: 30px;
-       }
-       width: 500px;
-       height: 200px;
+    .collection-data-section{
+        margin-bottom: 5rem;
+        .table-collection-data{
+            margin: auto;
+            text-align: center;
+            align-items: center;
+            width: auto;
+            height: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+           *{
+            color: rgb(36, 36, 36);
+           }
+           >*{
+            box-shadow: inset -1px 1px 0px 2.5px rgb(0 0 0 / 3%);
+            border-radius: 0.5rem;
+            padding: 30px;
+           }
+        }
+        .link-main-rerible{
+            height: 2.5rem;
+            background-color: #ff01ae;
+            border: solid;
+            border-color: rgb(0 0 0 / 5%);
+            width: 13rem;
+            margin: auto;
+            padding-top: .625rem;
+            border-radius: 8px;
+            a{
+                color: white;
+                font-weight: 400;
+                text-decoration: none;
+            }
+        }
+        .link-main-rerible:hover{
+            background-color:#ff01ae9c;
+        }
+    }
+}
+// Responsive
+@include for-normal-layout {
+    .home-page{
+        .hero-section{
+            margin: auto;
+            width: 80%;
+        }
+        .cards-carousel-section{
+            width: 80%;
+            margin: auto;
+        }
+    }
+}
+@include for-tablet-layout {
+    .home-page{
+        .hero-section{
+          flex-direction: column;
+        }
+    }
+}
+@include for-narrow-layout{
+    .home-page{
+        .hero-section{
+          flex-direction: column;
+        }
+        .cards-carousel-section{
+            margin:auto
+        }
+        .collection-data-section{
+            .table-collection-data{
+                width: 23rem;
+                margin-top: 1rem;
+            }
+        }
+    }
+}
+@include for-mobile-layout {
+    .home-page{
+        .hero-section{
+            .hero-img{
+                width: 300px;
+            }
+            flex-direction: column;
+        }
+        .cards-carousel-section{
+            .alice-carousel{
+                width: 90vw;
+            }
+        }
+        .collection-data-section{
+            .table-collection-data{
+                width: 90vw;
+                padding: 60px;
+                margin-bottom: 200px;
+            }
+        }
     }
 }

@@ -14,7 +14,7 @@
 }
 //538-1000px
 @mixin for-tablet-layout {
-    @media (min-width: $mobile-breakpoint) and (max-width: $tablet-breakpoint){
+    @media (min-width: $narrow-breakpoint ) and (max-width: $tablet-breakpoint){
         @content;
     }
 }

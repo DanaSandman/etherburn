@@ -15,11 +15,11 @@ export function Header() {
             <Burger open={open} setOpen={setOpen} />
             <Menu open={open} setOpen={setOpen} />
             </div>
-            <div className="flex align-center">
-            <span className="header-title">Ether Burn</span>
+            <div className="logo flex align-center ">
             <Link to="/home">
             <img className="header-logo" src={logo} alt="ETHERBURN logo"/>
             </Link>
+            <span className="header-title">Ether Burn</span>
             </div>
         </div>
     )

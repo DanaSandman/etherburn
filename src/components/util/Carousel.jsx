@@ -5,8 +5,10 @@ import { NftPreview } from "../nft/NftPreview.jsx";
 
 const responsive = {
   0: { items: 1 },
-  568: { items: 2 },
+  568: { items: 1 },
+  680: { items: 2 },
   1024: { items: 3 },
+  // 1350: { items: 4 },
 };
 
 let gNfts = [];

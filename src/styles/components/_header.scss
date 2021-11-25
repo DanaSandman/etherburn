@@ -1,17 +1,21 @@
 .header{
     display: flex;
     justify-content: space-between;
-    background-color: rgb(255, 255, 255);
+    backdrop-filter: blur(3px);
     position: fixed;
-    z-index: 5;
+    z-index: 3;
     width: 100vw;
     box-shadow: rgb(0 0 0 / 3%) 0px 2px 0px 0px;
+    height: 4.5rem;
 }
-.header-logo{
-    width: 6.9rem;
-    margin-top: 0.5rem;
-    margin-right: 0.5rem;
+.logo{
+   margin: auto;
+    .header-logo{
+        width: 5rem;
+    }
+    .header-title{
+        color: rgb(255, 0, 174)
+    }
 }
-.header-title{
-    color: rgb(255, 0, 174)
-}
+
+
