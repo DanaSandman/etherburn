@@ -1,20 +1,43 @@
 .home-page{
+    text-align: center;
+    padding-top: 5rem;
+    background-color: rgb(255, 255, 255);
     h2{
         color: rgb(37, 37, 37);
     }
-   padding-top: 5rem;
-    background-color: rgb(255, 255, 255);
     .hero-section{
+        margin-bottom: 50px;
         background-color: rgb(255, 255, 255);
         .hero-img{
-            width: 500px;
-            text-align: center;
+            margin: auto;
+            width: 350px;
+        }
+        p{
+            width: 80%;
+            margin: auto;
         }
     }
-    .home-section2{
-        background-color: rgb(255, 255, 255);
+    .cards-carousel-section{
+        button{
+            margin-top: 35px;
+        }
     }
-    .home-section3{
-        background-color: rgb(255, 255, 255);
+    .table-collection-data-section{
+        margin: auto;
+        text-align: center;
+        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+       *{
+        color: rgb(36, 36, 36);
+       }
+       >*{
+        box-shadow: inset -1px 1px 0px 2.5px rgb(0 0 0 / 3%);
+        border-radius: 0.5rem;
+        padding: 30px;
+       }
+       width: 500px;
+       height: 200px;
     }
 }

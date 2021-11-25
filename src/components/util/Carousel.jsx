@@ -35,9 +35,18 @@ export function Carousel(gNfts) {
   return (
     <AliceCarousel
       mouseTracking
+      // autoPlay="false"
+      // autoWidth="true"
+      // autoPlayInterval="400"
+      animationDuration="1800"
+      autoPlayStrategy="all"
       items={items}
       responsive={responsive}
       controlsStrategy="alternate"
+      infinite="true"
+      mouseTracking="true"
+      // renderKey="2"
+      // swipeExtraPadding="20"
     />
   );
 }

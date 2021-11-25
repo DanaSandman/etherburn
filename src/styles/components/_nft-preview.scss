@@ -13,8 +13,11 @@
         * {
             color: rgb(36, 36, 36);
         }
-        .nft-title{
+        .nft-title, span{
             margin: 1rem 0 1rem 0;
+        }
+        h5{
+            text-align: start;
         }
     }
 }

@@ -11,6 +11,7 @@ const StyledMenu = styled.nav`
   position: absolute;
   top: 0;
   left: 0;
+  width: 350px;
     box-shadow:
    0 2.8px 2.2px rgba(0, 0, 0, 0.034),
    0 6.7px 5.3px rgba(0, 0, 0, 0.048),
@@ -18,7 +19,8 @@ const StyledMenu = styled.nav`
    0 22.3px 17.9px rgba(0, 0, 0, 0.072),
    0 41.8px 33.4px rgba(0, 0, 0, 0.086),
    0 100px 80px rgba(0, 0, 0, 0.12);
-  transition: transform 0.3s ease-in-out;
+   transition: transform 0.3s ease-in-out;
+
   @media (max-width: 576px) {
     width: 100%;
   }

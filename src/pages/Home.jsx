@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment }from "react";
+import React, { useEffect }from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
 
@@ -6,7 +6,6 @@ import { loadNfts } from "../store/nft/nft.action.js";
 
 //Cmps
 import { NftList } from '../components/util/Carousel.jsx';
-import { Carousel } from '../components/util/Carousel.jsx';
 //Img
 import HeroImg from "../assets/img/Logo.png";
 
@@ -28,10 +27,29 @@ export function Home() {
         </section>
         <section className='cards-carousel-section'>
         <NftList nfts={nfts.nfts} />
-        {/* <button>some button</button> */}
+        <button>Go To Rerible</button>
         </section>
-        <section className='home-section3'>
-          <h2>section3</h2>
+        <section className='table-collection-data-section'>
+            <div className='flex column'>
+              <h3>13.8</h3>
+              <h5>items</h5>
+            </div>
+
+            <div className='flex column'>
+              <h3>286</h3>
+              <h5>owners</h5>
+            </div>
+
+            <div className='flex column'>
+              <h3>3.99 ETH</h3>
+              <h5>floor price</h5>
+            </div>
+
+            
+            <div className='flex column'>
+              <h3>12.8K ETH</h3>
+              <h5>volume traded</h5>
+            </div>
         </section>
       </div>
   );
