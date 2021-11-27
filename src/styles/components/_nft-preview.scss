@@ -16,8 +16,18 @@
         .nft-title, span{
             margin: 1rem 0 1rem 0;
         }
-        h5{
+        h6{
             text-align: start;
+            font-weight: 300;
+            margin-bottom: 5px;
+        }
+        h4{
+            text-align: start;
+            .eth-logo{
+                width: 0.6rem;
+                margin-right: 5px;
+                margin-bottom: -2px;
+            }
         }
     }
 }

@@ -6,6 +6,7 @@ import { loadNfts } from "../store/nft/nft.action.js";
 
 //Cmps
 import { NftList } from '../components/util/Carousel.jsx';
+import  {web3}  from '../services/web3.service.js';
 //Img
 import HeroImg from "../assets/img/Logo.png";
 
@@ -16,6 +17,7 @@ export function Home() {
 
   useEffect(() => {
     dispatch(loadNfts());
+    web3.eth.getBlockNumber().then((num) => console.log('web3', num));
   }, []);
 
   return (

@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ETHlogo from "../../assets/img/ethLogo.svg";
+
 
 export function NftPreview({ nft }) {
-  console.log("preview", nft);
   return (
       <div className="nft-preview flex column">
         {/* <Link to={`/nft/${nft._id}`} > */}
@@ -15,7 +16,8 @@ export function NftPreview({ nft }) {
               <h4 className="nft-title">{nft.title}</h4>
               <span>{nft.copies}</span>
             </div>
-            <h5>{nft.price}⧫</h5>
+            <h6>Price</h6>
+            <h4><img className='eth-logo' src={ETHlogo} alt="eth-logo" />{nft.price}</h4>
             <p>{nft.description}</p>
           </div>
           {/* <div className="owners-card">
