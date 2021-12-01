@@ -6,23 +6,42 @@ import { loadNfts } from "../store/nft/nft.action.js";
 
 //Cmps
 import { NftList } from '../components/util/Carousel.jsx';
-import  {web3}  from '../services/web3.service.js';
+import  { web3, contract, web3service }   from '../services/web3.service.js';
 //Img
 import HeroImg from "../assets/img/Logo.png";
 
-export function Home() {
+export function Home(props) {
 
   const dispatch = useDispatch();
   const  nfts  = useSelector((state) => state.nftModule);
 
+  const myWallet ='0x42f91354b885328b56A624eD0f7bDADF9a6F75ba';
+
   useEffect(() => {
+
     dispatch(loadNfts());
-    web3.eth.getBlockNumber().then((num) => console.log('web3', num));
+  
+    web3.eth.getBlockNumber()
+    .then((num) => console.log('web3', num));
+    
+    web3service.callOptions(myWallet);
+
+    calls();
+
   }, []);
+
+  const calls = async() => {
+   const result =  await contract.methods.version().call();
+    console.log('result',result);
+  };
 
   return (
       <div className="home-page">
         <section className="hero-section flex">
+          <div className='account-details'>
+          <p>{props.currentAccount}</p>
+          <p> Your Balance: {props.balance} ETH</p>
+          </div>
           <img className='hero-img' src={HeroImg} alt="hero-image" />
           <div className='content-hero flex column'>
           <h2>Ether Burn</h2>

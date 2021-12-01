@@ -90,9 +90,7 @@ export const MENU_ITEMS = [
     }
 
 ]
-
-const Menu = ({open}) => {
-
+const Menu = ({open, setOpen}) => {
     const renderMenuItem = (item, index) => {
         switch (item.type) {
             case PRIMARY_ITEM:
@@ -117,7 +115,7 @@ const Menu = ({open}) => {
     }
 
     return (
-        <StyledMenu open={open}>
+        <StyledMenu onClick={() => setOpen(!open)} open={open}>
             {MENU_ITEMS.map(renderMenuItem)}
         </StyledMenu>
     )

@@ -8,6 +8,14 @@
     .hero-section{
         margin-bottom: 50px;
         background-color: rgb(255, 255, 255);
+        .account-details{
+            background-color: #e3e3e3;
+            margin-bottom: -70px;
+            p{
+                font-size: small;
+                margin: 0px;
+            }
+        }
         .hero-img{
             margin: auto;
             width: 350px;
