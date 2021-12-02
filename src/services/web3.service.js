@@ -12,55 +12,32 @@ export const contract = new web3.eth.Contract(
 
 const gContractData = {
     cost: 0,
-    timeTominting: 0,
+    timeToMinting: 0,
+    isPaused: true,
+    maxMintAmount: 0,
+    maxSupply: 0,
 };
 
 async function read(){
-    await cost();
-    await getSecondsUntilMinting();
+    gContractData.cost = await contract.methods.cost().call();
+    gContractData.timeToMinting = await contract.methods.getSecondsUntilMinting().call();
+    gContractData.isPaused = await contract.methods.isPaused().call();
+    gContractData.maxMintAmount = await contract.methods.maxMintAmount().call();
+    gContractData.maxSupply = await contract.methods.maxSupply().call();
+    return gContractData
 };
-// function write(){
-//     sonefunction()
-// };
+// async function write(){
+//     const payableAmount = 0.001
+//     const _mintAmount = 1 
+//     const mint = await contract.methods.mint(payableAmount,_mintAmount).send({
+//         from: '0x42f91354b885328b56A624eD0f7bDADF9a6F75ba',
+//         value: payableAmount,
 
-//READ/CALLS
-async function cost() {
-        gContractData.cost = await contract.methods.cost().call();
-        console.log('gContractData.cost',gContractData.cost);
-};
-async function getSecondsUntilMinting() {
-    // const currTime = 
-    // const timeTominting =
-    gContractData.timeTominting = await contract.methods.getSecondsUntilMintig().call();
-    console.log('gContractData.timeTominting',gContractData.timeTominting);
-};
-//WRITE/TRANSECTIONS
-// async function transections() {
-//     // const usr = '0x42f91354b885328b56A624eD0f7bDADF9a6F75ba';
-//     // const wad = '';
-
-//     // const recipt = await contract.methods.mint(usr,wad).send({
-//     //     from: '0x42f91354b885328b56A624eD0f7bDADF9a6F75ba',
-//     //     //gas limit
-//     //     gas: 1000,
-//     //     gasPrice: 1000,
-//     // })
-
-//     const recipt = await contract.methods.deny().send({
-//     })
-//     console.log('recipt',recipt);
+//     });
+//     return mint
 // };
 
 export const web3service = {
     read,
     // write,
-    gContractData
 };
-
- //  async function calls(wallet) {
-//     // const result = await contract.methods.name().call();
-//     const result = await contract.methods.balanceOf(wallet).call();
-//     // const result = await contract.methods.version().call();
-//     console.log('result',result);
-//     return result
-// };

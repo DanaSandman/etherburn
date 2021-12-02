@@ -17,9 +17,7 @@ export function Home(props) {
   const dispatch = useDispatch();
   const  nfts  = useSelector((state) => state.nftModule);
 
-
   useEffect(() => {
-
     dispatch(loadNfts());
     web3.eth.getBlockNumber()
     .then((num) => console.log('web3', num));
@@ -27,10 +25,17 @@ export function Home(props) {
     getContractData()
   }, []);
 
+  useEffect(() => {
+    console.log('contractData',contractData);
+  }, [contractData]);
+
   const getContractData = async () => {
-    await  web3service.read();
-     setcontractData(web3service.gContractData);
-     console.log('contractData',contractData.cost);
+    const dataFromContract = await web3service.read();
+    setcontractData(dataFromContract);
+  };
+  const mint = async () => {
+    // const mintData = await web3service.write();
+    console.log('mintData');
   };
 
   return (
@@ -38,13 +43,19 @@ export function Home(props) {
         <section className="hero-section flex">
           <div className='account-details'>
           <p>{contractData.cost}</p>
+          <p>{contractData.timeToMinting}</p>
+          <p>{contractData.maxMintAmount}</p>
+          <p>{contractData.maxSupply}</p>
           <p>{props.currentAccount}</p>
           <p> Your Balance: {props.balance} ETH</p>
+          <button onclick = {mint} > MINT</button>
           </div>
           <img className='hero-img' src={HeroImg} alt="hero-image" />
           <div className='content-hero flex column'>
           <h2>Ether Burn</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque natus maiores illum, voluptatibus quidem dignissimos accusamus excepturi obcaecati eius sunt nisi facilis quod, dolor non molestias rerum quae velit reprehenderit?</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque natus maiores illum, voluptatibus quidem dignissimos 
+            accusamus excepturi obcaecati eius sunt nisi facilis quod, dolor non molestias rerum quae velit reprehenderit?
+          </p>
           </div>
         </section>
         <section className='cards-carousel-section'>
