@@ -17,7 +17,7 @@ const gContractData = {
 
 async function read(){
     await cost();
-    await getSecondsUntilMintig();
+    await getSecondsUntilMinting();
 };
 // function write(){
 //     sonefunction()
@@ -28,7 +28,7 @@ async function cost() {
         gContractData.cost = await contract.methods.cost().call();
         console.log('gContractData.cost',gContractData.cost);
 };
-async function getSecondsUntilMintig() {
+async function getSecondsUntilMinting() {
     // const currTime = 
     // const timeTominting =
     gContractData.timeTominting = await contract.methods.getSecondsUntilMintig().call();
