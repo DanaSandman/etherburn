@@ -1,3 +1,4 @@
+import { AccessAlarms } from '@material-ui/icons';
 import Web3 from 'web3';
 import abi from '../assets/util/abi.json';
 
@@ -26,18 +27,23 @@ async function read(){
     gContractData.maxSupply = await contract.methods.maxSupply().call();
     return gContractData
 };
-// async function write(){
-//     const payableAmount = 0.001
-//     const _mintAmount = 1 
-//     const mint = await contract.methods.mint(payableAmount,_mintAmount).send({
-//         from: '0x42f91354b885328b56A624eD0f7bDADF9a6F75ba',
-//         value: payableAmount,
+async function write(){
 
-//     });
-//     return mint
-// };
+    // const payableAmount = web3.utils.fromWei(gContractData.cost);
+    const payableAmount = gContractData.cost
+    const _mintAmount = 1 
+    const acc = await web3.eth.getAccounts();
+console.log('payableAmount', payableAmount);
+console.log('_mintAmount', _mintAmount);
+console.log('acc',acc);
+    const mint = await contract.methods.mint(_mintAmount).send({
+        from: acc[0],
+        value: payableAmount,
+    });
+    return mint
+};
 
 export const web3service = {
     read,
-    // write,
+    write,
 };

@@ -12,7 +12,6 @@ import HeroImg from "../assets/img/Logo.png";
 export function Home(props) {
 
   const initialContractData = {};
-  const myWallet ='0x42f91354b885328b56A624eD0f7bDADF9a6F75ba';
   const [contractData, setcontractData] = useState(initialContractData)
   const dispatch = useDispatch();
   const  nfts  = useSelector((state) => state.nftModule);
@@ -20,7 +19,7 @@ export function Home(props) {
   useEffect(() => {
     dispatch(loadNfts());
     web3.eth.getBlockNumber()
-    .then((num) => console.log('web3', num));
+    .then((num) => console.log('web3 block num', num));
     console.log('contractData',contractData);
     getContractData()
   }, []);
@@ -34,8 +33,9 @@ export function Home(props) {
     setcontractData(dataFromContract);
   };
   const mint = async () => {
-    // const mintData = await web3service.write();
-    console.log('mintData');
+    console.log('start miting');
+    const mintData = await web3service.write();
+    console.log('mintData',mintData);
   };
 
   return (
@@ -48,7 +48,7 @@ export function Home(props) {
           <p>{contractData.maxSupply}</p>
           <p>{props.currentAccount}</p>
           <p> Your Balance: {props.balance} ETH</p>
-          <button onclick = {mint} > MINT</button>
+          <button onClick = {mint} > MINT</button>
           </div>
           <img className='hero-img' src={HeroImg} alt="hero-image" />
           <div className='content-hero flex column'>
