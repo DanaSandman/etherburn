@@ -13,6 +13,8 @@
     "author": "Me",
     "license": "ISC",
     "dependencies": {
+        "minimist": "^1.2.5",
+        "web3.storage": "^3.1.0",
         "axios": "^0.21.4",
         "bcrypt": "^5.0.0",
         "cors": "^2.8.5",
