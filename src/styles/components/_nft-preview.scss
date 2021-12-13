@@ -1,12 +1,13 @@
 
 .nft-preview{
+    width: 250px;
     text-align: center;
     a{
         text-decoration: none;
     }
     .content-img-card{
         .nft-img{
-            width: 15.6rem;
+            width: 13.6rem;
         }
     }
     .content-card{
@@ -28,6 +29,27 @@
                 margin-right: 5px;
                 margin-bottom: -2px;
             }
+        }
+        .mint-btn{
+            height: 2.5rem;
+            background-color: #ff01ae;
+            color: azure;
+            font-weight: 500;
+            border: solid;
+            border-color: rgba(0, 0, 0, 0.05);
+            width: 13rem;
+            margin: auto;
+            border-radius: 5px;
+        }
+        .mint-btn:hover{
+            background-color: #ff01afa6;
+        }
+        .minted{
+            color: black;
+            background-color: rgba(202, 200, 200, 0.856);
+        }
+        .minted:hover{
+            background-color: rgba(202, 200, 200, 0.411);
         }
     }
 }

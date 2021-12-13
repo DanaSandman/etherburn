@@ -8,11 +8,11 @@ const responsive = {
   568: { items: 1 },
   680: { items: 2 },
   1024: { items: 3 },
-  // 1350: { items: 4 },
+  1300: { items: 4 },
 };
 
 let gNfts = [];
-export function NftList({ nfts }) {
+export function NftListCarousel({ nfts }) {
   console.log("carousel list", nfts);
   gNfts = nfts;
   return (

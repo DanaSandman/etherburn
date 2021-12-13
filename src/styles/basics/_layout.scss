@@ -1,10 +1,21 @@
-.home-page,.about-page{
+.home-page{
     display: grid;
     grid-template-columns: 7.5rem minmax( auto, $desktop-breakpoint ) 7.5rem;
     grid-template-rows: 430px 680px 600px;
     section{
         grid-column: 2/3;
     };
+}
+.collection-page{
+    display: grid;
+    grid-template-columns: 7.5rem minmax( auto, $desktop-breakpoint ) 7.5rem;
+    grid-template-rows: 300px 2fr;
+    section{
+        grid-column: 2/3;
+    };
+    .filter-collection{
+        grid-row: 1/2;
+    }
 }
 // Responsive
 @include for-wide-layout {

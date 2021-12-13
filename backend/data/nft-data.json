@@ -18,6 +18,8 @@
             "title": "wooww",
             "price": "0.03",
             "copies": "1/1",
+            "minted": "false",
+            "category": "daily",
             "description" : "lorem ipsum doladdekjh hjjd woow grew up in Sweden and lived elsewhere before settling in Noosa, Australia. Her abstract works of art often start as digital sketches before they are painted on linen and altered into organic"
         },
         {
@@ -38,6 +40,8 @@
             "title": "the second",
             "price": "3.00",
             "copies": "1/1",
+            "minted": "false",
+            "category": "weekly",
             "description" : "lorem ipsum doladdekjh hjjd woow grew up in Sweden and lived elsewhere before settling in Noosa, Australia. Her abstract works of art often start as digital sketches before they are painted on linen and altered into organic"
         },
         {
@@ -58,6 +62,9 @@
             "title": "hii im firs",
             "price": "0.05",
             "copies": "1/1",
+            "minted": "true",
+            "category": "monthly",
+            "openSeaLink": "https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/20320409577353525733027990277588759518385479256488519863146356740530754289665",
             "description" : "lorem ipsum doladdekjh hjjd woow grew up in Sweden and lived elsewhere before settling in Noosa, Australia. Her abstract works of art often start as digital sketches before they are painted on linen and altered into organic"
         },
         {
@@ -78,6 +85,8 @@
             "title": "wooww",
             "price": "0.50",
             "copies": "1/1",
+            "minted": "false",
+            "category": "million",
             "description" : "lorem ipsum doladdekjh hjjd woow grew up in Sweden and lived elsewhere before settling in Noosa, Australia. Her abstract works of art often start as digital sketches before they are painted on linen and altered into organic"
         },
         {
@@ -98,6 +107,9 @@
             "title": "the second",
             "price": "2.00",
             "copies": "1/1",
+            "minted": "true",
+            "category": "yearly",
+            "openSeaLink": "https://opensea.io/assets/0x1eff5ed809c994ee2f500f076cef22ef3fd9c25d/66",
             "description" : "lorem ipsum doladdekjh hjjd woow grew up in Sweden and lived elsewhere before settling in Noosa, Australia. Her abstract works of art often start as digital sketches before they are painted on linen and altered into organic"
         },
         {
@@ -118,6 +130,8 @@
             "title": "hii im firs",
             "price": "0.08",
             "copies": "1/1",
+            "minted": "false",
+            "category": "billion",
             "description" : "lorem ipsum doladdekjh hjjd woow grew up in Sweden and lived elsewhere before settling in Noosa, Australia. Her abstract works of art often start as digital sketches before they are painted on linen and altered into organic"
         }
     ]

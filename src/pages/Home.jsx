@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 //Store
 import { loadNfts } from "../store/nft/nft.action.js";
 //Cmps
-import { NftList } from '../components/util/Carousel.jsx';
+import { NftListCarousel } from '../components/util/Carousel.jsx';
 import  { web3, contract, web3service }   from '../services/web3.service.js';
 //Img
 import HeroImg from "../assets/img/Logo.png";
@@ -41,7 +41,7 @@ export function Home(props) {
   return (
       <div className="home-page">
         <section className="hero-section flex">
-          <div className='account-details'>
+          {/* <div className='account-details'>
           <p>{contractData.cost}</p>
           <p>{contractData.timeToMinting}</p>
           <p>{contractData.maxMintAmount}</p>
@@ -49,7 +49,7 @@ export function Home(props) {
           <p>{props.currentAccount}</p>
           <p> Your Balance: {props.balance} ETH</p>
           <button onClick = {mint} > MINT</button>
-          </div>
+          </div> */}
           <img className='hero-img' src={HeroImg} alt="hero-image" />
           <div className='content-hero flex column'>
           <h2>Ether Burn</h2>
@@ -59,7 +59,8 @@ export function Home(props) {
           </div>
         </section>
         <section className='cards-carousel-section'>
-        <NftList nfts={nfts.nfts} />
+        <NftListCarousel nfts={nfts.nfts} />
+        {/* <span> <Link to="/collection">bbbbbbb</Link></span> */}
         </section>
         <section className='collection-data-section flex column'>
           <div className='table-collection-data'>

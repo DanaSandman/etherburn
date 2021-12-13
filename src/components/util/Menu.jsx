@@ -64,9 +64,9 @@ export const MENU_ITEMS = [
         type: PRIMARY_ITEM,
         path: `${BASE_ETHERBURN_APP_URL}/#/home`,
     }, {
-        title: 'About Us',
+        title: 'Collection',
         type: PRIMARY_ITEM,
-        path: `${BASE_ETHERBURN_APP_URL}/#/about`,
+        path: `${BASE_ETHERBURN_APP_URL}/#/collection`,
     },{
         type: ICON_ITEMS,
         children: [

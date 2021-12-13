@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./styles/App.scss";
 //pages
 import { Home } from "./pages/Home.jsx";
-import { About } from "./pages/About.jsx";
+import { Collection } from "./pages/Collection.jsx";
 //components
 import { Header } from './components/util/Header.jsx';
 import { Footer } from "./components/util/Footer.jsx";
@@ -43,14 +43,14 @@ export function App() {
       <div className="app">
         <Header />
         <main>
-        {!isConnected && <Login onLogin={onLogin} onLogout={onLogout} />}
-        {isConnected && (
+        {/* {!isConnected && <Login onLogin={onLogin} onLogout={onLogout} />}
+        {isConnected && ( */}
           <Routes>
             <Route path="/" element={<Home currentAccount={currentAccount} balance={balance} />} />
             <Route path="/home" element={<Home currentAccount={currentAccount} balance={balance} />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/collection" element={<Collection />} />
           </Routes>
-          )}
+          {/* )} */}
         </main>
         <Footer />
       </div>

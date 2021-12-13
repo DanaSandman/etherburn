@@ -1,0 +1,9 @@
+.nft-list{
+    flex-wrap: wrap;
+    > * {
+        box-shadow: inset -1px 1px 0px 2.5px rgb(0 0 0 / 3%);
+        border-radius: 0.9rem;
+        padding: 15px;
+        margin: 10px;
+    }
+}

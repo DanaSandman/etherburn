@@ -1,0 +1,27 @@
+.collection-page{
+    h2{
+        margin: 0px;
+        color: #ff00ae;
+    }
+    .filter-collection{
+       margin-top: 200px;
+       ul{
+         > * {
+             list-style: none;
+             button{
+                width: 100px;
+                height: 40px;
+                padding: 5px;
+                text-align: center;
+                margin-right: 10px;
+                border: none;
+                border-radius: 5px;
+                background-color: -1px 1px 0px 2.5px rgb(0 0 0 / 3%);
+             }
+             button:hover, button:hover{
+                background-color: rgba(153, 153, 153, 0.788);
+             }
+            }
+        }
+    }
+}

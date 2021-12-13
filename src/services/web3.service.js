@@ -28,14 +28,12 @@ async function read(){
     return gContractData
 };
 async function write(){
-
-    // const payableAmount = web3.utils.fromWei(gContractData.cost);
     const payableAmount = gContractData.cost
     const _mintAmount = 1 
     const acc = await web3.eth.getAccounts();
-console.log('payableAmount', payableAmount);
-console.log('_mintAmount', _mintAmount);
-console.log('acc',acc);
+    console.log('payableAmount', payableAmount);
+    console.log('_mintAmount', _mintAmount);
+    console.log('acc',acc);
     const mint = await contract.methods.mint(_mintAmount).send({
         from: acc[0],
         value: payableAmount,

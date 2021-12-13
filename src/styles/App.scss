@@ -5,12 +5,13 @@
 
 //PAGES
 @import './pages/home.scss';
-@import './pages/about.scss';
+@import './pages/collection.scss';
 
 
 //CMPS
 @import './components/header.scss';
 @import './components/footer.scss';
+@import './components/nft-list.scss';
 @import './components/nft-preview.scss';
 @import './components/carousel.scss';
 @import './components/login.scss';
