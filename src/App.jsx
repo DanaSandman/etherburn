@@ -5,17 +5,16 @@ import "./styles/App.scss";
 import { Home } from "./pages/Home.jsx";
 import { Collection } from "./pages/Collection.jsx";
 //components
-import { Header } from './components/util/Header.jsx';
+import { Header } from "./components/util/Header.jsx";
 import { Footer } from "./components/util/Footer.jsx";
 
-import  Login  from './components/util/Login.jsx';
+import Login from "./components/util/Login.jsx";
 import Web3 from "web3";
 
 export function App() {
   const [isConnected, setIsConnected] = useState(false);
   const [currentAccount, setCurrentAccount] = useState(null);
   const [balance, setBalance] = useState(0);
-
 
   const onLogin = async (provider) => {
     const web3 = new Web3(provider);
@@ -43,16 +42,28 @@ export function App() {
       <div className="app">
         <Header />
         <main>
-        {/* {!isConnected && <Login onLogin={onLogin} onLogout={onLogout} />}
+          {/* {!isConnected && <Login onLogin={onLogin} onLogout={onLogout} />}
         {isConnected && ( */}
           <Routes>
-            <Route path="/" element={<Home currentAccount={currentAccount} balance={balance} />} />
-            <Route path="/home" element={<Home currentAccount={currentAccount} balance={balance} />} />
+            <Route
+              path="/"
+              element={
+                <Home currentAccount={currentAccount} balance={balance} />
+              }
+            />
+            <Route
+              path="/home"
+              element={
+                <Home currentAccount={currentAccount} balance={balance} />
+              }
+            />
             <Route path="/collection" element={<Collection />} />
           </Routes>
           {/* )} */}
         </main>
-        <Footer />
+        <footer>
+          <Footer />
+        </footer>
       </div>
     </Router>
   );

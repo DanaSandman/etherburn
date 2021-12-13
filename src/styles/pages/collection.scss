@@ -4,6 +4,7 @@
         color: #ff00ae;
     }
     .filter-collection{
+        overflow-x: auto;
        margin-top: 200px;
        ul{
          > * {
@@ -13,15 +14,21 @@
                 height: 40px;
                 padding: 5px;
                 text-align: center;
-                margin-right: 10px;
+                margin-right: 3px;
                 border: none;
                 border-radius: 5px;
                 background-color: -1px 1px 0px 2.5px rgb(0 0 0 / 3%);
              }
              button:hover, button:hover{
-                background-color: rgba(153, 153, 153, 0.788);
+                background-color: rgba(204, 200, 200, 0.582);
+             }
+             button:focus{
+                border-bottom: 4px solid $primary-color;
              }
             }
         }
+    }
+    .filter-collection::-webkit-scrollbar{
+        width: 0;
     }
 }
