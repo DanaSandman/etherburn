@@ -35,6 +35,24 @@
     }
     .collection-data-section{
         margin-bottom: 5rem;
+        .collection-link-main{
+            height: 2.5rem;
+            color: white;
+            font-weight: 400;
+            text-decoration: none;
+            background-color: #ff01ae;
+            border: solid;
+            border-color: rgb(0 0 0 / 5%);
+            width: 13rem;
+            margin: auto;
+            padding: .415rem;
+            border-radius: 8px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .collection-link-main:hover{
+            background-color:#ff01ae9c;
+        }
         .table-collection-data{
             margin: auto;
             text-align: center;
@@ -52,24 +70,6 @@
             border-radius: 0.5rem;
             padding: 30px;
            }
-        }
-        .link-main-rerible{
-            height: 2.5rem;
-            background-color: #ff01ae;
-            border: solid;
-            border-color: rgb(0 0 0 / 5%);
-            width: 13rem;
-            margin: auto;
-            padding-top: .415rem;
-            border-radius: 8px;
-            a{
-                color: white;
-                font-weight: 400;
-                text-decoration: none;
-            }
-        }
-        .link-main-rerible:hover{
-            background-color:#ff01ae9c;
         }
     }
 }

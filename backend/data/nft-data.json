@@ -1,7 +1,7 @@
 {
     "nfts": [
         {
-            "_id": "o1225",
+            "id": "o1225",
             "owners": [
                 {
                     "ownerName": "israel perez",
@@ -132,6 +132,138 @@
             "copies": "1/1",
             "minted": "false",
             "category": "billion",
+            "description" : "lorem ipsum doladdekjh hjjd woow grew up in Sweden and lived elsewhere before settling in Noosa, Australia. Her abstract works of art often start as digital sketches before they are painted on linen and altered into organic"
+        },
+        {
+            "id": "i1565",
+            "owners": [
+                {
+                    "ownerName": "israel perez",
+                    "walletAdress": "125hkj21254hgvhgvf",
+                    "ownerImg": "https://res.cloudinary.com/tappan/image/upload/v1621526740/collection%20thumbs/sevtusjp6vzs9zzrgxyj.jpg"
+                },
+                {
+                    "ownerName": "dana sandmna",
+                    "walletAdress": "125hkj21254hgvhgvf",
+                    "ownerImg": "https://cdn.shopify.com/s/files/1/0941/7736/files/Profile_Pic_2048x2048.jpg?v=1558126779"
+                }
+            ],
+            "nftImg": "//cdn.shopify.com/s/files/1/0941/7736/products/Lucky-7__14-x-11_38_Print-No-Frame_720x@2x.jpg?v=1620280646",
+            "title": "hii im firs",
+            "price": "0.08",
+            "copies": "1/1",
+            "minted": "false",
+            "category": "billion",
+            "description" : "lorem ipsum doladdekjh hjjd woow grew up in Sweden and lived elsewhere before settling in Noosa, Australia. Her abstract works of art often start as digital sketches before they are painted on linen and altered into organic"
+        },
+        {
+            "id": "i1565",
+            "owners": [
+                {
+                    "ownerName": "israel perez",
+                    "walletAdress": "125hkj21254hgvhgvf",
+                    "ownerImg": "https://res.cloudinary.com/tappan/image/upload/v1621526740/collection%20thumbs/sevtusjp6vzs9zzrgxyj.jpg"
+                },
+                {
+                    "ownerName": "dana sandmna",
+                    "walletAdress": "125hkj21254hgvhgvf",
+                    "ownerImg": "https://cdn.shopify.com/s/files/1/0941/7736/files/Profile_Pic_2048x2048.jpg?v=1558126779"
+                }
+            ],
+            "nftImg": "//cdn.shopify.com/s/files/1/0941/7736/products/Lucky-7__14-x-11_38_Print-No-Frame_720x@2x.jpg?v=1620280646",
+            "title": "hii im firs",
+            "price": "0.08",
+            "copies": "1/1",
+            "minted": "false",
+            "category": "yearly",
+            "description" : "lorem ipsum doladdekjh hjjd woow grew up in Sweden and lived elsewhere before settling in Noosa, Australia. Her abstract works of art often start as digital sketches before they are painted on linen and altered into organic"
+        },
+        {
+            "id": "i1565",
+            "owners": [
+                {
+                    "ownerName": "israel perez",
+                    "walletAdress": "125hkj21254hgvhgvf",
+                    "ownerImg": "https://res.cloudinary.com/tappan/image/upload/v1621526740/collection%20thumbs/sevtusjp6vzs9zzrgxyj.jpg"
+                },
+                {
+                    "ownerName": "dana sandmna",
+                    "walletAdress": "125hkj21254hgvhgvf",
+                    "ownerImg": "https://cdn.shopify.com/s/files/1/0941/7736/files/Profile_Pic_2048x2048.jpg?v=1558126779"
+                }
+            ],
+            "nftImg": "//cdn.shopify.com/s/files/1/0941/7736/products/Lucky-7__14-x-11_38_Print-No-Frame_720x@2x.jpg?v=1620280646",
+            "title": "hii im firs",
+            "price": "0.08",
+            "copies": "1/1",
+            "minted": "false",
+            "category": "yearly",
+            "description" : "lorem ipsum doladdekjh hjjd woow grew up in Sweden and lived elsewhere before settling in Noosa, Australia. Her abstract works of art often start as digital sketches before they are painted on linen and altered into organic"
+        },
+        {
+            "id": "i1565",
+            "owners": [
+                {
+                    "ownerName": "israel perez",
+                    "walletAdress": "125hkj21254hgvhgvf",
+                    "ownerImg": "https://res.cloudinary.com/tappan/image/upload/v1621526740/collection%20thumbs/sevtusjp6vzs9zzrgxyj.jpg"
+                },
+                {
+                    "ownerName": "dana sandmna",
+                    "walletAdress": "125hkj21254hgvhgvf",
+                    "ownerImg": "https://cdn.shopify.com/s/files/1/0941/7736/files/Profile_Pic_2048x2048.jpg?v=1558126779"
+                }
+            ],
+            "nftImg": "//cdn.shopify.com/s/files/1/0941/7736/products/Lucky-7__14-x-11_38_Print-No-Frame_720x@2x.jpg?v=1620280646",
+            "title": "hii im firs",
+            "price": "0.08",
+            "copies": "1/1",
+            "minted": "false",
+            "category": "yearly",
+            "description" : "lorem ipsum doladdekjh hjjd woow grew up in Sweden and lived elsewhere before settling in Noosa, Australia. Her abstract works of art often start as digital sketches before they are painted on linen and altered into organic"
+        },
+        {
+            "id": "i1565",
+            "owners": [
+                {
+                    "ownerName": "israel perez",
+                    "walletAdress": "125hkj21254hgvhgvf",
+                    "ownerImg": "https://res.cloudinary.com/tappan/image/upload/v1621526740/collection%20thumbs/sevtusjp6vzs9zzrgxyj.jpg"
+                },
+                {
+                    "ownerName": "dana sandmna",
+                    "walletAdress": "125hkj21254hgvhgvf",
+                    "ownerImg": "https://cdn.shopify.com/s/files/1/0941/7736/files/Profile_Pic_2048x2048.jpg?v=1558126779"
+                }
+            ],
+            "nftImg": "//cdn.shopify.com/s/files/1/0941/7736/products/Lucky-7__14-x-11_38_Print-No-Frame_720x@2x.jpg?v=1620280646",
+            "title": "hii im firs",
+            "price": "0.08",
+            "copies": "1/1",
+            "minted": "false",
+            "category": "daily",
+            "description" : "lorem ipsum doladdekjh hjjd woow grew up in Sweden and lived elsewhere before settling in Noosa, Australia. Her abstract works of art often start as digital sketches before they are painted on linen and altered into organic"
+        },
+        {
+            "id": "i1565",
+            "owners": [
+                {
+                    "ownerName": "israel perez",
+                    "walletAdress": "125hkj21254hgvhgvf",
+                    "ownerImg": "https://res.cloudinary.com/tappan/image/upload/v1621526740/collection%20thumbs/sevtusjp6vzs9zzrgxyj.jpg"
+                },
+                {
+                    "ownerName": "dana sandmna",
+                    "walletAdress": "125hkj21254hgvhgvf",
+                    "ownerImg": "https://cdn.shopify.com/s/files/1/0941/7736/files/Profile_Pic_2048x2048.jpg?v=1558126779"
+                }
+            ],
+            "nftImg": "//cdn.shopify.com/s/files/1/0941/7736/products/Lucky-7__14-x-11_38_Print-No-Frame_720x@2x.jpg?v=1620280646",
+            "title": "hii im firs",
+            "price": "0.08",
+            "copies": "1/1",
+            "minted": "false",
+            "category": "daily",
             "description" : "lorem ipsum doladdekjh hjjd woow grew up in Sweden and lived elsewhere before settling in Noosa, Australia. Her abstract works of art often start as digital sketches before they are painted on linen and altered into organic"
         }
     ]

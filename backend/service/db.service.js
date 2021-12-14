@@ -6,8 +6,8 @@ module.exports = {
     getCollection
 }
 
-const dbName = 'ETHERBURN_DB'// MongoDB Atlas - prod
-// const dbName = 'etherburn'// MongoDB Local - dev
+// const dbName = 'ETHERBURN_DB'// MongoDB Atlas - prod
+const dbName = 'etherburn'// MongoDB Local - dev
 
 var dbConn = null
 

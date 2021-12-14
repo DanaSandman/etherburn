@@ -8,7 +8,6 @@ const BASE_URL = process.env.NODE_ENV === 'production' ? '/api/' : '//localhost:
 
 export const httpService = {
     get(endpoint, data) {
-        console.log('http get',endpoint);
         return ajax(endpoint, 'GET', data)
     },
     post(endpoint, data) {

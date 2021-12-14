@@ -4,8 +4,8 @@ export const nftService = {
     loadNfts,
 };
 
-async function loadNfts() {
-    return await httpService.get('nft');   
+async function loadNfts(filterBy) {
+    return await httpService.get('nft', filterBy);   
    }
 
 

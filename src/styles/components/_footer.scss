@@ -5,7 +5,8 @@ footer{
     .main-footer{
        display: grid;
        grid-template-columns: 1fr;
-       grid-template-rows: 1fr 0.4fr 0.001fr;
+       grid-template-rows: 1fr 0.4fr 0.1fr;
+       height: 800px;
        .footer-main-contant{
         grid: 1/2;
         p{
@@ -15,8 +16,6 @@ footer{
        .footer-links{
           grid-row: 1/2;
           grid-column: 2/3;
-          margin-left: 11rem;
-          margin-top: 80px;
           h6{
               margin-top: 40px ;
              margin-bottom: 3.8rem;
@@ -38,7 +37,6 @@ footer{
        .footer-social-media-links{
           grid-column: 1/2;
           grid-row: 2/3;
-          margin-top: -5rem;
        }
        .footer-policy-links{
            margin-top: -60px;
@@ -120,7 +118,7 @@ footer{
        }
     }
     .footer-links{
-          margin: 140px 170px 102px 0;
+          margin: 140px 170px 150px 0;
           section{
              margin-right: 79px;
              ul{
@@ -157,7 +155,7 @@ footer{
        .footer-links,
        .footer-join-the-waitlist
        {
-          margin-left: 0px;
+          margin-left: 8.125rem;
        }
        .footer-join-the-waitlist{
           p{
