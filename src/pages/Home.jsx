@@ -13,15 +13,16 @@ export function Home(props) {
   const initialContractData = {};
   const [contractData, setcontractData] = useState(initialContractData);
   const dispatch = useDispatch();
-  const nfts = useSelector((state) => state.nftModule);
+
+  const nfts = useSelector((state) => state.nftModule.nfts);
 
   useEffect(() => {
-    dispatch(loadNfts());
+      dispatch(loadNfts());
     web3.eth.getBlockNumber().then((num) => console.log("web3 block num", num));
     console.log("contractData", contractData);
     getContractData();
   }, []);
-
+  
   useEffect(() => {
     console.log("contractData", contractData);
   }, [contractData]);
@@ -60,11 +61,11 @@ export function Home(props) {
         </div>
       </section>
       <section className="cards-carousel-section">
-        <NftListCarousel nfts={nfts.nfts} />
+        <NftListCarousel nfts={nfts} />
       </section>
       <section className="collection-data-section flex column">
-      <Link to="/collection" className="collection-link-main">
-          ALL COLLECTION 
+        <Link to="/collection" className="collection-link-main">
+          ALL COLLECTION
         </Link>
         <div className="table-collection-data">
           <div className="flex column">

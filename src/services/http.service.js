@@ -23,7 +23,7 @@ export const httpService = {
 
 async function ajax(endpoint, method= 'GET', data=null) {
     console.log('data',data);
-    console.log('endpoint',endpoint);
+    // console.log('endpoint',endpoint);
     console.log('method',method);
     try {
         console.log(data);
