@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+//Cmps
 import { NftList } from '../components/nft/NftList.jsx'
 //Store
 import { loadNfts } from '../store/nft/nft.action.js'
@@ -11,7 +12,7 @@ export function Collection() {
   const [nftsData, setNftsData] = useState()
 
   useEffect(() => {
-    dispatch(loadNfts())
+   if (!nfts[0]) dispatch(loadNfts())  
   }, [])
 
   useEffect(() => {
@@ -19,7 +20,6 @@ export function Collection() {
   }, [nfts])
 
   const filter = (category) => {
-    console.log('filter category', category)
     if (category === 'all') {
       setNftsData(nfts)
     } else {
@@ -64,11 +64,6 @@ export function Collection() {
             <NftList nfts={nftsData} />
           </div>
         )}
-        {/* :(
-        <div>
-          <h2>Loading...</h2>
-        </div>
-        ) */}
       </section>
     </div>
   )

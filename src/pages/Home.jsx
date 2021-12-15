@@ -9,15 +9,15 @@ import { web3, contract, web3service } from "../services/web3.service.js";
 //Img
 import HeroImg from "../assets/img/Logo.png";
 
-export function Home(props) {
-  const initialContractData = {};
-  const [contractData, setcontractData] = useState(initialContractData);
-  const dispatch = useDispatch();
+export function Home() {
 
+  const [contractData, setcontractData] = useState({});
+  const dispatch = useDispatch();
   const nfts = useSelector((state) => state.nftModule.nfts);
 
   useEffect(() => {
-      dispatch(loadNfts());
+    if (!nfts[0]) dispatch(loadNfts())  
+
     web3.eth.getBlockNumber().then((num) => console.log("web3 block num", num));
     console.log("contractData", contractData);
     getContractData();
@@ -31,6 +31,7 @@ export function Home(props) {
     const dataFromContract = await web3service.read();
     setcontractData(dataFromContract);
   };
+  
   const mint = async () => {
     console.log("start miting");
     const mintData = await web3service.write();

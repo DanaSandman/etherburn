@@ -7,7 +7,7 @@ module.exports = {
 }
 
 // const dbName = 'ETHERBURN_DB'// MongoDB Atlas - prod
-const dbName = 'local' // MongoDB Local - dev
+const dbName = 'etherburn' // MongoDB Local - dev
 
 var dbConn = null
 
