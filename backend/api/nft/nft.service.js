@@ -2,20 +2,22 @@ const dbService = require('../../service/db.service.js')
 
 async function query(filterBy = {}) {
     console.log('4 service');
-    console.log('filterBy service',filterBy);
-//    const criteria = _buildCriteria(filterBy)
+    console.log('filterBy service', filterBy);
+    //    const criteria = _buildCriteria(filterBy)
 
-    if (filterBy !== '{}'){
-        filterBy = {category: filterBy}
+    if (filterBy !== '{}') {
+        filterBy = {
+            category: filterBy
+        }
     }
-    console.log('filterBy service',filterBy);
+    console.log('filterBy service', filterBy);
 
     try {
         const collection = await dbService.getCollection('nft')
         // console.log('23.criteria', criteria);
         // const nfts = await collection.find({}).toArray()
         const nfts = await collection.find(filterBy).toArray()
-        
+
         // const nfts = await require('../../data/nft-data.json');
 
         // console.log('9 service nfts', nfts);
