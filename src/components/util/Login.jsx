@@ -37,7 +37,7 @@ const Login = (props) => {
   return (
     <div>
       <button  className="connect-btn" onClick={onLoginHandler} type="button">
-        {!isConnecting && "Connect"}
+        {!isConnecting && "Connect "}
         {isConnecting && "Loading..."}
       </button>
     </div>

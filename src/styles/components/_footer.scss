@@ -64,7 +64,7 @@ footer{
     }
     h6{
     margin: 0 0 27px 0;
-    font-family: TacticSans-Reg;
+   //  font-family: TacticSans-Reg;
     font-size: 16px;
     letter-spacing: 20%;
     color: $primary-bg-color;
@@ -82,7 +82,7 @@ footer{
           margin-bottom: -50px
        }
        span{
-         font-family: Poppins;
+         // font-family: Poppins;
          font-size: 14px;
          letter-spacing: 5%;
          color:  $primary-bg-color;
@@ -110,7 +110,7 @@ footer{
        .footer-policy-links{
           width: 280px;
           a{
-             font-family: Poppins;
+            //  font-family: Poppins;
              font-size: 14px;
              letter-spacing: 0.2px;
              color:  $primary-bg-color;
@@ -128,7 +128,7 @@ footer{
              li{
              display: flex;
              text-transform: uppercase;
-             font-family: Poppins;
+            //  font-family: Poppins;
              font-style: SemiBold;
              font-size: 16px;
              letter-spacing: 5%;

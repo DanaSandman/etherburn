@@ -19,7 +19,7 @@ export function NftPreview({ nft }) {
             </div>
             <h6>Price</h6>
             <h4><img className='eth-logo' src={ETHlogo} alt="eth-logo" />{nft.price}</h4>
-            <p>{nft.description}</p>
+            {/* <p>{nft.description}</p>x */}
             {(nft.minted === "false") ? (
               <button onClick={()=>alert('minted yay')} className="mint-btn">MINT</button>
             ):(

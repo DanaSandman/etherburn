@@ -1,14 +1,14 @@
 .home-page{
     display: grid;
-    grid-template-columns: 7.5rem minmax( auto, $desktop-breakpoint ) 7.5rem;
-    grid-template-rows: 430px 680px 600px;
+    grid-template-columns: 8.5rem minmax( auto, $desktop-breakpoint ) 8.5rem;
+    grid-template-rows: 430px 680px 350px 400px 450px 700px;
     section{
         grid-column: 2/3;
     };
 }
 .collection-page{
     display: grid;
-    grid-template-columns: 7.5rem minmax( auto, $desktop-breakpoint ) 7.5rem;
+    grid-template-columns: 8.5rem minmax( auto, $desktop-breakpoint ) 8.5rem;
     grid-template-rows: 300px 2fr;
     section{
         grid-column: 2/3;

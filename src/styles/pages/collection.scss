@@ -25,6 +25,9 @@
              button:focus{
                 border-bottom: 4px solid $primary-color;
              }
+             button:focus-visible {
+                outline: none;
+            }
             }
         }
     }

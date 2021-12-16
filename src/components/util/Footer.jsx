@@ -33,7 +33,7 @@ export function Footer() {
             growing community to learn more about our ongoing developments and
             future plans, share your feedback and feature requests with us.
           </p>
-          <span>© 2021 Flype. All Rights Reserved.</span>
+          <span>© 2021 EtherBurn. </span>
         </div>
         <div className="footer-social-media-links flex column">
           <h6>Follow Us</h6>

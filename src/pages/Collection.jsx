@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 //Cmps
 import { NftList } from '../components/nft/NftList.jsx'
@@ -10,9 +10,11 @@ export function Collection() {
   // const [category, setCategory] = useState("{}");
   const nfts = useSelector((state) => state.nftModule.nfts)
   const [nftsData, setNftsData] = useState()
+  const btnRef = useRef(null);
 
   useEffect(() => {
    if (!nfts[0]) dispatch(loadNfts())  
+   btnRef.current.focus();
   }, [])
 
   useEffect(() => {
@@ -36,7 +38,7 @@ export function Collection() {
       <section className="filter-collection margin-auto">
         <ul className="margin-auto flex">
           <li>
-            <button onClick={() => filter('all')}>ALL</button>
+            <button onClick={() => filter('all')} ref={btnRef} >ALL</button>
           </li>
           <li>
             <button onClick={() => filter('daily')}>Daily</button>
