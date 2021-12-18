@@ -1,11 +1,15 @@
 .collection-page{
+    text-align: center;
     h2{
-        margin: 0px;
         color: #ff00ae;
+        font-size: 20px;
+        letter-spacing: 20%;
+        font-weight: 400;
+        margin-bottom: 30px;
     }
     .filter-collection{
         overflow-x: auto;
-       margin-top: 200px;
+       margin-top: 150px;
        ul{
          > * {
              list-style: none;
@@ -14,7 +18,7 @@
                 height: 40px;
                 padding: 5px;
                 text-align: center;
-                margin-right: 3px;
+                margin-right: 1.2px;
                 border: none;
                 border-radius: 5px;
                 background-color: -1px 1px 0px 2.5px rgb(0 0 0 / 3%);

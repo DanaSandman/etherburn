@@ -10,17 +10,17 @@ export function NftPreview({ nft }) {
       <div className="nft-preview flex column">
         {/* <Link to={`/nft/${nft._id}`} > */}
           <div className="content-img-card">
-            <img className="nft-img" src={nft.nftImg} alt={nft.title} />
+            <img className="nft-img" src={nft.image} alt={nft.name} />
           </div>
           <div className="content-card flex column">
             <div className="flex space-between">
-              <h4 className="nft-title">{nft.title}</h4>
-              <span>{nft.copies}</span>
+              <h4 className="nft-title">{nft.name}</h4>
+              <span>1/1</span>
             </div>
             <h6>Price</h6>
-            <h4><img className='eth-logo' src={ETHlogo} alt="eth-logo" />{nft.price}</h4>
+            <h4><img className='eth-logo' src={ETHlogo} alt="eth-logo" />from smart-contract</h4>
             {/* <p>{nft.description}</p>x */}
-            {(nft.minted === "false") ? (
+            {(nft.isMinted === "false") ? (
               <button onClick={()=>alert('minted yay')} className="mint-btn">MINT</button>
             ):(
               <button onClick={()=>window.open(`${openSeaLink}`)} className="mint-btn minted">OPENSEA </button> 

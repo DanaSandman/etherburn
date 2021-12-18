@@ -1,14 +1,16 @@
+.nft-list-contianer{
+    width: 66rem;
+    justify-content: center;
+}
 .nft-list{
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 70px;
     > * {
         border: 1px solid rgb(229, 232, 235);
         border-radius: 0.9rem;
-        padding: 15px;
         margin: 10px; 
     }
-}
-.nft-list{
     > *:hover{
         box-shadow: rgb(4 17 29 / 25%) 0px 0px 8px 0px;
         transition: all 0.1s ease 0s;

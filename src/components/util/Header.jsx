@@ -37,8 +37,8 @@ export function Header() {
   };
 
   return (
-    <div className="header flex ">
-      <div>
+    <div className="header">
+      <div className="burger">
         <Burger open={open} setOpen={setOpen} />
         <Menu open={open} setOpen={setOpen} />
       </div>
@@ -48,9 +48,9 @@ export function Header() {
         </Link>
         <span className="header-title">Ether Burn</span>
       </div>
-      <div className="header-connrct-btn flex align-center">
-        {!isConnected && <Login onLogin={onLogin} onLogout={onLogout} />}
-        {isConnected && <div>I Am Connected</div>}
+      <div className="header-connect-btn flex align-center">
+        {!isConnected && <Login className="login" onLogin={onLogin} onLogout={onLogout} />}
+        {isConnected && <div className="connected">{currentAccount}</div>}
       </div>
     </div>
   );

@@ -1,16 +1,21 @@
-
 .nft-preview{
-    width: 250px;
+    width: fit-content;
+    height: 420px;
+    outline: none;
     text-align: center;
+    justify-content: space-between;
     a{
         text-decoration: none;
     }
     .content-img-card{
         .nft-img{
-            width: 13.6rem;
+            width: 18rem;
+            border-radius: 0.9rem;
         }
     }
     .content-card{
+        height: 190px;
+        padding: 1rem;
         * {
             color: rgb(36, 36, 36);
         }

@@ -1,9 +1,8 @@
 .alice-carousel{
 .item{
-    width: 18rem;
-    height: 100%;
+    width: fit-content;
+    height: 105%;
     background-color: rgb(255, 255, 255);
-    padding: 1rem;
     border: 1px solid rgb(229, 232, 235);
     border-radius: 1rem;
 }
@@ -19,6 +18,7 @@
     }
 }
 .alice-carousel__dots{
+    display: none;
         .alice-carousel__dots-item{
             background-color: rgba(54, 54, 54, 0.301);
         }
@@ -27,14 +27,20 @@
         }
 }
 .alice-carousel__prev-btn, .alice-carousel__next-btn{
+    margin-top: 10px;
     width: 50px; 
 }
+.alice-carousel__next-btn{
+    margin-right: 105px;
+}
+// .alice-carousel__prev-btn{
+//     margin-right: 40px;
+// }
 .alice-carousel__next-btn-wrapper, .alice-carousel__prev-btn-wrapper{
         background-color: rgb(0 0 0 / 5%);
         border: solid;
         border-color: rgb(54 54 54 / 25%);
         border-radius: 50%;
-        height: 40px;
 }
 .alice-carousel__next-btn-wrapper:hover, .alice-carousel__prev-btn-wrapper:hover{
     background-color:#f759ad45;

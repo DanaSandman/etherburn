@@ -72,25 +72,25 @@ export function Home() {
         </div>
       </section>
       <section className="cards-carousel-section flex column">
-        <NftListCarousel nfts={nfts} />
+        <div className="home-carousel"><NftListCarousel nfts={nfts} /></div>
         <Link to="/collection" className="collection-link-main">
           ALL COLLECTION
         </Link>
       </section>
       <section className="eco-system-section flex column">
         <h2>Eco System</h2>
-        <p>
+        <p className="p-description">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis
           commodi sequi error eveniet culpa quia corporis, temporibus natus
           dolorem doloribus nesciunt porro nisi iure harum ipsam iste suscipit
           explicabo quae.
         </p>
-        <div className="items">
-          <div className="item1 flex">
+        <div className="item-types">
+          <div className="daily flex">
             <img className="img" src={HeroImg} alt="hero-image" />
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore quae exercitationem, odio nesciunt laboriosam commodi in nisi ad ex, perspiciatis debitis omnis voluptatibus ipsam, eaque sequi numquam? Iusto, aliquid vero!</p>
           </div>
-          <div className="item2 flex">
+          <div className="weekly flex">
             <img className="img" src={HeroImg} alt="hero-image" />
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
@@ -99,7 +99,7 @@ export function Home() {
               perspiciatis in rem iusto neque temporibus ducimus!
             </p>
           </div>
-          <div className="item3 flex">
+          <div className="monthly flex">
             <img className="img" src={HeroImg} alt="hero-image" />
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
@@ -108,7 +108,25 @@ export function Home() {
               laboriosam dicta reprehenderit? Ullam!
             </p>
           </div>
-          <div className="item4 flex">
+          <div className="million flex">
+            <img className="img" src={HeroImg} alt="hero-image" />
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Voluptas, eos cupiditate ut numquam, aspernatur fugiat, beatae
+              aperiam ex optio repellendus dolore quia aut soluta ducimus.
+              Aliquid cupiditate delectus iure esse.
+            </p>
+          </div>
+          <div className="yearly flex">
+            <img className="img" src={HeroImg} alt="hero-image" />
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Voluptas, eos cupiditate ut numquam, aspernatur fugiat, beatae
+              aperiam ex optio repellendus dolore quia aut soluta ducimus.
+              Aliquid cupiditate delectus iure esse.
+            </p>
+          </div>
+          <div className="billion flex">
             <img className="img" src={HeroImg} alt="hero-image" />
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
@@ -119,29 +137,9 @@ export function Home() {
           </div>
         </div>
       </section>
-      <section className="collection-data-section flex column">
-        <div className="table-collection-data">
-          <div className="flex column">
-            <h3>13.8</h3>
-            <h5>items</h5>
-          </div>
-          <div className="flex column">
-            <h3>286</h3>
-            <h5>owners</h5>
-          </div>
-          <div className="flex column">
-            <h3>3.99 ETH</h3>
-            <h5>floor price</h5>
-          </div>
-          <div className="flex column">
-            <h3>12.8K ETH</h3>
-            <h5>volume traded</h5>
-          </div>
-        </div>
-      </section>
       <section className="road-map-section flex column">
           <h2>Road Map</h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas eveniet error tenetur odit facilis, fuga ipsum eos dignissimos quam mollitia corporis quos inventore voluptatem natus maiores quas placeat iure aliquid!
+          <p className="p-description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas eveniet error tenetur odit facilis, fuga ipsum eos dignissimos quam mollitia corporis quos inventore voluptatem natus maiores quas placeat iure aliquid!
           </p>
           <div className="road-map">
             <div className="q1 flex">
@@ -159,16 +157,16 @@ export function Home() {
           </div>
       </section>
       <section className="team-section flex column">
-        <div className="content-area-team flex space-between">
+        <div className="content-area-team flex justify-center ">
           <div className="title">
-            <span>OUR TEAM</span>
-            <h2>
+            <h2>OUR TEAM</h2>
+            <p>
               We are lorem ipsum dolor sit<br></br> amet, consectetur
-            </h2>
+            </p>
           </div>
-          <button className="btn-team-about-us">
+          {/* <button className="btn-team-about-us">
             <div className="btn-content">about us</div>
-          </button>
+          </button> */}
         </div>
         <div className="members flex space-between">
           <div className="member1">
@@ -232,3 +230,24 @@ export function Home() {
     </div>
   );
 }
+//למחוק גם בסיאסאס
+  {/* <section className="collection-data-section flex column">
+        <div className="table-collection-data">
+          <div className="flex column">
+            <h3>13.8</h3>
+            <h5>items</h5>
+          </div>
+          <div className="flex column">
+            <h3>286</h3>
+            <h5>owners</h5>
+          </div>
+          <div className="flex column">
+            <h3>3.99 ETH</h3>
+            <h5>floor price</h5>
+          </div>
+          <div className="flex column">
+            <h3>12.8K ETH</h3>
+            <h5>volume traded</h5>
+          </div>
+        </div>
+      </section> */}//למחוק גם בסיאסאס
