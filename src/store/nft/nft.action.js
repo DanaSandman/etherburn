@@ -4,7 +4,6 @@ import {
 
 //LIST
 export function loadNfts(filterBy) {
-
     if (!filterBy) {
         filterBy = '{}';
     }

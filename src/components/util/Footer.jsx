@@ -59,12 +59,8 @@ export function Footer() {
             </a>
           </div>
         </div>
-        <div className="footer-policy-links flex space-between">
-          <Link to="/#">Privacy Policy</Link>
-          <Link to="/#">Terms and Conditions</Link>
-        </div>
         <div className="footer-links flex">
-          <section className="support">
+          <section>
             <ul>
               <li>
                 <img

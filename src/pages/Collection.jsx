@@ -36,7 +36,7 @@ export function Collection() {
   return (
     <div className="collection-page">
       <section className="filter-collection margin-auto">
-      <h2>ETHER BURN COLLECTION</h2>
+         <h2>ETHER BURN COLLECTION</h2>
         <ul className="margin-auto flex">
           <li>
             <button onClick={() => filter('all')} ref={btnRef} >ALL</button>

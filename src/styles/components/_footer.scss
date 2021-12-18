@@ -38,23 +38,23 @@ footer{
           grid-column: 1/2;
           grid-row: 2/3;
        }
-       .footer-policy-links{
-           margin-top: -60px;
-          margin-left: 100px;
-          width: 31.5rem;
-          grid-column: 2/4;
-          grid-row: 2/3;
-          *{
-             color: $primary-bg-color;
-             margin-top: 1.5rem;
-          }
-          a:hover{
-            color: $primary-color;
-          }
-          :last-child{
-             margin-right: 222px;
-            } 
-       }
+      //  .footer-policy-links{
+      //      margin-top: -60px;
+      //     margin-left: 100px;
+      //     width: 31.5rem;
+      //     grid-column: 2/4;
+      //     grid-row: 2/3;
+      //     *{
+      //        color: $primary-bg-color;
+      //        margin-top: 1.5rem;
+      //     }
+      //     a:hover{
+      //       color: $primary-color;
+      //     }
+      //     :last-child{
+      //        margin-right: 222px;
+      //       } 
+      //  }
        .footer-join-the-waitlist{
           grid-column: 2/3;
           grid-row: 2/4;
