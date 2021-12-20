@@ -21,18 +21,3 @@ export function loadNfts(filterBy) {
         }
     };
 }
-// //FILTER
-// export function filterNft(filterBy) {
-//     if(!filterBy){
-//         filterBy = '{}';
-//     }
-//     return async dispatch => {
-//       try {
-//         const nftsFilterd = await nftService.loadNfts(filterBy)
-//         console.log('action arts', nftsFilterd );
-//         dispatch({ type: 'SET_NFTS', nftsFilterd });
-//       } catch (err) {
-//         console.log('NftsActions: err in loadNfts', err)
-//       } 
-//     }
-// }

@@ -3,9 +3,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 //Store
 import { loadNfts } from "../store/nft/nft.action.js";
+import { loadContractData } from "../store/contract/contract.action.js";
+
 //Cmps
 import { NftListCarousel } from "../components/util/Carousel.jsx";
-import { web3, contract, web3service } from "../services/web3.service.js";
+import { web3, web3service } from "../services/web3.service.js";
 //Img
 import HeroImg from "../assets/img/Logo.png";
 //imgs team
@@ -16,9 +18,9 @@ import TeamImg4 from "../assets/img/team/TeamImg4.png";
 
 export function Home() {
   
-  const [contractData, setcontractData] = useState({});
   const dispatch = useDispatch();
   const nfts = useSelector((state) => state.nftModule.nfts);
+  const contractData = useSelector((state) => state.contractModule.contractData);
   const linkedinTeamPath = {
     IsraelPerez: "https://www.linkedin.com/in/israel-perez-84b69322/",
     DanaSandman: "https://www.linkedin.com/in/dana-sandman-451a2b168/",
@@ -27,20 +29,15 @@ export function Home() {
 
   useEffect(() => {
     if (!nfts[0]) dispatch(loadNfts());
-
+    // if (!contractData) 
+    dispatch(loadContractData());
     web3.eth.getBlockNumber().then((num) => console.log("web3 block num", num));
-    console.log("contractData", contractData);
-    getContractData();
   }, []);
 
   useEffect(() => {
-    console.log("contractData", contractData);
+    //לבדיקות בלבד למחוק לאחר השימוש
+    console.log('contractData',contractData);
   }, [contractData]);
-
-  const getContractData = async () => {
-    const dataFromContract = await web3service.read();
-    setcontractData(dataFromContract);
-  };
 
   const mint = async () => {
     console.log("start miting");
@@ -51,15 +48,16 @@ export function Home() {
   return (
     <div className="home-page">
       <section className="hero-section flex">
-        {/* <div className='account-details'>
-          <p>{contractData.cost}</p>
-          <p>{contractData.timeToMinting}</p>
-          <p>{contractData.maxMintAmount}</p>
-          <p>{contractData.maxSupply}</p>
-          <p>{props.currentAccount}</p>
+          <div className='account-details'>
+          {/* <p>{props.currentAccount}</p>
           <p> Your Balance: {props.balance} ETH</p>
-          <button onClick = {mint} > MINT</button>
-          </div> */}
+          <button onClick ={ {mint} > MINT</button> */}
+           {contractData && <p>{contractData.presalePrice}</p>}
+           {contractData && <p>{contractData.presaleMintMax}</p>}
+           {contractData && <p>{contractData.publicPresalePrice}</p>}
+           {contractData && <p>{contractData.publicPresaleMintMax}</p>}
+           {contractData && <p>{contractData.stage}</p>}
+          </div>
         <img className="hero-img" src={HeroImg} alt="hero-image" />
         <div className="content-hero flex column">
           <h2>Ether Burn</h2>
