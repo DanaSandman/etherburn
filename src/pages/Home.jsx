@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 //Store
 import { loadNfts } from "../store/nft/nft.action.js";
 import { loadContractData } from "../store/contract/contract.action.js";
-
 //Cmps
 import { NftListCarousel } from "../components/util/Carousel.jsx";
 import { web3, web3service } from "../services/web3.service.js";
+import  SVGComponent  from "../components/svg.jsx"
 //Img
 import HeroImg from "../assets/img/Logo.png";
 //imgs team
@@ -48,16 +48,17 @@ export function Home() {
   return (
     <div className="home-page">
       <section className="hero-section flex">
-          <div className='account-details'>
+          {/* <div className='account-details'> */}
           {/* <p>{props.currentAccount}</p>
           <p> Your Balance: {props.balance} ETH</p>
           <button onClick ={ {mint} > MINT</button> */}
-           {contractData && <p>{contractData.presalePrice}</p>}
-           {contractData && <p>{contractData.presaleMintMax}</p>}
-           {contractData && <p>{contractData.publicPresalePrice}</p>}
-           {contractData && <p>{contractData.publicPresaleMintMax}</p>}
-           {contractData && <p>{contractData.stage}</p>}
-          </div>
+           {/* {contractData && <p>{contractData.presalePrice}</p>} */}
+           {/* {contractData && <p>{contractData.presaleMintMax}</p>} */}
+           {/* {contractData && <p>{contractData.publicPresalePrice}</p>} */}
+           {/* {contractData && <p>{contractData.publicPresaleMintMax}</p>} */}
+           {/* {contractData && <p>{contractData.stage}</p>} */}
+          {/* </div> */}
+          <SVGComponent/>
         <img className="hero-img" src={HeroImg} alt="hero-image" />
         <div className="content-hero flex column">
           <h2>Ether Burn</h2>
