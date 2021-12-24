@@ -1,14 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import ETHlogo from "../../assets/img/ethLogo.svg";
+import { web3service } from "../../services/web3.service.js";
+
 
 export function NftPreview({ nft }) {
 
-  const openSeaLink = nft.openSeaLink;
+  const contractData = useSelector((state) => state.contractModule.contractData);
+  const openSeaLink = `https://opensea.io/assets/${contractData.contractAddress}/${nft.tokenId}`;
+
 
   return (
       <div className="nft-preview flex column">
-        {/* <Link to={`/nft/${nft._id}`} > */}
           <div className="content-img-card">
             <img className="nft-img" src={nft.image} alt={nft.name} />
           </div>
@@ -18,15 +21,13 @@ export function NftPreview({ nft }) {
               <span>1/1</span>
             </div>
             <h6>Price</h6>
-            <h4><img className='eth-logo' src={ETHlogo} alt="eth-logo" />from smart-contract</h4>
-            {/* <p>{nft.description}</p>x */}
+            <h4><img className='eth-logo' src={ETHlogo} alt="eth-logo" />{contractData.cost / 1e18}</h4>
             {(nft.isMinted === "false") ? (
-              <button onClick={()=>alert('minted yay')} className="mint-btn">MINT</button>
+              <button onClick={()=>web3service.mint([Math.round(nft.tokenId)])} className="mint-btn">MINT</button>
             ):(
               <button onClick={()=>window.open(`${openSeaLink}`)} className="mint-btn minted">OPENSEA </button> 
             )}
           </div>
-          {/* </Link> */}
       </div>
   );
 }

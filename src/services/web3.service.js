@@ -1,4 +1,3 @@
-import { AccessAlarms } from '@material-ui/icons';
 import Web3 from 'web3';
 import abi from '../assets/util/abi.json';
 
@@ -8,45 +7,52 @@ export const web3 = new Web3(window.ethereum);
 export const contract = new web3.eth.Contract(
     abi.abi,
     //smart contract address
-    '0x31c2F3c057275AD0B36F2d60E021D789cFAb94a1'
+    '0xf22B4a4f3060630559e98Cf884Ce45d62DE2696e'
     );
     console.log('contract web3 service', contract);
 
  const gContractData = {
-    presalePrice: 0,
-    presaleMintMax: 0,
-    publicPresalePrice: 0,
-    publicPresaleMintMax: 0,
+    contractAddress: '0xf22B4a4f3060630559e98Cf884Ce45d62DE2696e',
     paused: false,
-    stage: 0
+    stage: 0,
+    cost: 0,
+    mintMax: 0,
 };
 
 export async function read(){
     console.log('read');
-    gContractData.presalePrice = await contract.methods.presalePrice().call();
-    gContractData.presaleMintMax = await contract.methods.presaleMintMax().call();
-    gContractData.publicPresalePrice = await contract.methods.publicPresalePrice().call();
-    gContractData.publicPresaleMintMax = await contract.methods.publicPresaleMintMax().call();
+
     gContractData.paused = await contract.methods.paused().call();
-    gContractData.stage = await contract.methods.stage().call();
+    gContractData.stage = parseInt(await contract.methods.stage().call());
+
+    if (gContractData.stage === 1){
+        console.log('stage', gContractData.stage);
+        gContractData.cost = parseInt(await contract.methods.presalePrice().call());
+        gContractData.mintMax = await contract.methods.presaleMintMax().call();
+    }else if (gContractData.stage === 2){
+        gContractData.cost = await contract.methods.publicPresalePrice().call();
+        gContractData.mintMax = await contract.methods.publicPresaleMintMax().call();
+    }
     return gContractData
 };
-async function write(){
-    console.log('write');
-    // const payableAmount = gContractData.cost
-    // const _mintAmount = 1 
-    // const acc = await web3.eth.getAccounts();
-    // console.log('payableAmount', payableAmount);
-    // console.log('_mintAmount', _mintAmount);
-    // console.log('acc',acc);
-    // const mint = await contract.methods.mint(_mintAmount).send({
-    //     from: acc[0],
-    //     value: payableAmount,
-    // });
-    // return mint
+
+export async function mint( _tokenIds ){
+    console.log('mint');
+    const payableAmount = gContractData.cost
+    const acc = await web3.eth.getAccounts();
+
+    console.log('payableAmount', payableAmount);
+    console.log('_tokenIds', _tokenIds);
+    console.log('acc',acc);
+
+    const mintTx = await contract.methods.mint(_tokenIds).send({
+        from: acc[0],
+        value: payableAmount,
+    });
+    return mintTx
 };
 
 export const web3service = {
     read,
-    write,
+    mint,
 };

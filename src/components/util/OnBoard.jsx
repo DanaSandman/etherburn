@@ -99,17 +99,18 @@ export default function OnBoard() {
         // const notify = initNotify();
         // dispatch(setWalletNotify(notify));
     }, []);
-    // useEffect(() => {
-    //     let previouslySelectedWallet = window.localStorage.getItem('selectedWallet');
-    //     previouslySelectedWallet = previouslySelectedWallet !== 'undefined' ? previouslySelectedWallet : undefined;
-    //     dispatch(setSelectedWallet(previouslySelectedWallet));
 
-    //     if (previouslySelectedWallet && onboard) {
-    //         onboard.walletSelect(previouslySelectedWallet);
-    //     }else if (onboard){
-    //         dispatch(setWalletOnboard(onboard));
-    //     }
-    // }, [onboard]);
+    useEffect(() => {
+        let previouslySelectedWallet = window.localStorage.getItem('selectedWallet');
+        previouslySelectedWallet = previouslySelectedWallet !== 'undefined' ? previouslySelectedWallet : undefined;
+        // dispatch(setSelectedWallet(previouslySelectedWallet));
+
+        // if (previouslySelectedWallet && onboard) {
+        //     onboard.walletSelect(previouslySelectedWallet);
+        // }else if (onboard){
+        //     dispatch(setWalletOnboard(onboard));
+        // }
+    }, [onboard]);
 
     // useEffect(() => {
     //     if (onboard) {

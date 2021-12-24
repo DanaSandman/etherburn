@@ -1,10 +1,12 @@
 import * as React from "react";
 
+import firemove from '../assets/svg/firemove.svg';
 const SVGComponent = (props) => (
+  
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
-    width={290}
+    width={300}
     height={500}
     viewBox="0 0 290 500"
     {...props}
@@ -13,12 +15,12 @@ const SVGComponent = (props) => (
       <filter id="f1">
         <feImage
           result="p0"
-          xlinkHref="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjkwJyBoZWlnaHQ9JzUwMCcgdmlld0JveD0nMCAwIDI5MCA1MDAnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PHJlY3Qgd2lkdGg9JzI5MHB4JyBoZWlnaHQ9JzUwMHB4JyBmaWxsPScjZDUzM2E5Jy8+PC9zdmc+"
-        />
-        <feImage
+          xlinkHref="https://upload.wikimedia.org/wikipedia/commons/b/bc/IKB_191.jpg"/> 
+           <feImage
           result="p1"
           xlinkHref="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjkwJyBoZWlnaHQ9JzUwMCcgdmlld0JveD0nMCAwIDI5MCA1MDAnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PGNpcmNsZSBjeD0nMTQxJyBjeT0nMTM2JyByPScxMjBweCcgZmlsbD0nI2MwMmFhYScvPjwvc3ZnPg=="
         />
+         {/*
         <feImage
           result="p2"
           xlinkHref="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjkwJyBoZWlnaHQ9JzUwMCcgdmlld0JveD0nMCAwIDI5MCA1MDAnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PGNpcmNsZSBjeD0nMjYwJyBjeT0nMzY1JyByPScxMjBweCcgZmlsbD0nIzM0Y2Q1MicvPjwvc3ZnPg=="
@@ -26,7 +28,7 @@ const SVGComponent = (props) => (
         <feImage
           result="p3"
           xlinkHref="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMjkwJyBoZWlnaHQ9JzUwMCcgdmlld0JveD0nMCAwIDI5MCA1MDAnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zyc+PGNpcmNsZSBjeD0nMTYyJyBjeT0nMTcyJyByPScxMDBweCcgZmlsbD0nIzc1NmNjMicvPjwvc3ZnPg=="
-        />
+        /> */}
         <feBlend mode="overlay" in="p0" in2="p1" />
         <feBlend mode="exclusion" in2="p2" />
         <feBlend mode="overlay" in2="p3" result="blendOut" />
@@ -225,10 +227,14 @@ const SVGComponent = (props) => (
     <g
       mask="url(#none)"
       style={{
-        transform: "translate(72px,189px)",
+        transform: "translate(105px,189px)",
+        // transform: "skew(23deg, 55deg)",
+        // transform:"rotate3d(1, 1, 1, 331deg)",
+        // transition:"3s"
       }}
     >
-   <path fill="#e3e3e3" d="M75,80.53c1.09-11.23-0.67-21.99-7.36-34.73c-1.37,8.96-4.51,14.01-11.31,20.53c-2.97-17.65-12.67-34.14-21.9-49.42 c0.54,20.29-6.07,49.28-19.71,64.91c-1.67-8.15-0.47-12.35-1.55-20.57c-1.83,7.34-5.64,11.96-6.69,22.07 c-0.85,8.25,1.47,15.26,5.77,20.64c4.8,6,12.08,10.05,20.23,11.63C56.08,120.16,72.75,103.65,75,80.53L75,80.53z M59.64,117.53 c-4.74,3.09-9.29,4.64-14,5.15c-4.59,0.5-9.23,0.01-14.32-0.97c-9.56-1.85-18.16-6.68-23.91-13.87 c-18.06-22.57,2.36-46.03,3.81-71.92c6.31,7.7,6.95,12.2,8.09,22.31c0.12,1.07,0.22,2.14,0.3,3.21c2.61-6.6,4.57-13.56,5.93-20.43 c2.97-15,3.13-26.27,0.18-41.01c10.94,6.6,16.63,15.28,22.86,26.61c3.84,7,7.52,14.32,10.81,23.37c2.35-9.32,2.9-12.34,0.47-22.3 C88.44,45.72,90.75,97.2,59.64,117.53L59.64,117.53z"/>
+   {/* <path fill="#e3e3e3" d="M75,80.53c1.09-11.23-0.67-21.99-7.36-34.73c-1.37,8.96-4.51,14.01-11.31,20.53c-2.97-17.65-12.67-34.14-21.9-49.42 c0.54,20.29-6.07,49.28-19.71,64.91c-1.67-8.15-0.47-12.35-1.55-20.57c-1.83,7.34-5.64,11.96-6.69,22.07 c-0.85,8.25,1.47,15.26,5.77,20.64c4.8,6,12.08,10.05,20.23,11.63C56.08,120.16,72.75,103.65,75,80.53L75,80.53z M59.64,117.53 c-4.74,3.09-9.29,4.64-14,5.15c-4.59,0.5-9.23,0.01-14.32-0.97c-9.56-1.85-18.16-6.68-23.91-13.87 c-18.06-22.57,2.36-46.03,3.81-71.92c6.31,7.7,6.95,12.2,8.09,22.31c0.12,1.07,0.22,2.14,0.3,3.21c2.61-6.6,4.57-13.56,5.93-20.43 c2.97-15,3.13-26.27,0.18-41.01c10.94,6.6,16.63,15.28,22.86,26.61c3.84,7,7.52,14.32,10.81,23.37c2.35-9.32,2.9-12.34,0.47-22.3 C88.44,45.72,90.75,97.2,59.64,117.53L59.64,117.53z"/> */}
+   <object type="image/svg+xml" data={firemove}></object>
 
       {/* <rect x="-16px" y="-16px" width="180px" height="180px" fill="none" />
       <path
