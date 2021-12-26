@@ -16,6 +16,7 @@ import TeamImg2 from "../assets/img/team/TeamImg2.png";
 import TeamImg3 from "../assets/img/team/TeamImg3.png";
 import TeamImg4 from "../assets/img/team/TeamImg4.png";
 
+
 export function Home() {
   
   const dispatch = useDispatch();
@@ -58,8 +59,8 @@ export function Home() {
            {/* {contractData && <p>{contractData.publicPresaleMintMax}</p>} */}
            {/* {contractData && <p>{contractData.stage}</p>} */}
           {/* </div> */}
-          <SVGComponent/>
-          {/* <source src="/Videos/video1.mp4" type="video/mp4"/> */}
+          {/* <SVGComponent/> */}
+          <div><source src="../assets/NFT.mp4" type="video/mp4"/></div>
         <img className="hero-img" src={HeroImg} alt="hero-image" />
         <div className="content-hero flex column">
           <h2>Ether Burn</h2>
