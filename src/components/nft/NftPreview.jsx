@@ -13,7 +13,13 @@ export function NftPreview({ nft }) {
   return (
       <div className="nft-preview flex column">
           <div className="content-img-card">
-            <img className="nft-img" src={nft.image} alt={nft.name} />
+            {(nft.image)?(
+              <img className="nft-img" src={nft.image} alt={nft.name} />
+            ):(
+              <video width="auto" height="auto" loop autoPlay muted>
+              <source src={nft.video} type="video/mp4" />
+              </video>
+            )}
           </div>
           <div className="content-card flex column">
             <div className="flex space-between">
