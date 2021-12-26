@@ -59,6 +59,7 @@ export function Home() {
            {/* {contractData && <p>{contractData.stage}</p>} */}
           {/* </div> */}
           <SVGComponent/>
+          {/* <source src="/Videos/video1.mp4" type="video/mp4"/> */}
         <img className="hero-img" src={HeroImg} alt="hero-image" />
         <div className="content-hero flex column">
           <h2>Ether Burn</h2>
