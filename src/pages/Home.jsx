@@ -8,6 +8,8 @@ import { loadContractData } from "../store/contract/contract.action.js";
 import { NftListCarousel } from "../components/util/Carousel.jsx";
 import { web3, web3service } from "../services/web3.service.js";
 import  SVGComponent  from "../components/svg.jsx"
+import NFT from '../assets/NFT.mp4';
+
 //Img
 import HeroImg from "../assets/img/Logo.png";
 //imgs team
@@ -60,7 +62,9 @@ export function Home() {
            {/* {contractData && <p>{contractData.stage}</p>} */}
           {/* </div> */}
           {/* <SVGComponent/> */}
-          <div><source src="../assets/NFT.mp4" type="video/mp4"/></div>
+          <video width="auto" height="auto" loop autoPlay muted>
+          <source src={NFT} type="video/mp4"/>
+          </video>
         <img className="hero-img" src={HeroImg} alt="hero-image" />
         <div className="content-hero flex column">
           <h2>Ether Burn</h2>

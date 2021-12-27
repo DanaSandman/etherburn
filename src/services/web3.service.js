@@ -1,6 +1,10 @@
 import Web3 from 'web3';
 import abi from '../assets/util/abi.json';
+<<<<<<< HEAD
 import Notify from 'bnc-notify';
+=======
+import Notify from "bnc-notify"
+>>>>>>> 601e30ea3e861b371fe97eb31be9ee1e2d406a0b
 
 //web3 to metamask
 export const web3 = new Web3(window.ethereum);
@@ -8,12 +12,12 @@ export const web3 = new Web3(window.ethereum);
 export const contract = new web3.eth.Contract(
     abi.abi,
     //smart contract address
-    '0xf22B4a4f3060630559e98Cf884Ce45d62DE2696e'
+    '0x381D82D5EEEDA26586FffFD170bd77D50748daDD'
     );
     console.log('contract web3 service', contract);
 
  const gContractData = {
-    contractAddress: '0xf22B4a4f3060630559e98Cf884Ce45d62DE2696e',
+    contractAddress: '0x381D82D5EEEDA26586FffFD170bd77D50748daDD',
     paused: false,
     stage: 0,
     cost: 0,
@@ -21,6 +25,7 @@ export const contract = new web3.eth.Contract(
 };
 
 var notify = Notify({
+<<<<<<< HEAD
     dappId: '187fa55a-7d23-4eb8-b72c-4c19f9a5be2d',       // [String] The API key created by step one above
     networkId: 4 , // [Integer] The Ethereum network ID your Dapp uses.
     onerror: error => console.log(`Notify error: ${error.message}`)
@@ -28,7 +33,15 @@ var notify = Notify({
   
 export async function read(){
     console.log('read');
+=======
+  dappId: '187fa55a-7d23-4eb8-b72c-4c19f9a5be2d',       // [String] The API key created by step one above
+  networkId: 4  // [Integer] The Ethereum network ID your Dapp uses.
+});
+>>>>>>> 601e30ea3e861b371fe97eb31be9ee1e2d406a0b
 
+export async function read(){
+    console.log('presaleSupply', await contract.methods.presaleSupply().call());
+    
     gContractData.paused = await contract.methods.paused().call();
     gContractData.stage = parseInt(await contract.methods.stage().call());
 
@@ -48,17 +61,26 @@ export async function mint( _tokenIds ){
     const payableAmount = gContractData.cost
     const acc = await web3.eth.getAccounts();
 
-    console.log('payableAmount', payableAmount);
-    console.log('_tokenIds', _tokenIds);
-    console.log('acc',acc);
+    console.log('mint payableAmount', payableAmount);
+    console.log('mint _tokenIds', _tokenIds);
+    console.log('mint acc',acc[0]);
+    console.log("presaleMintCount", await contract.methods.presaleMintCount(acc[0]).call());
 
     const mintTx = await contract.methods.mint(_tokenIds).send({
         from: acc[0],
         value: payableAmount,
     })
     .on("transactionHash", hash => {
+<<<<<<< HEAD
         notify.hash(hash)
         console.log('notify hash',hash);
+=======
+        // pass the hash to notify to track it
+        notify.hash(hash)
+        console.log('hash',hash);
+    }).on("Transfer", transfer => {
+        console.log("Transfer", transfer);
+>>>>>>> 601e30ea3e861b371fe97eb31be9ee1e2d406a0b
     })
     return mintTx
 };
