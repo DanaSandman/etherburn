@@ -1,7 +1,9 @@
 const nftService = require('./nft.service');
+const web3Service = require('../../service/web3.service');
 
 module.exports = {
     getNfts,
+    mint
     // deleteArt,
     // saveArt,
     // getArt
@@ -29,3 +31,18 @@ async function getNfts(req, res) {
         })
     }
 };
+
+//UPDATE 
+async function mint (req, res) {
+    try {
+       await web3Service.connect()
+        console.log('controller nft connect web3');
+        res.send({
+            err: 'connect smart contract events'
+        })
+    } catch (err) {
+        res.status(500).send({
+            err: 'Failed to connect smart contract events'
+        })
+    }
+}

@@ -1,10 +1,7 @@
 import Web3 from 'web3';
 import abi from '../assets/util/abi.json';
-<<<<<<< HEAD
-import Notify from 'bnc-notify';
-=======
 import Notify from "bnc-notify"
->>>>>>> 601e30ea3e861b371fe97eb31be9ee1e2d406a0b
+import {nftService} from './nft/nft.service.js';
 
 //web3 to metamask
 export const web3 = new Web3(window.ethereum);
@@ -25,19 +22,9 @@ export const contract = new web3.eth.Contract(
 };
 
 var notify = Notify({
-<<<<<<< HEAD
-    dappId: '187fa55a-7d23-4eb8-b72c-4c19f9a5be2d',       // [String] The API key created by step one above
-    networkId: 4 , // [Integer] The Ethereum network ID your Dapp uses.
-    onerror: error => console.log(`Notify error: ${error.message}`)
-  });
-  
-export async function read(){
-    console.log('read');
-=======
   dappId: '187fa55a-7d23-4eb8-b72c-4c19f9a5be2d',       // [String] The API key created by step one above
   networkId: 4  // [Integer] The Ethereum network ID your Dapp uses.
 });
->>>>>>> 601e30ea3e861b371fe97eb31be9ee1e2d406a0b
 
 export async function read(){
     console.log('presaleSupply', await contract.methods.presaleSupply().call());
@@ -57,7 +44,10 @@ export async function read(){
 };
 
 export async function mint( _tokenIds ){
+    
     console.log('mint');
+    await nftService.mint();
+    
     const payableAmount = gContractData.cost
     const acc = await web3.eth.getAccounts();
 
@@ -71,16 +61,11 @@ export async function mint( _tokenIds ){
         value: payableAmount,
     })
     .on("transactionHash", hash => {
-<<<<<<< HEAD
-        notify.hash(hash)
-        console.log('notify hash',hash);
-=======
         // pass the hash to notify to track it
         notify.hash(hash)
         console.log('hash',hash);
     }).on("Transfer", transfer => {
         console.log("Transfer", transfer);
->>>>>>> 601e30ea3e861b371fe97eb31be9ee1e2d406a0b
     })
     return mintTx
 };

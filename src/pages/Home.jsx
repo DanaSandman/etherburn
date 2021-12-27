@@ -42,11 +42,11 @@ export function Home() {
     console.log('contractData',contractData);
   }, [contractData]);
 
-  const mint = async () => {
-    console.log("start miting");
-    const mintData = await web3service.write();
-    console.log("mintData", mintData);
-  };
+  // const mint = async () => {
+  //   console.log("start miting");
+  //   const mintData = await web3service.write();
+  //   console.log("mintData", mintData);
+  // };
 
   return (
     <div className="home-page">
@@ -62,7 +62,7 @@ export function Home() {
            {/* {contractData && <p>{contractData.stage}</p>} */}
           {/* </div> */}
           {/* <SVGComponent/> */}
-          <video width="auto" height="auto" loop autoPlay muted>
+          <video width="238" height="auto" loop autoPlay muted>
           <source src={NFT} type="video/mp4"/>
           </video>
         <img className="hero-img" src={HeroImg} alt="hero-image" />
