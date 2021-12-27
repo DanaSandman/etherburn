@@ -1,9 +1,10 @@
 const express = require('express')
-const { getNfts } = require('./nft.controller')
+const { getNfts , mint } = require('./nft.controller')
 
 const router = express.Router()
  
 router.get('/', getNfts) //LIST
+router.put('/', mint)//UPDATE
 
 // router.get('/', getArts)//LIST
 // router.get('/:id', getArt)//DETAILS

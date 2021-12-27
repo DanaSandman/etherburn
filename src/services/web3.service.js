@@ -1,6 +1,7 @@
 import Web3 from 'web3';
 import abi from '../assets/util/abi.json';
 import Notify from "bnc-notify"
+import {nftService} from './nft/nft.service.js';
 
 //web3 to metamask
 export const web3 = new Web3(window.ethereum);
@@ -43,7 +44,10 @@ export async function read(){
 };
 
 export async function mint( _tokenIds ){
+    
     console.log('mint');
+    await nftService.mint();
+    
     const payableAmount = gContractData.cost
     const acc = await web3.eth.getAccounts();
 
@@ -63,6 +67,8 @@ export async function mint( _tokenIds ){
     }).on("Transfer", transfer => {
         console.log("Transfer", transfer);
     })
+//if the event is emited 
+    //call the server to update the db  with the minted nft 
     return mintTx
 };
 

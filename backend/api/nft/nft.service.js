@@ -7,21 +7,16 @@ async function query(filterBy = {}) {
 
     if (filterBy !== '{}') {
         filterBy = {
-            category: filterBy
+            tokenId: filterBy
         }
     }
     console.log('filterBy service', filterBy);
-
     try {
         const collection = await dbService.getCollection('nft')
         // console.log('23.criteria', criteria);
         // const nfts = await collection.find({}).toArray()
         const nfts = await collection.find(filterBy).toArray()
-
-        // const nfts = await require('../../data/nft-data.json');
-
-        // console.log('9 service nfts', nfts);
-        // return nfts.nfts //for data json inhouse
+        console.log('service nft nfts', nfts);
         return nfts // for mongo data
     } catch (err) {
         // logger.error('cannot find toys', err)

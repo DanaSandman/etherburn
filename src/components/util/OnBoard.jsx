@@ -21,7 +21,6 @@ export default function OnBoard() {
 
     const dispatch = useDispatch();
     const [onboard, setOnboard] = useState(null);
-    // const [notify, setNotify] = useState(null)
     const [isConnected, setIsConnected] = useState(false);
     const currUserAddress = useSelector((state) => state.userModule.currUserAddress)
 
@@ -40,13 +39,7 @@ export default function OnBoard() {
     //     await onboard.accountSelect();
     //     console.log('change account after' );
     // };
-    // const initNotify = () =>{
-    //     return Notify({
-    //         dappId: dappId,
-    //         networkId,
-    //         onerror: error => console.log(`Notify error: ${error.message}`)
-    //     })
-    // };
+
     const setAccountAddress = (account) => {
         console.log(`${account} is now connected`);
         dispatch(setUserAccount(account));
@@ -96,10 +89,8 @@ export default function OnBoard() {
             }
         })
         setOnboard(onboard);
-        // const notify = initNotify();
-        // dispatch(setWalletNotify(notify));
     }, []);
-
+ 
     useEffect(() => {
         let previouslySelectedWallet = window.localStorage.getItem('selectedWallet');
         previouslySelectedWallet = previouslySelectedWallet !== 'undefined' ? previouslySelectedWallet : undefined;
@@ -111,12 +102,6 @@ export default function OnBoard() {
         //     dispatch(setWalletOnboard(onboard));
         // }
     }, [onboard]);
-
-    // useEffect(() => {
-    //     if (onboard) {
-    //         dispatch(setWalletOnboard(onboard));
-    //     }
-    // }, [onboard]);
 
   return (
     <div>
