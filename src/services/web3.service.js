@@ -1,5 +1,6 @@
 import Web3 from 'web3';
 import abi from '../assets/util/abi.json';
+import Notify from 'bnc-notify';
 
 //web3 to metamask
 export const web3 = new Web3(window.ethereum);
@@ -19,6 +20,12 @@ export const contract = new web3.eth.Contract(
     mintMax: 0,
 };
 
+var notify = Notify({
+    dappId: '187fa55a-7d23-4eb8-b72c-4c19f9a5be2d',       // [String] The API key created by step one above
+    networkId: 4 , // [Integer] The Ethereum network ID your Dapp uses.
+    onerror: error => console.log(`Notify error: ${error.message}`)
+  });
+  
 export async function read(){
     console.log('read');
 
@@ -48,7 +55,11 @@ export async function mint( _tokenIds ){
     const mintTx = await contract.methods.mint(_tokenIds).send({
         from: acc[0],
         value: payableAmount,
-    });
+    })
+    .on("transactionHash", hash => {
+        notify.hash(hash)
+        console.log('notify hash',hash);
+    })
     return mintTx
 };
 
