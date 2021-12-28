@@ -8,7 +8,6 @@ export function NftPreview({ nft }) {
   const contractData = useSelector((state) => state.contractModule.contractData);
   const openSeaLink = `https://opensea.io/assets/${contractData.contractAddress}/${nft.tokenId}`;
 
-
   return (
       <div className="nft-preview flex column">
           <div className="content-img-card">

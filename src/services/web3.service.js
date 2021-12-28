@@ -44,18 +44,15 @@ export async function read(){
 };
 
 export async function mint( _tokenIds ){
-    
     console.log('mint');
-    await nftService.mint();
-    
     const payableAmount = gContractData.cost
     const acc = await web3.eth.getAccounts();
-
+    let tokenIdMinted = null
     console.log('mint payableAmount', payableAmount);
     console.log('mint _tokenIds', _tokenIds);
     console.log('mint acc',acc[0]);
     console.log("presaleMintCount", await contract.methods.presaleMintCount(acc[0]).call());
-
+    
     const mintTx = await contract.methods.mint(_tokenIds).send({
         from: acc[0],
         value: payableAmount,
@@ -67,8 +64,15 @@ export async function mint( _tokenIds ){
     }).on("Transfer", transfer => {
         console.log("Transfer", transfer);
     })
-//if the event is emited 
+    //if the event is emited 
     //call the server to update the db  with the minted nft 
+    console.log('mintTx',mintTx);
+
+    tokenIdMinted = await mintTx.events.Transfer.returnValues.tokenId
+    if (tokenIdMinted){
+        console.log('tokenIdMinted',tokenIdMinted);
+        nftService.updateNft(tokenIdMinted);
+    }
     return mintTx
 };
 
