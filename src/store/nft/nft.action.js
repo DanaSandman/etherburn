@@ -21,3 +21,16 @@ export function loadNfts(filterBy) {
         }
     };
 }
+//DETAILS
+export function setNft(tokenId) {
+    return async dispatch => {
+        try {
+            console.log('action tokenId', tokenId);
+            const nft = await nftService.getById(tokenId);
+            console.log('action nft res', nft);
+            dispatch({ type: 'SET_NFT', nft });
+        } catch (err) {
+            console.log('nft Actions: err in selected nft', err);
+        }
+    };
+}

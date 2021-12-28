@@ -2,7 +2,8 @@ import { httpService } from '../http.service.js';
 
 export const nftService = {
     loadNfts,
-    updateNft
+    updateNft,
+    getById
 };
 
 async function loadNfts(filterBy) {
@@ -12,3 +13,7 @@ async function loadNfts(filterBy) {
 async function updateNft(tokenId) {
     return await httpService.put('nft', {tokenId: tokenId});   
    }
+   //DETAILS
+async function getById(tokenId) {
+    return await httpService.get(`nft/${tokenId}`);
+}

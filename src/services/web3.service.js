@@ -9,12 +9,12 @@ export const web3 = new Web3(window.ethereum);
 export const contract = new web3.eth.Contract(
     abi.abi,
     //smart contract address
-    '0x381D82D5EEEDA26586FffFD170bd77D50748daDD'
+    '0x7c17a37Bc86a146aF3D6b4E5d7aE11970916e31d'
     );
     console.log('contract web3 service', contract);
 
  const gContractData = {
-    contractAddress: '0x381D82D5EEEDA26586FffFD170bd77D50748daDD',
+    contractAddress: '0x7c17a37Bc86a146aF3D6b4E5d7aE11970916e31d',
     paused: false,
     stage: 0,
     cost: 0,

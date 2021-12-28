@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import ETHlogo from "../../assets/img/ethLogo.svg";
 import { web3service } from "../../services/web3.service.js";
@@ -10,6 +11,7 @@ export function NftPreview({ nft }) {
 
   return (
       <div className="nft-preview flex column">
+          <Link to={`/nft/${nft.tokenId}`} >
           <div className="content-img-card">
             {(nft.image)?(
               <img className="nft-img" src={nft.image} alt={nft.name} />
@@ -32,6 +34,7 @@ export function NftPreview({ nft }) {
               <button onClick={()=>window.open(`${openSeaLink}`)} className="mint-btn minted">OPENSEA </button> 
             )}
           </div>
+          </Link>
       </div>
   );
 }

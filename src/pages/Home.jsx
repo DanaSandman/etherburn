@@ -42,12 +42,6 @@ export function Home() {
     console.log('contractData',contractData);
   }, [contractData]);
 
-  // const mint = async () => {
-  //   console.log("start miting");
-  //   const mintData = await web3service.write();
-  //   console.log("mintData", mintData);
-  // };
-
   return (
     <div className="home-page">
       <section className="hero-section flex">

@@ -19,11 +19,12 @@ async function query(filterBy = {}) {
 };
 async function updateNft(tokenId){
     console.log('updateNft',tokenId)
-
     try {
+        const ownerNft = await web3Service.checkIfMinted(tokenId);
+        console.log('ownerNftttttttttttttttttttttttttt',ownerNft);
+        if (ownerNft !== null){
         const nfts = await query({ tokenId: tokenId})
-            console.log('ififif', nfts[0].tokenId);
-            const nftToSave = {
+            const nftToSave = { 
                 _id: nfts[0]._id,
                 metadata: nfts[0].metadata,
                 isMinted: 'true',
@@ -42,6 +43,7 @@ async function updateNft(tokenId){
             const nftsAfterUpdate = await query();
             console.log('nfts after mint',nftsAfterUpdate);
             return nftsAfterUpdate;
+        }
     } catch (err) {
         // logger.error('cannot insert art', err)
         throw err

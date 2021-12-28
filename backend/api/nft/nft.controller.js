@@ -2,10 +2,10 @@ const nftService = require('./nft.service');
 
 module.exports = {
     getNfts,
-    updateNft
+    updateNft,
+    getNft
     // deleteNft,
     // saveNft,
-    // getNft
 };
 
 //LIST
@@ -24,7 +24,6 @@ async function getNfts(req, res) {
         })
     }
 };
-
 //UPDATE 
 async function updateNft (req, res) {
     try {
@@ -37,4 +36,17 @@ async function updateNft (req, res) {
             err: 'Failed to update nft'
         })
     }
-}
+};
+//DETAILS
+async function getNft(req, res) {
+    try {
+        console.log('req.params.id controller-getNft',req.params.tokenId);
+        const nfts = await nftService.query({ tokenId: req.params.tokenId})
+        console.log('nft details controller start',nfts[0]);
+        res.send(nfts[0])
+    } catch (err) {
+        // logger.error('Cannot get arts', err)
+        console.log('Cannot get arts', err);
+        res.status(500).send({ err: 'Failed to get arts' })
+    }
+};

@@ -4,6 +4,7 @@ import "./styles/App.scss";
 //pages
 import { Home } from "./pages/Home.jsx";
 import { Collection } from "./pages/Collection.jsx";
+import { NftDetails } from "./pages/NftDetails.jsx";
 //components
 import { Header } from "./components/util/Header.jsx";
 import { Footer } from "./components/util/Footer.jsx";
@@ -58,6 +59,7 @@ export function App() {
               }
             />
             <Route path="/collection" element={<Collection />} />
+            <Route path="/nft/:nftId" element={<NftDetails />} />
           </Routes>
           {/* )} */}
         </main>
