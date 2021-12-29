@@ -22,7 +22,8 @@ import TeamImg4 from "../assets/img/team/TeamImg4.png";
 export function Home() {
   
   const dispatch = useDispatch();
-  const nfts = useSelector((state) => state.nftModule.nfts);
+  const nftsData = useSelector((state) => state.nftModule.nfts);
+  const [nfts, setNfts] = useState(nftsData)
   const contractData = useSelector((state) => state.contractModule.contractData);
   const linkedinTeamPath = {
     IsraelPerez: "https://www.linkedin.com/in/israel-perez-84b69322/",
@@ -31,11 +32,23 @@ export function Home() {
   };
 
   useEffect(() => {
-    if (!nfts[0]) dispatch(loadNfts());
-    // if (!contractData) 
+    if (!nftsData[0]) _loadData();
+    setNfts(nftsData)
     dispatch(loadContractData());
     web3.eth.getBlockNumber().then((num) => console.log("web3 block num", num));
   }, []);
+
+  const _loadData = () => {
+    dispatch(loadNfts())
+  }
+
+  useEffect(() => {
+    console.log('new data');
+    // setNfts(...nfts, )
+
+    // setNfts(prevNfts => prevNfts  + nftsData)
+
+  }, [nftsData]);
 
   useEffect(() => {
     //לבדיקות בלבד למחוק לאחר השימוש
@@ -71,7 +84,7 @@ export function Home() {
         </div>
       </section>
       <section className="cards-carousel-section flex column">
-        <div className="home-carousel"><NftListCarousel nfts={nfts} /></div>
+        <div className="home-carousel"><NftListCarousel loadNft={_loadData} nfts={nfts} /></div>
         <Link to="/collection" className="collection-link-main">
           ALL COLLECTION
         </Link>
