@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AliceCarousel from "react-alice-carousel";
+import { useSelector } from "react-redux";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { NftPreview } from "../nft/NftPreview.jsx";
 
@@ -11,13 +12,13 @@ const responsive = {
   1300: { items: 4 },
 };
 
-let gNfts = [];
-export function NftListCarousel({ nfts }) {
-  console.log("carousel list", nfts);
-  gNfts = nfts;
+export function NftListCarousel() {
+  const  nfts = useSelector((state) => state.nftModule.nfts);
   return (
     <div>
-      <Carousel nfts={gNfts} />
+      {nfts&& 
+      <Carousel nfts={nfts} />      
+      }
     </div>
   );
 }

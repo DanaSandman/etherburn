@@ -7,7 +7,6 @@ import { web3service } from "../../services/web3.service.js";
 
 export function NftPreview({ nft }) {
 
-  // const [currNft, setNft] = useState(nft);
   const dispatch = useDispatch()
   const contractData = useSelector((state) => state.contractModule.contractData);
   const openSeaLink = `https://opensea.io/assets/${contractData.contractAddress}/${nft.tokenId}`;
@@ -20,7 +19,7 @@ const mint = async () => {
 
   return (
       <div className="nft-preview flex column">
-          {/* <Link to={`/nft/${nft.tokenId}`} > */}
+          <Link to={`/nft/${nft.tokenId}`} >
           <div className="content-img-card">
             {(nft.image)?(
               <img className="nft-img" src={nft.image} alt={nft.name} />
@@ -30,6 +29,7 @@ const mint = async () => {
               </video>
             )}
           </div>
+            </Link>
           <div className="content-card flex column">
             <div className="flex space-between">
               <h4 className="nft-title">{nft.name}</h4>
@@ -43,7 +43,6 @@ const mint = async () => {
               <button onClick={()=>window.open(`${openSeaLink}`)} className="mint-btn minted">OPENSEA </button> 
             )}
           </div>
-          {/* </Link> */}
       </div>
   );
 }

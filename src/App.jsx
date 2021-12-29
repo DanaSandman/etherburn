@@ -59,7 +59,7 @@ export function App() {
               }
             />
             <Route path="/collection" element={<Collection />} />
-            <Route path="/nft/:nftId" element={<NftDetails />} />
+            <Route path="/nft/:tokenId" element={<NftDetails />} />
           </Routes>
           {/* )} */}
         </main>

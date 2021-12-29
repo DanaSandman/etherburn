@@ -22,7 +22,7 @@ export function loadNfts(filterBy) {
     };
 }
 //DETAILS
-export function setNft(tokenId) {
+export function setSelectedNft(tokenId) {
     return async dispatch => {
         try {
             console.log('action tokenId', tokenId);

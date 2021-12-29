@@ -1,14 +1,35 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux'
 import { Loader } from "../components/util/Loader.jsx";
-// import {  useSearchParams } from "react-router-dom";
+import { setSelectedNft } from '../store/nft/nft.action.js';
+import { useParams } from "react-router-dom";
 
-export function NftDetails() {
+  export const NftDetails = () => {
 
+    const { tokenId } = useParams();
+    const [nft, setNft] = useState (null)
+    const dispatch = useDispatch();
+    const selectedNft = useSelector((state) => state.nftModule.selectedNft);
+
+  useEffect(() => {
+   if (!nft) dispatch( setSelectedNft(tokenId))
+    const loadNft = async () => {
+        console.log('selectedNft',selectedNft);
+        setNft(selectedNft)
+    };
+    loadNft()
+  }, [])
+
+  useEffect(() => {
+    setNft(selectedNft)
+}, [selectedNft])
+
+if (!selectedNft) return <div> <Loader /></div>
   return (
     <div className='nft-details-page'>
         <div className='nft-details-main'>
-            <Loader />;
+        <h1>{tokenId}</h1>
+        <h1>{selectedNft.tokenId}</h1>
         </div>
     </div>
   );

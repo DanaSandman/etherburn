@@ -22,9 +22,8 @@ import TeamImg4 from "../assets/img/team/TeamImg4.png";
 export function Home() {
   
   const dispatch = useDispatch();
-  const nftsData = useSelector((state) => state.nftModule.nfts);
-  const [nfts, setNfts] = useState(nftsData)
-  const contractData = useSelector((state) => state.contractModule.contractData);
+  const nfts = useSelector((state) => state.nftModule.nfts);
+  // const contractData = useSelector((state) => state.contractModule.contractData);
   const linkedinTeamPath = {
     IsraelPerez: "https://www.linkedin.com/in/israel-perez-84b69322/",
     DanaSandman: "https://www.linkedin.com/in/dana-sandman-451a2b168/",
@@ -32,28 +31,10 @@ export function Home() {
   };
 
   useEffect(() => {
-    if (!nftsData[0]) _loadData();
-    setNfts(nftsData)
+    dispatch(loadNfts());
     dispatch(loadContractData());
     web3.eth.getBlockNumber().then((num) => console.log("web3 block num", num));
   }, []);
-
-  const _loadData = () => {
-    dispatch(loadNfts())
-  }
-
-  useEffect(() => {
-    console.log('new data');
-    // setNfts(...nfts, )
-
-    // setNfts(prevNfts => prevNfts  + nftsData)
-
-  }, [nftsData]);
-
-  useEffect(() => {
-    //לבדיקות בלבד למחוק לאחר השימוש
-    console.log('contractData',contractData);
-  }, [contractData]);
 
   return (
     <div className="home-page">
@@ -84,7 +65,7 @@ export function Home() {
         </div>
       </section>
       <section className="cards-carousel-section flex column">
-        <div className="home-carousel"><NftListCarousel loadNft={_loadData} nfts={nfts} /></div>
+      {nfts ? ( <div className="home-carousel"><NftListCarousel /></div> ):(<h1>loding</h1>)}
         <Link to="/collection" className="collection-link-main">
           ALL COLLECTION
         </Link>
