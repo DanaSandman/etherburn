@@ -1,6 +1,6 @@
 .header{
     display: grid;
-    grid-template-columns: 8.5rem minmax( auto, $desktop-breakpoint ) 8.5rem;
+    grid-template-columns: 8.5rem minmax( auto, $desktop-breakpoint ) 10rem;
     backdrop-filter: blur(7px);
     position: fixed;
     z-index: 3;

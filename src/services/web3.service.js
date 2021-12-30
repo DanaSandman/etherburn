@@ -20,6 +20,7 @@ export const contract = new web3.eth.Contract(
     cost: 0,
     mintMax: 0,
 };
+let gIsMinted = false
 
 var notify = Notify({
   dappId: '187fa55a-7d23-4eb8-b72c-4c19f9a5be2d',       // [String] The API key created by step one above
@@ -28,7 +29,7 @@ var notify = Notify({
 
 export async function read(){
     console.log('presaleSupply', await contract.methods.presaleSupply().call());
-    
+
     gContractData.paused = await contract.methods.paused().call();
     gContractData.stage = parseInt(await contract.methods.stage().call());
 
@@ -44,7 +45,7 @@ export async function read(){
 };
 
 export async function mint( _tokenIds ){
-    console.log('mint');
+    console.log('start mint');
     const payableAmount = gContractData.cost
     const acc = await web3.eth.getAccounts();
     let tokenIdMinted = null
@@ -64,13 +65,11 @@ export async function mint( _tokenIds ){
     }).on("Transfer", transfer => {
         console.log("Transfer", transfer);
     })
-    //if the event is emited 
-    //call the server to update the db  with the minted nft 
     console.log('mintTx',mintTx);
-
     tokenIdMinted = await mintTx.events.Transfer.returnValues.tokenId
     if (tokenIdMinted){
         console.log('tokenIdMinted',tokenIdMinted);
+        gIsMinted = true
         nftService.updateNft(tokenIdMinted);
     }
     return mintTx
@@ -79,4 +78,6 @@ export async function mint( _tokenIds ){
 export const web3service = {
     read,
     mint,
+    gIsMinted
+
 };

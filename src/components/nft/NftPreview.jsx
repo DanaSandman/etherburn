@@ -2,20 +2,21 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from 'react-router-dom';
 import ETHlogo from "../../assets/img/ethLogo.svg";
+import  { BasicModal } from "../util/Modal.jsx"
 import { loadNfts } from "../../store/nft/nft.action.js";
 import { web3service } from "../../services/web3.service.js";
 
 export function NftPreview({ nft }) {
 
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   const contractData = useSelector((state) => state.contractModule.contractData);
   const openSeaLink = `https://opensea.io/assets/${contractData.contractAddress}/${nft.tokenId}`;
 
-const mint = async () => {
-  console.log('start minting');
-  await web3service.mint([Math.round(nft.tokenId)]);
-  dispatch(loadNfts())  
-};
+// const mint = async () => {
+//   console.log('start minting');
+//   await web3service.mint([Math.round(nft.tokenId)]);
+//   dispatch(loadNfts())  
+// };
 
   return (
       <div className="nft-preview flex column">
@@ -38,7 +39,8 @@ const mint = async () => {
             <h6>Price</h6>
             <h4><img className='eth-logo' src={ETHlogo} alt="eth-logo" />{contractData.cost / 1e18}</h4>
             {(nft.isMinted === "false") ? (
-              <button onClick={()=>mint()}  className="mint-btn">MINT</button>
+              <BasicModal nft={nft}/>
+              // <button onClick={()=>mint()}  className="mint-btn">MINT</button>
             ):(
               <button onClick={()=>window.open(`${openSeaLink}`)} className="mint-btn minted">OPENSEA </button> 
             )}
