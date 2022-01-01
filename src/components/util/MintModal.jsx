@@ -19,19 +19,25 @@ const style = {
   p: 4,
 };
 
-export function BasicModal({ nft }) {
+export function MintModal({ nft }) {
 
   const dispatch = useDispatch()
   const contractData = useSelector((state) => state.contractModule.contractData);
+  const addressConnected = useSelector((state) => state.userModule.currUserAddress)
   const [modalStatus, setModalStatus] = React.useState('start');
-
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
 const mint = async () => {
   console.log('start minting');
-  setModalStatus('inProcess')
+  if(addressConnected){
+    setModalStatus('inProcess')
+  } else{ 
+    console.log('addressConnected',addressConnected);
+    setModalStatus('notConnected')
+  } 
+
   await web3service.mint([Math.round(nft.tokenId)]);
   setModalStatus('done')
   dispatch(loadNfts())  
@@ -57,9 +63,15 @@ const mint = async () => {
            <button onClick={()=>mint()}  className="mint-btn">START</button>
           </Typography>
           </div>
-          }{(modalStatus === 'inProcess')&&
+          }
+          {(modalStatus === 'inProcess')&&
             <Typography id="modal-modal-title" variant="h6" component="h2">
             LOADING
+          </Typography>
+          }
+          {(modalStatus === 'notConnected')&&
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+          Please CONNECT YOURE WALLET!
           </Typography>
           }{(modalStatus === 'done')&&
             <Typography id="modal-modal-title" variant="h6" component="h2">

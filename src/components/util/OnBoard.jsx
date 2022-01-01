@@ -2,7 +2,7 @@ import Onboard from 'bnc-onboard';
 // import Notify from 'bnc-notify';
 import Web3 from 'web3';
 import { useState, useEffect, useLayoutEffect} from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { setUserAccount } from "../../store/user/user.action.js";
 
@@ -20,17 +20,17 @@ export default function OnBoard() {
     const dispatch = useDispatch();
     const [onboard, setOnboard] = useState(null);
     const [isConnected, setIsConnected] = useState(false);
-    const addressConnected =  window.localStorage.getItem('account address');
+    const addressConnected = useSelector((state) => state.userModule.currUserAddress)
 
-    useLayoutEffect(() => {
-        const ADD =  window.localStorage.getItem('account address');
-        if (ADD === undefined  || ADD === 'undefined'){
-            setIsConnected(false)
-        }
-    }, [])
+    // useLayoutEffect(() => {
+    //     const ADD =  window.localStorage.getItem('account address');
+    //     if (ADD === undefined  || ADD === 'undefined'){
+    //         setIsConnected(false)
+    //     }
+    // }, [])
     useEffect(() => {
-       const checkConnected = window.localStorage.getItem('isConnected');
-       if (checkConnected) setIsConnected(true);
+       const isConnected = window.localStorage.getItem('isConnected');
+       if (isConnected) setIsConnected(true);
         const onboard = Onboard({
             dappId: dappId,  
             networkId: networkId,
@@ -70,25 +70,31 @@ export default function OnBoard() {
         console.log('onboard',onboard);
     }, []);
 
-    useEffect(() => {
-        let previouslySelectedAcc = window.localStorage.getItem('account address');
-        previouslySelectedAcc = previouslySelectedAcc !== 'undefined' ? previouslySelectedAcc : undefined;
-        dispatch(setUserAccount(previouslySelectedAcc));
-        if (previouslySelectedAcc && onboard) {
-            onboard.walletSelect(previouslySelectedAcc);
-        }else if (onboard){
-            dispatch(setUserAccount(onboard));
-        }
-    }, [onboard]);
+    // useEffect(() => {
+    //     let previouslySelectedAcc = window.localStorage.getItem('account address');
+    //     previouslySelectedAcc = previouslySelectedAcc !== 'undefined' ? previouslySelectedAcc : undefined;
+    //     dispatch(setUserAccount(previouslySelectedAcc));
+    //     if (previouslySelectedAcc && onboard) {
+    //         onboard.walletSelect(previouslySelectedAcc);
+    //     }else if (onboard){
+    //         dispatch(setUserAccount(onboard));
+    //     }
+    // }, [onboard]);
 
     const onlogin = async () => {
         await onboard.walletSelect();
+        const readyToTransact = await onboard.walletCheck()
+        if (readyToTransact) console.log('readddddy');
+        const isConnected = window.localStorage.getItem('account address');
+        if (isConnected){
         window.localStorage.setItem('isConnected', true)
-        setIsConnected(true);
+        setIsConnected(true)
+        };
     };
     const onLogout = async () => {
         await onboard.walletReset();
         setIsConnected(false);
+        dispatch(setUserAccount(''));
         window.localStorage.removeItem('account address')
         window.localStorage.removeItem('selectedWallet')
         window.localStorage.removeItem('isConnected')
@@ -99,6 +105,7 @@ export default function OnBoard() {
         window.localStorage.setItem('account address', account)
     };
     const setWallet = (wallet) => {
+        
         console.log(`${wallet.name} is now connected`);
         web3 = new Web3(wallet.provider)
         window.localStorage.setItem('selectedWallet', wallet.name)
