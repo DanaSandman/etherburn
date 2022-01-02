@@ -7,7 +7,6 @@ import { loadNfts } from '../store/nft/nft.action.js'
 
 export function Collection() {
   const dispatch = useDispatch()
-  // const [category, setCategory] = useState("{}");
   const nfts = useSelector((state) => state.nftModule.nfts)
   const [nftsData, setNftsData] = useState()
   const btnRef = useRef(null);
