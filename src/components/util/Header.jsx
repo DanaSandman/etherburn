@@ -1,6 +1,6 @@
 import logo from "../../assets/img/Logo.png";
 import { Link } from "react-router-dom";
-import OnBoard from "./OnBoard.jsx";
+import UserWallet from "./UserWallet.jsx";
 //Menu&Burger
 import React, { useState } from "react";
 import Burger from "./Burger";
@@ -15,13 +15,13 @@ export function Header() {
         <Menu open={open} setOpen={setOpen} />
       </div>
       <div className="logo flex align-center ">
-        <Link to="/home">
+        <Link to="/">
           <img className="header-logo" src={logo} alt="ETHERBURN logo" />
         </Link>
         <span className="header-title">Ether Burn</span>
       </div>
       <div className="header-connect-btn flex align-center">
-        <OnBoard/>
+        <UserWallet/>
       </div>
     </div>
   );
