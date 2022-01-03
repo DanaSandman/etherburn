@@ -15,11 +15,14 @@ export default function UserWallet() {
 
     const onlogin = async () => {
         const walletSelected = await onboard.walletSelect()
+        if(walletSelected){
         const readyToTransact = await onboard.walletCheck()
+        
         window.localStorage.setItem('isConnected', true)
         // setIsConnected(true);
         console.log('walletSelected',walletSelected);
         console.log('readyToTransact',readyToTransact);
+        }
     };
     const onLogout = async () => {
        onboard.walletReset();

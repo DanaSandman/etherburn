@@ -54,12 +54,20 @@ export function MintModal({ nft }) {
     console.log("start minting");
     console.log("isConnected", isConnected);
     setModalStatus("inProcess");
-    await web3service.mint([Math.round(nft.tokenId)]);
-    setModalStatus("done");
-    dispatch(loadNfts());
+    try {
+      await web3service.mint([Math.round(nft.tokenId)])
+      setModalStatus("done")
+      dispatch(loadNfts());
+    } catch (error) {
+      console.error('rejectedd',error);
+      setModalStatus("rejected");
+      setTimeout(() =>{
+        handleClose()
+        }, 3000);
+    };
   };
 
-  const connectWallet = () => {
+  const connectWallet = async () => {
     handleClose();
     const setAccount = (account) => {
       dispatch(setUserAccount(account));
@@ -68,17 +76,16 @@ export function MintModal({ nft }) {
       window.ethereum = wallet.provider;
       window.localStorage.setItem("selectedWallet", wallet.name);
     };
-
     const onboard = initOnboard({
       address: setAccount,
       // network: setChainId,
       // balance: setBalance,
       wallet: setWallet,
     });
-    onboard.walletSelect();
+    await onboard.walletSelect();
     window.localStorage.setItem("isConnected", true);
-    //need to open again the modal and start minting 
     setModalStatus("start");
+    setOpen(true);
   };
 
   return (
@@ -94,6 +101,7 @@ export function MintModal({ nft }) {
           {modalStatus === "start" && (
             <div>
               <Typography id="modal-modal-title" variant="h6" component="h2">
+              <button onClick={() => handleClose()} className="mint-btn">X</button>
                 You About To Mint {nft.name}
               </Typography>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
@@ -107,6 +115,12 @@ export function MintModal({ nft }) {
           {modalStatus === "inProcess" && (
             <Typography id="modal-modal-title" variant="h6" component="h2">
               LOADING
+            </Typography>
+          )}
+            {modalStatus === "rejected" && (
+            <Typography id="modal-modal-title" variant="h6" component="h2">
+            <button onClick={() => handleClose()} className="mint-btn">X</button>
+              rejected
             </Typography>
           )}
           {modalStatus === "notConnect" && (
@@ -123,6 +137,7 @@ export function MintModal({ nft }) {
           )}
           {modalStatus === "done" && (
             <Typography id="modal-modal-title" variant="h6" component="h2">
+          <button onClick={() => handleClose()} className="mint-btn">X</button>
               greenv
             </Typography>
           )}
