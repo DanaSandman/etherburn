@@ -12,6 +12,16 @@
             width: 18rem;
             border-radius: 0.9rem;
         }
+        .nft-video{
+            video{
+                width: 250px;
+            }
+        }
+        video:hover{
+            height: 420px;
+            object-fit: cover;
+            border-radius: 0.8rem;
+        }
     }
     .content-card{
         height: 190px;

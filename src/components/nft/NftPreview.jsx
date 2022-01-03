@@ -16,9 +16,9 @@ export function NftPreview({ nft }) {
             {(nft.image)?(
               <img className="nft-img" src={nft.image} alt={nft.name} />
             ):(
-              <video width="238px" height="250px" loop autoPlay muted>
+             <div className="nft-video"><video loop autoPlay muted>
               <source src={nft.video} type="video/mp4" />
-              </video>
+              </video></div>
             )}
           </div>
             {/* </Link> */}
