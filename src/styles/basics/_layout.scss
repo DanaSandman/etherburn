@@ -31,6 +31,9 @@
     minmax(auto)
     3.75rem;
     }
+    .home-page{
+        grid-template-rows: 580px 580px 700px 700px 580px
+    }
 }
 @include for-tablet-layout {
     .home-page,.about-page{

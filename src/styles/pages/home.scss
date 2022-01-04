@@ -57,28 +57,6 @@
             background-color:#ff01ae9c;
         }
     }
-    // .collection-data-section{
-    //     margin-bottom: 10rem;
- 
-    //     .table-collection-data{
-    //         margin: auto;
-    //         text-align: center;
-    //         align-items: center;
-    //         width: auto;
-    //         height: 20px;
-    //         display: grid;
-    //         grid-template-columns: 1fr 1fr;
-    //         grid-template-rows: 1fr 1fr;
-    //        *{
-    //         color: rgb(36, 36, 36);
-    //        }
-    //        >*{
-    //         box-shadow: inset -1px 1px 0px 2.5px rgb(0 0 0 / 3%);
-    //         border-radius: 0.5rem;
-    //         padding: 30px;
-    //        }
-    //     }
-    // }
     .eco-system-section{
         .p-description{
             margin-left: 15rem;
@@ -105,6 +83,7 @@
         }
     }
     .road-map-section{
+        grid-row: 4/5;
         .p-description{
             margin-left: 15rem;
             margin-right: 15rem;
@@ -225,6 +204,7 @@
 // Responsive
 @include for-normal-layout{
     .home-page{
+
         .hero-section{
             margin: auto;
             width: 80%;
@@ -232,6 +212,12 @@
         .cards-carousel-section{
             width: 80%;
             margin: auto;
+        }
+        .eco-system-section{
+            .p-description{
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
         }
     }
 }
