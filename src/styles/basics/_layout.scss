@@ -19,46 +19,48 @@
 }
 // Responsive
 @include for-wide-layout {
-    .home-page,.about-page{
+    .home-page,.collection-page{
             justify-content: center;
     }
 }
 @include for-normal-layout {
-    .home-page,.about-page{
+    .home-page,.collection-page{
     justify-content: center;
     grid-template-columns:
     3.75rem
-    minmax(auto)
+    minmax(auto, $tablet-breakpoint)
     3.75rem;
     }
     .home-page{
-        grid-template-rows: 580px 580px 700px 700px 580px
+        grid-template-rows: 580px 730px 700px 700px 580px
     }
 }
 @include for-tablet-layout {
-    .home-page,.about-page{
+    .home-page, .collection-page{
         grid-template-columns: 
-        3.75rem
-        minmax(auto, 42.5rem)
-        3.75rem;
+        2.75rem
+        minmax(auto, 38.75)
+        2.75rem;
     }
     .home-page{
-        grid-template-rows: 580px 580px 600px
+        grid-template-rows: 580px 690px 1300px 650px 1000px;
     }
 }
 @include for-narrow-layout{
-    .home-page,.about-page{
-        grid-template-columns: 1.5rem minmax(auto, 32rem) 1.5rem;
+    .home-page,.collection-page{
+        grid-template-columns: 1.5rem minmax(auto, 31rem) 1.5rem;
     }
     .home-page{
-        grid-template-rows: 620px 580px 500px
+        grid-template-rows: 580px 690px 1350px 750px 1100px;
     }
 }
 @include for-mobile-layout {
-    .home-page,.about-page{
-        grid-template-columns: 1.5rem minmax( auto, 22.7rem ) 1.5rem;
+    .home-page,.collection-page{
+        grid-template-columns: 1.5rem minmax( auto, 290px ) 1.5rem;
+        padding: 0%;
     }
     .home-page{
-        grid-template-rows:600px 585px 600px;
+        grid-template-rows: 580px 690px 1900px 1220px 1750px;
     }
 }
+

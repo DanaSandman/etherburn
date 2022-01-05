@@ -176,9 +176,9 @@ footer{
     }
     }
     @include for-tablet-layout{
-       padding: 0 3.75rem 0 3.75rem;
+      //  padding: 0 3.75rem 0 3.75rem;
        margin: 0px;
-       width: 40.5rem;
+      //  width: 40.5rem;
        .footer-divider-img{
           .footer-divider-img{
              width: 40.5rem;
@@ -226,40 +226,46 @@ footer{
     }
     @include for-narrow-layout {
        p, .footer-email-form{
-          width: 29.5rem;
+         width: 24.5rem;
        }
     }
     @include for-mobile-layout{
        *{
-          max-width: 315px;
+          max-width: 20rem;
        }
-       width: 315px;
-       margin: 0 1.875rem 0 1.875rem;
-       .footer-divider-img{
-          .footer-divider-img{  
-             z-index: 2;
-             width: 19.68rem;
-             justify-content: center;
-          }
-       }
+      .main-footer{
+         // grid-template-rows: 1fr;
+         width: 23.5rem;
+         grid-template-columns: 1fr; 
+      }
+      padding: 0%;
+      margin: 0%;
        .main-footer{
-          width: 23.5rem;
+          width: 20rem;
           height: 62.5rem;
           margin: 0px;
           display: grid;
-          grid-template-columns: 1fr;            
+          grid-template-columns: 1fr;   
+          div{
+            width: 365px;
+          }         
              .footer-main-contant{
                 grid-row: 1/2;
                 p{
-                   width: 19.68rem;
+                   width: 365px;
                    height: 11.3rem;
-                   margin-bottom: 4.25rem;
+                  //  margin-bottom: 4.25rem;
+                   margin: 2rem 0 2rem 0;
                  }
              }
              .footer-links{
                 grid-row: 2/3;
                 grid-column: 1/2;
                 flex-direction: column;
+                width: 320px;
+                ul{
+                   width: 250px;
+                }
                 h6{
                    font-size: 18px;
                    font-weight: 400;
@@ -268,6 +274,7 @@ footer{
                    opacity:  0.6 !important;
                 }
                 li{
+                   width: 250px;
                    font-size: 18px;
                    font-weight: 600;
                 }

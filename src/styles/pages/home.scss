@@ -1,5 +1,6 @@
 .home-page{
     text-align: center;
+    justify-content: center;
     padding-top: 5rem;
     background-color: rgb(255, 255, 255);
     h2{
@@ -83,7 +84,6 @@
         }
     }
     .road-map-section{
-        grid-row: 4/5;
         .p-description{
             margin-left: 15rem;
             margin-right: 15rem;
@@ -204,14 +204,10 @@
 // Responsive
 @include for-normal-layout{
     .home-page{
-
+        justify-content: center;
         .hero-section{
             margin: auto;
             width: 80%;
-        }
-        .cards-carousel-section{
-            width: 80%;
-            margin: auto;
         }
         .eco-system-section{
             .p-description{
@@ -219,50 +215,179 @@
                 margin-right: 1rem;
             }
         }
+        .team-section{
+            .members{
+                // width: 71%;
+                img{
+                    height: 200px;
+                }
+                .member1 * ,
+                .member2 *,
+                .member3 *,
+                .member4 *{
+                margin: 0 1.5625rem .70rem 0 ;
+                width: 12.5rem;
+                }
+                .linkedin-team-link{
+                    bottom: 1.1875rem;
+                    background-repeat: no-repeat;
+                    left: 9rem;
+                }
+            }
+          h3{
+            font-size: 21px;
+          }
+        }
     }
 }
 @include for-tablet-layout{
     .home-page{
+        justify-content: center;
         .hero-section{
           flex-direction: column;
+          h2, p {
+              text-align: center;
+              width: 80%;
+          }
+        }
+        .cards-carousel-section {
+            .home-carousel {
+                margin-left: 1.5rem;
+                .alice-carousel .alice-carousel__next-btn {
+                    margin-right: 1.625rem;
+                }
+            }
+        }
+        .eco-system-section{
+            .p-description{
+                margin: 1.25rem 0 1.25rem 0 ;
+            }
+        }
+        .road-map-section{
+            .p-description{
+                margin: 1.25rem 0 1.25rem 0 ;
+            }
+        }
+        .team-section{
+            .members{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                .linkedin-team-link{
+                    right: 44px;
+                }
+            }
+            // .members > *{
+            //     p{
+            //         margin: 0px;
+            //     }
+            // }
         }
     }
 }
 @include for-narrow-layout{
     .home-page{
+        justify-content: center;
         .hero-section{
           flex-direction: column;
+          .content-hero{
+              text-align: center;
+              width: auto;
+          }
         }
         .cards-carousel-section{
             margin:auto
         }
-        .collection-data-section{
-            .table-collection-data{
-                width: 23rem;
-                margin-top: 1rem;
+        .eco-system-section{
+            .p-description{
+                margin: auto;
             }
+            .item-types > *{
+                flex-direction: column;
+            }
+        }
+        .road-map-section{
+            .p-description{
+                margin: auto;
+            }
+        }
+        .team-section{
+            .members{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                .linkedin-team-link{
+                    right: 44px;
+                }
+            }
+            // .members > *{
+            //     p{
+            //         margin: 0px;
+            //     }
+            // }
         }
     }
 }
 @include for-mobile-layout{
     .home-page{
+        justify-content: center;
         .hero-section{
-            .hero-img{
-                width: 300px;
-            }
             flex-direction: column;
+            .content-hero{
+                width: auto;
+                text-align: center;
+            }
+            .hero-img{
+                width: 15.5rem;
+                margin: auto;
+            }
+            p{
+                width: 18.2rem;
+            }
         }
         .cards-carousel-section{
-            .alice-carousel{
-                width: 90vw;
+            .home-carousel{
+                margin: 0px;
+                div{
+                    .alice-carousel{
+                        div{
+                            .alice-carousel__wrapper{
+                                left: 10%;
+                            }
+                        }
+                            .alice-carousel__next-btn{
+                                margin: 0px;
+                            }
+                    }
+                }
+                }
+            }
+        .eco-system-section{
+            .p-description{
+                margin: auto;
+            }
+            .item-types > *{
+                flex-direction: column;
             }
         }
-        .collection-data-section{
-            .table-collection-data{
-                width: 90vw;
-                padding: 60px;
-                margin-bottom: 200px;
+        .road-map-section{
+            .p-description{
+                margin: 0px;
+                padding: 10px;
             }
+        }
+        .team-section{
+            overflow-x: inherit;
+            .members{
+                display: grid;
+                grid-template-columns: 1fr;
+                .linkedin-team-link{
+                    right: 88px;
+                }
+            }
+            // .members > *{
+            //     p{
+            //         margin: 0px;
+            //     }
+            // }
         }
     }
 }

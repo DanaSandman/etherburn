@@ -12,7 +12,7 @@
         @content;
     }
 }
-//538-1000px
+//712-1000px
 @mixin for-tablet-layout {
     @media (min-width: $narrow-breakpoint ) and (max-width: $tablet-breakpoint){
         @content;

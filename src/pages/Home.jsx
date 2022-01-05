@@ -7,8 +7,7 @@ import { loadContractData } from "../store/contract/contract.action.js";
 //Cmps
 import { NftListCarousel } from "../components/util/Carousel.jsx";
 import { web3, web3service } from "../services/web3.service.js";
-import  SVGComponent  from "../components/svg.jsx"
-import NFT from '../assets/NFT.mp4';
+// import NFT from '../assets/NFT.mp4';
 
 //Img
 import HeroImg from "../assets/img/Logo.png";
@@ -49,7 +48,6 @@ export function Home() {
            {/* {contractData && <p>{contractData.publicPresaleMintMax}</p>} */}
            {/* {contractData && <p>{contractData.stage}</p>} */}
           {/* </div> */}
-          {/* <SVGComponent/> */}
         <img className="hero-img" src={HeroImg} alt="hero-image" />
         <div className="content-hero flex column">
           <h2>Ether Burn</h2>
