@@ -186,6 +186,7 @@ footer{
        }
        .main-footer{
                 width: 40.5rem;
+                height: 1100px;
                 display: grid;
                 grid-template-columns: 1fr;
              .footer-main-contant{
@@ -225,6 +226,18 @@ footer{
        } 
     }
     @include for-narrow-layout {
+       .main-footer{
+          height: auto;
+          .footer-links{
+            grid-row: 2/3;
+            grid-column: 1/2;
+            margin: 2.5rem 0 2.5rem 0;
+          }
+          .footer-social-media-links{
+            grid-column: 1/2;
+            grid-row: 3/4;
+          }
+       }
        p, .footer-email-form{
          width: 24.5rem;
        }
@@ -233,19 +246,17 @@ footer{
        *{
           max-width: 20rem;
        }
-      .main-footer{
-         // grid-template-rows: 1fr;
-         width: 23.5rem;
-         grid-template-columns: 1fr; 
-      }
+
       padding: 0%;
       margin: 0%;
        .main-footer{
+         padding-left: 25px;
           width: 20rem;
           height: 62.5rem;
           margin: 0px;
           display: grid;
-          grid-template-columns: 1fr;   
+          grid-template-columns: 1fr;  
+          grid-template-columns: 1fr;  
           div{
             width: 365px;
           }         

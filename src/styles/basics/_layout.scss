@@ -39,11 +39,11 @@
     .home-page, .collection-page{
         grid-template-columns: 
         2.75rem
-        minmax(auto, 38.75)
+        minmax(auto, 38.75rem)
         2.75rem;
     }
     .home-page{
-        grid-template-rows: 580px 690px 1300px 650px 1000px;
+        grid-template-rows: 580px 690px 1300px 650px 1200px;
     }
 }
 @include for-narrow-layout{
