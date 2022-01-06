@@ -7,7 +7,7 @@ import { loadContractData } from "../store/contract/contract.action.js";
 //Cmps
 import { NftListCarousel } from "../components/util/Carousel.jsx";
 import { web3, web3service } from "../services/web3.service.js";
-// import NFT from '../assets/NFT.mp4';
+import NFT from '../assets/NFT.mp4';
 
 //Img
 import HeroImg from "../assets/img/Logo.png";

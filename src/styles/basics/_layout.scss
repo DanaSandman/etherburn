@@ -60,7 +60,12 @@
         padding: 0%;
     }
     .home-page{
-        grid-template-rows: 580px 690px 1900px 1220px 1750px;
+        padding: 0%;
+        grid-template-rows: 680px 690px 1900px 1220px 1850px;
+    }
+    .collection-page{
+        padding-left: 1.25rem;
+        grid-template-rows: 255px 2fr;
     }
 }
 

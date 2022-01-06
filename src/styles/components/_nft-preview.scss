@@ -68,7 +68,16 @@
             height: auto;
         }
     }
-
+}
+.close-modal-box-btn{
+    margin: 0px;
+    padding: 0px;
+    right: 12%;
+}
+.content-card{
+    h4{
+        margin-bottom: 1rem;
+    }
 }
 .content-img-modal{
     .nft-img-modal{
@@ -76,12 +85,12 @@
         border-radius: 0.9rem;
     }
     .nft-video-modal{
-        height: 600px;
+        height: 34.3rem;
         video{
             object-fit: cover;
-            width: 350px;
-            height: 552px;
-            margin-left: -10px;
+            width: 21.875rem;
+            height: 34.5rem;
+            margin-left: -0.625rem;
         }
     }
 }
@@ -115,3 +124,4 @@
         }
     }
 }
+

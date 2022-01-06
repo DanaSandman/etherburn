@@ -29,4 +29,22 @@
     }
 }
 
+@include for-mobile-layout{
+    .logo{
+        margin-left: -20px;
+        margin-right: 20px;
+        .header-logo{
+            width: 4rem;
+        }
+    }
+    .burger{
+        button{
+            top: 30%;
+            left: 1rem;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+
+    }
+}
 

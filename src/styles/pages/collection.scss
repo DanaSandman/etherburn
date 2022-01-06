@@ -8,9 +8,9 @@
         margin-bottom: 30px;
     }
     .filter-collection{
-        overflow-x: auto;
-       margin-top: 150px;
+        margin-top: 150px;
        ul{
+        overflow-x: auto;
          > * {
              list-style: none;
              button{
@@ -39,3 +39,36 @@
         width: 0;
     }
 }
+
+@include for-tablet-layout{
+    .filter-collection{
+        ul{
+            width: 31.25rem;
+        }
+    }
+
+}
+@include for-narrow-layout{
+    .filter-collection{
+        ul{
+            width: 19rem;
+        }
+    }
+}
+@include for-mobile-layout{
+    .filter-collection{
+        h2{
+            font-size: 16px;
+        }
+        ul{
+            width: 18rem;
+            padding: 0px;
+                button{
+                    width: 75px;
+                    height: 35px;
+                    padding: 5px;
+                    margin-right: -9px;
+                }
+            }
+        }
+    }

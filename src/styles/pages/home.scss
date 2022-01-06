@@ -123,7 +123,7 @@
         .members{
             justify-content: center;
             margin-top: 39px;
-            overflow-x: auto;
+            // overflow-x: auto;
             h3{
                 font-size: 25px;
                 text-transform: uppercase;
@@ -137,7 +137,7 @@
                 color: $primary-color;
             }
             P{
-                width: 220px;
+                // width: 220px;
                 // font-family: Antikor Mono;
                 font-size: 16px;
                 color: $text-color;
@@ -153,25 +153,6 @@
                 margin-top: 5px;
                 margin-bottom: 5px;
             }
-            // .member-img{
-            //     height: 223px;
-            //      --b: 1px;   
-            //      --c:#ff00ae; 
-            //      --w:10px;
-            //     border:var(--b) solid transparent;
-            //     background:
-            //     linear-gradient(var(--c),var(--c)) top left,
-            //     linear-gradient(var(--c),var(--c)) top left,
-            //     linear-gradient(var(--c),var(--c)) bottom left,
-            //     linear-gradient(var(--c),var(--c)) bottom left,
-            //     linear-gradient(var(--c),var(--c)) top right,
-            //     linear-gradient(var(--c),var(--c)) top right,
-            //     linear-gradient(var(--c),var(--c)) bottom right,
-            //     linear-gradient(var(--c),var(--c)) bottom right;
-            //     background-size:var(--b) var(--w),var(--w) var(--b);
-            //     background-origin:border-box;
-            //     background-repeat:no-repeat;
-            // }
             .member-img{
             position:relative; 
             }
@@ -193,8 +174,8 @@
         .member2 *,
         .member3 *,
         .member4 *{
-        margin: 0 0.6rem 0.6rem 0.6rem ;
-    }
+        margin: .5rem 0.6rem 0.6rem 0.6rem ;
+        }
     }
     .members::-webkit-scrollbar{
         width: 0;
@@ -318,11 +299,6 @@
                     right: 1.1875rem;
                 }
             }
-            // .members > *{
-            //     p{
-            //         margin: 0px;
-            //     }
-            // }
         }
     }
 }
@@ -344,6 +320,7 @@
             }
         }
         .cards-carousel-section{
+            margin-left: -20px;
             .home-carousel{
                 margin: 0px;
                 div{
@@ -361,6 +338,7 @@
                 }
             }
         .eco-system-section{
+            margin-left: -20px;
             .p-description{
                 margin: auto;
             }
