@@ -1,4 +1,4 @@
-import logo from "../../assets/img/Logo.png";
+import logo from "../../assets/img/LOGO.png";
 import { Link } from "react-router-dom";
 import UserWallet from "./UserWallet.jsx";
 //Menu&Burger

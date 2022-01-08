@@ -2,14 +2,14 @@
 .item{
     width: fit-content;
     height: 32rem;
-    background-color: rgba(34, 34, 34, 0.966);
+    background-color: $secondary-bg-color;
     border: 1px solid rgb(23, 23, 24);
     border-radius: 1rem;
 }
-.item:hover{
-    box-shadow: rgba(204, 208, 212, 0.25) 0px 0px 8px 0px;
-    transition: all 0.1s ease 0s;
-}
+// .item:hover{
+//     // box-shadow: rgba(255, 255, 255, 0.55) 0px 0px 8px 0px;
+//     transition: all 0.1s ease 0s;
+// }
 .alice-carousel__stage{
     li{
         .alice-carousel__stage-item{
@@ -23,7 +23,7 @@
             background-color: rgba(54, 54, 54, 0.301);
         }
         .alice-carousel__dots-item:not(.__custom).__active{
-            background-color: #f4188d;
+            background-color: $primary-color;
         }
 }
 .alice-carousel__prev-btn, .alice-carousel__next-btn{
@@ -44,13 +44,13 @@
 }
 .alice-carousel__next-btn-wrapper:hover, .alice-carousel__prev-btn-wrapper:hover{
     background-color:#f759ad45;
-    border-color: #f4188d;
+    border-color: $primary-color;
 }
 .alice-carousel__next-btn-item, .alice-carousel__prev-btn-item{
     text-align: center;
     padding: 6px;
     *:hover {
-        color: #f4188d;
+        color: $primary-color;
     }
     span{
         width: 1.25rem;

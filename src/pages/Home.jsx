@@ -7,15 +7,22 @@ import { loadContractData } from "../store/contract/contract.action.js";
 //Cmps
 import { NftListCarousel } from "../components/util/Carousel.jsx";
 import { web3, web3service } from "../services/web3.service.js";
-import NFT from '../assets/NFT.mp4';
+// import NFT from '../assets/NFT.mp4';
 
 //Img
-import HeroImg from "../assets/img/Logo.png";
+import HeroImg from "../assets/img/HeroIMG.png";
 //imgs team
 import TeamImg1 from "../assets/img/team/TeamImg1.png";
 import TeamImg2 from "../assets/img/team/TeamImg2.png";
 import TeamImg3 from "../assets/img/team/TeamImg3.png";
 import TeamImg4 from "../assets/img/team/TeamImg4.png";
+//items-types
+import daily from "../assets/img/items_types/daily.png";
+import weekly from "../assets/img/items_types/weekly.png";
+import monthly from "../assets/img/items_types/monthly.png";
+import yearly from "../assets/img/items_types/yearly.png";
+import million from "../assets/img/items_types/million.png";
+import billion from "../assets/img/items_types/billion.png";
 
 
 export function Home() {
@@ -38,16 +45,6 @@ export function Home() {
   return (
     <div className="home-page">
       <section className="hero-section flex">
-          {/* <div className='account-details'> */}
-          {/* <p>{props.currentAccount}</p>
-          <p> Your Balance: {props.balance} ETH</p>
-          <button onClick ={ {mint} > MINT</button> */}
-           {/* {contractData && <p>{contractData.presalePrice}</p>} */}
-           {/* {contractData && <p>{contractData.presaleMintMax}</p>} */}
-           {/* {contractData && <p>{contractData.publicPresalePrice}</p>} */}
-           {/* {contractData && <p>{contractData.publicPresaleMintMax}</p>} */}
-           {/* {contractData && <p>{contractData.stage}</p>} */}
-          {/* </div> */}
         <img className="hero-img" src={HeroImg} alt="hero-image" />
         <div className="content-hero flex column">
           <h2>Ether Burn</h2>
@@ -74,12 +71,12 @@ export function Home() {
           explicabo quae.
         </p>
         <div className="item-types">
-          <div className="daily flex">
-            <img className="img" src={HeroImg} alt="hero-image" />
+          <div className="daily flex column">
+            <img className="img" src={daily} alt="hero-image" />
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore quae exercitationem, odio nesciunt laboriosam commodi in nisi ad ex, perspiciatis debitis omnis voluptatibus ipsam, eaque sequi numquam? Iusto, aliquid vero!</p>
           </div>
-          <div className="weekly flex">
-            <img className="img" src={HeroImg} alt="hero-image" />
+          <div className="weekly flex column">
+            <img className="img" src={weekly} alt="hero-image" />
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae
               corporis ut obcaecati non consequuntur dolores asperiores
@@ -87,8 +84,8 @@ export function Home() {
               perspiciatis in rem iusto neque temporibus ducimus!
             </p>
           </div>
-          <div className="monthly flex">
-            <img className="img" src={HeroImg} alt="hero-image" />
+          <div className="monthly flex column">
+            <img className="img" src={monthly} alt="hero-image" />
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti
               iste vero minima dolorem, perspiciatis amet fugit a accusantium
@@ -96,8 +93,8 @@ export function Home() {
               laboriosam dicta reprehenderit? Ullam!
             </p>
           </div>
-          <div className="million flex">
-            <img className="img" src={HeroImg} alt="hero-image" />
+          <div className="million flex column">
+            <img className="img" src={million} alt="hero-image" />
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Voluptas, eos cupiditate ut numquam, aspernatur fugiat, beatae
@@ -105,8 +102,8 @@ export function Home() {
               Aliquid cupiditate delectus iure esse.
             </p>
           </div>
-          <div className="yearly flex">
-            <img className="img" src={HeroImg} alt="hero-image" />
+          <div className="yearly flex column">
+            <img className="img" src={yearly} alt="hero-image" />
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Voluptas, eos cupiditate ut numquam, aspernatur fugiat, beatae
@@ -114,8 +111,8 @@ export function Home() {
               Aliquid cupiditate delectus iure esse.
             </p>
           </div>
-          <div className="billion flex">
-            <img className="img" src={HeroImg} alt="hero-image" />
+          <div className="billion flex column">
+            <img className="img" src={billion} alt="hero-image" />
             <p>
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Voluptas, eos cupiditate ut numquam, aspernatur fugiat, beatae

@@ -4,7 +4,6 @@
     padding-top: 5rem;
     background-color: $primary-bg-color;
     h2{
-        // color: rgb(37, 37, 37);
         letter-spacing: 0.2em;
         font-size: 20px;
         letter-spacing: 20%;
@@ -13,9 +12,7 @@
     }
     .hero-section{
         margin-bottom: 50px;
-        // background-color: rgb(255, 255, 255);
         .account-details{
-            // background-color: #e3e3e3;
             margin-bottom: -70px;
             p{
                 font-size: small;
@@ -24,7 +21,7 @@
         }
         .hero-img{
             margin: auto;
-            width: 350px;
+            width: 35.5rem;
         }
         .content-hero{
             text-align: start;
@@ -68,13 +65,14 @@
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
             > * {
-                border: 1px solid rgb(229, 232, 235);
+                // border: 1px solid rgb(229, 232, 235);
+                box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 0rem #bc13fe, 0 0 0.8rem #bc13fe, 0 0 1rem #bc13fe, inset 0 0 1.3rem #bc13fe;
                 border-radius: 0.9rem;
-                padding: 15px;
-                margin: 8px; 
+                padding: 1.25rem;
+                margin: 1.25rem; 
                 text-align: start;
                 img{
-                    width: 115px;
+                    width: 300px;
                 } 
             }
             // > *:hover{
