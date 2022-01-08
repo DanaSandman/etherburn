@@ -7,7 +7,7 @@
 }
 html {
     // background-color: $primary-bg-color;
-  background-color: #fff;
+  background-color: $primary-bg-color;
     font-family: Figgins;
   }
   body {
@@ -24,6 +24,9 @@ h6 {
   color: $text-color;
   text-transform: uppercase;
 }
+p{
+  color: $text-color;
+}
 input,
 select,
 a,
@@ -31,3 +34,14 @@ button {
   cursor: pointer;
   text-transform: uppercase;
 }
+button {
+// background-color:rgba(72, 172, 186, 0.365);
+background-color: rgba(202, 200, 200, 0.411);
+border-radius: 0.5rem;
+padding: 1rem;
+margin: 0 1rem 0 1rem;
+border: none;
+} 
+//  button:hover{
+//   background-color: #9efcf6;
+// }

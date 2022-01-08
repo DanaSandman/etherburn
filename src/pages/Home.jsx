@@ -7,7 +7,6 @@ import { loadContractData } from "../store/contract/contract.action.js";
 //Cmps
 import { NftListCarousel } from "../components/util/Carousel.jsx";
 import { web3, web3service } from "../services/web3.service.js";
-import  SVGComponent  from "../components/svg.jsx"
 import NFT from '../assets/NFT.mp4';
 
 //Img
@@ -49,10 +48,6 @@ export function Home() {
            {/* {contractData && <p>{contractData.publicPresaleMintMax}</p>} */}
            {/* {contractData && <p>{contractData.stage}</p>} */}
           {/* </div> */}
-          {/* <SVGComponent/> */}
-          <video width="238" height="auto" loop autoPlay muted>
-          <source src={NFT} type="video/mp4"/>
-          </video>
         <img className="hero-img" src={HeroImg} alt="hero-image" />
         <div className="content-hero flex column">
           <h2>Ether Burn</h2>
@@ -184,7 +179,7 @@ export function Home() {
             <h3>
             dana<br></br>sandman
             </h3>
-            <h4>co-founder & CTO</h4>
+            <h4>co-founder & Software Developer</h4>
             <p>
               Entrepreneur, Founder, programer and Product designer with more
               than 10 years of experience.

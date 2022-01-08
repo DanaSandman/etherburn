@@ -37,20 +37,16 @@ export default function UserWallet() {
         dispatch(setUserAccount(account));
     };
 
-    // const setChainId = (chainId) => {
-    //     chainId = chainId ? supportedNetworks[chainId] ? chainId : UNSUPPORTED_NETWORK : DEFAULT_CHAIN_ID;
-    //     dispatch(setUserChainId(chainId));
-    // }
-    // const setBalance = (balance) => {
-    //     dispatch(setUserBalance(balance));
-    // }
-
     const setWallet = (wallet) => {
         window.ethereum = wallet.provider;
         window.localStorage.setItem('selectedWallet', wallet.name)
     };
 
     useEffect(() => {
+       const selectedWallet =  window.localStorage.getItem('selectedWallet');
+        if (selectedWallet === undefined || selectedWallet === 'undefined'){
+            window.localStorage.setItem('isConnected', false)
+        }
         const onboard = initOnboard({
             address: setAccount,
             // network: setChainId,

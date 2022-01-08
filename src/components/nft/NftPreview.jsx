@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 // import { Link } from 'react-router-dom';
 import ETHlogo from "../../assets/img/ethLogo.svg";
 import  { MintModal } from "../util/MintModal.jsx"
+import { PreviewModal } from "../util/PreviewModal.jsx"
 
 export function NftPreview({ nft }) {
 
@@ -11,17 +12,7 @@ export function NftPreview({ nft }) {
 
   return (
       <div className="nft-preview flex column">
-          {/* <Link to={`/nft/${nft.tokenId}`} > */}
-          <div className="content-img-card">
-            {(nft.image)?(
-              <img className="nft-img" src={nft.image} alt={nft.name} />
-            ):(
-             <div className="nft-video"><video loop autoPlay muted>
-              <source src={nft.video} type="video/mp4" />
-              </video></div>
-            )}
-          </div>
-            {/* </Link> */}
+          <PreviewModal nft={nft}/>
           <div className="content-card flex column">
             <div className="flex space-between">
               <h4 className="nft-title">{nft.name}</h4>

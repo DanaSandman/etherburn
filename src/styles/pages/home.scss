@@ -1,9 +1,10 @@
 .home-page{
     text-align: center;
+    justify-content: center;
     padding-top: 5rem;
-    background-color: rgb(255, 255, 255);
+    background-color: $primary-bg-color;
     h2{
-        color: rgb(37, 37, 37);
+        // color: rgb(37, 37, 37);
         letter-spacing: 0.2em;
         font-size: 20px;
         letter-spacing: 20%;
@@ -12,9 +13,9 @@
     }
     .hero-section{
         margin-bottom: 50px;
-        background-color: rgb(255, 255, 255);
+        // background-color: rgb(255, 255, 255);
         .account-details{
-            background-color: #e3e3e3;
+            // background-color: #e3e3e3;
             margin-bottom: -70px;
             p{
                 font-size: small;
@@ -54,31 +55,9 @@
             margin-top: 10px;
         }
         .collection-link-main:hover{
-            background-color:#ff01ae9c;
+            background-color:$primary-color;
         }
     }
-    // .collection-data-section{
-    //     margin-bottom: 10rem;
- 
-    //     .table-collection-data{
-    //         margin: auto;
-    //         text-align: center;
-    //         align-items: center;
-    //         width: auto;
-    //         height: 20px;
-    //         display: grid;
-    //         grid-template-columns: 1fr 1fr;
-    //         grid-template-rows: 1fr 1fr;
-    //        *{
-    //         color: rgb(36, 36, 36);
-    //        }
-    //        >*{
-    //         box-shadow: inset -1px 1px 0px 2.5px rgb(0 0 0 / 3%);
-    //         border-radius: 0.5rem;
-    //         padding: 30px;
-    //        }
-    //     }
-    // }
     .eco-system-section{
         .p-description{
             margin-left: 15rem;
@@ -144,7 +123,7 @@
         .members{
             justify-content: center;
             margin-top: 39px;
-            overflow-x: auto;
+            // overflow-x: auto;
             h3{
                 font-size: 25px;
                 text-transform: uppercase;
@@ -158,7 +137,7 @@
                 color: $primary-color;
             }
             P{
-                width: 220px;
+                // width: 220px;
                 // font-family: Antikor Mono;
                 font-size: 16px;
                 color: $text-color;
@@ -174,25 +153,6 @@
                 margin-top: 5px;
                 margin-bottom: 5px;
             }
-            // .member-img{
-            //     height: 223px;
-            //      --b: 1px;   
-            //      --c:#ff00ae; 
-            //      --w:10px;
-            //     border:var(--b) solid transparent;
-            //     background:
-            //     linear-gradient(var(--c),var(--c)) top left,
-            //     linear-gradient(var(--c),var(--c)) top left,
-            //     linear-gradient(var(--c),var(--c)) bottom left,
-            //     linear-gradient(var(--c),var(--c)) bottom left,
-            //     linear-gradient(var(--c),var(--c)) top right,
-            //     linear-gradient(var(--c),var(--c)) top right,
-            //     linear-gradient(var(--c),var(--c)) bottom right,
-            //     linear-gradient(var(--c),var(--c)) bottom right;
-            //     background-size:var(--b) var(--w),var(--w) var(--b);
-            //     background-origin:border-box;
-            //     background-repeat:no-repeat;
-            // }
             .member-img{
             position:relative; 
             }
@@ -214,8 +174,8 @@
         .member2 *,
         .member3 *,
         .member4 *{
-        margin: 0 0.6rem 0.6rem 0.6rem ;
-    }
+        margin: .5rem 0.6rem 0.6rem 0.6rem ;
+        }
     }
     .members::-webkit-scrollbar{
         width: 0;
@@ -225,57 +185,181 @@
 // Responsive
 @include for-normal-layout{
     .home-page{
+        justify-content: center;
         .hero-section{
             margin: auto;
             width: 80%;
         }
-        .cards-carousel-section{
-            width: 80%;
-            margin: auto;
+        .eco-system-section{
+            .p-description{
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+        }
+        .team-section{
+            .members{
+                // width: 71%;
+                img{
+                    height: 200px;
+                }
+                .member1 * ,
+                .member2 *,
+                .member3 *,
+                .member4 *{
+                margin: 0 1.5625rem .70rem 0 ;
+                width: 12.5rem;
+                }
+                .linkedin-team-link{
+                    bottom: 1.1875rem;
+                    background-repeat: no-repeat;
+                    left: 9rem;
+                }
+            }
+          h3{
+            font-size: 21px;
+          }
         }
     }
 }
 @include for-tablet-layout{
     .home-page{
+        justify-content: center;
         .hero-section{
           flex-direction: column;
+          h2, p {
+              text-align: center;
+              width: 80%;
+          }
+        }
+        .cards-carousel-section {
+            .home-carousel {
+                margin-left: 1.5rem;
+                .alice-carousel .alice-carousel__next-btn {
+                    margin-right: 1.625rem;
+                }
+            }
+        }
+        .eco-system-section{
+            .p-description{
+                margin: 1.25rem 0 1.25rem 0 ;
+            }
+        }
+        .road-map-section{
+            .p-description{
+                margin: 1.25rem 0 1.25rem 0 ;
+            }
+        }
+        .team-section{
+            .members{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                .linkedin-team-link{
+                    right: 44px;
+                }
+            }
+            // .members > *{
+            //     p{
+            //         margin: 0px;
+            //     }
+            // }
         }
     }
 }
 @include for-narrow-layout{
     .home-page{
+        justify-content: center;
         .hero-section{
           flex-direction: column;
+          .content-hero{
+              text-align: center;
+              width: auto;
+          }
         }
         .cards-carousel-section{
             margin:auto
         }
-        .collection-data-section{
-            .table-collection-data{
-                width: 23rem;
-                margin-top: 1rem;
+        .eco-system-section{
+            .p-description{
+                margin: auto;
+            }
+            .item-types > *{
+                flex-direction: column;
+            }
+        }
+        .road-map-section{
+            .p-description{
+                margin: auto;
+            }
+        }
+        .team-section{
+            .members{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                .linkedin-team-link{
+                    right: 1.1875rem;
+                }
             }
         }
     }
 }
 @include for-mobile-layout{
     .home-page{
+        justify-content: center;
         .hero-section{
-            .hero-img{
-                width: 300px;
-            }
             flex-direction: column;
+            .content-hero{
+                width: auto;
+                text-align: center;
+            }
+            .hero-img{
+                width: 15.5rem;
+                margin: auto;
+            }
+            p{
+                width: 18.2rem;
+            }
         }
         .cards-carousel-section{
-            .alice-carousel{
-                width: 90vw;
+            margin-left: -20px;
+            .home-carousel{
+                margin: 0px;
+                div{
+                    .alice-carousel{
+                        div{
+                            .alice-carousel__wrapper{
+                                left: 10%;
+                            }
+                        }
+                            .alice-carousel__next-btn{
+                                margin: 0px;
+                            }
+                    }
+                }
+                }
+            }
+        .eco-system-section{
+            margin-left: -20px;
+            .p-description{
+                margin: auto;
+            }
+            .item-types > *{
+                flex-direction: column;
             }
         }
-        .collection-data-section{
-            .table-collection-data{
-                width: 90vw;
-                padding: 60px;
-                margin-bottom: 200px;
+        .road-map-section{
+            .p-description{
+                margin: 0px;
+                padding: 10px;
+            }
+        }
+        .team-section{
+            overflow-x: inherit;
+            .members{
+                display: grid;
+                grid-template-columns: 1fr;
+                .linkedin-team-link{
+                    right: 2.375rem;
+                }
             }
         }
     }

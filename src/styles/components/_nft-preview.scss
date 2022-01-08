@@ -1,27 +1,11 @@
 .nft-preview{
     width: fit-content;
-    height: 420px;
+    height: 28.5rem;
     outline: none;
     text-align: center;
     justify-content: space-between;
     a{
         text-decoration: none;
-    }
-    .content-img-card{
-        .nft-img{
-            width: 18rem;
-            border-radius: 0.9rem;
-        }
-        .nft-video{
-            video{
-                width: 250px;
-            }
-        }
-        video:visited{
-            height: 420px;
-            object-fit: cover;
-            border-radius: 0.8rem;
-        }
     }
     .content-card{
         height: 190px;
@@ -30,7 +14,7 @@
             color: rgb(36, 36, 36);
         }
         .nft-title, span{
-            margin: 1rem 0 1rem 0;
+            margin: 0.2rem 0 1rem 0;
         }
         h6{
             text-align: start;
@@ -46,7 +30,7 @@
             }
         }
         .mint-btn{
-            height: 2.5rem;
+            // height: 2.5rem;
             background-color: #ff01ae;
             color: azure;
             font-weight: 500;
@@ -66,6 +50,77 @@
         }
         .minted:hover{
             background-color: rgba(202, 200, 200, 0.411);
+        }
+    }
+}
+//modal
+.content-img-card{
+    .nft-img{
+        width: 18rem;
+        border-radius: 0.9rem;
+    }
+    .nft-video{
+        video{
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            object-fit: contain;
+            width: 250px;
+            height: auto;
+        }
+    }
+}
+.close-modal-box-btn{
+    margin: 0px;
+    padding: 0px;
+    right: 12%;
+}
+.content-card{
+    h4{
+        margin-bottom: 1rem;
+    }
+}
+.content-img-modal{
+    .nft-img-modal{
+        width: 18rem;
+        border-radius: 0.9rem;
+    }
+    .nft-video-modal{
+        height: 34.3rem;
+        video{
+            object-fit: cover;
+            width: 21.875rem;
+            height: 34.5rem;
+            margin-left: -0.625rem;
+        }
+    }
+}
+.nft-title, span{
+    margin: 0 0 1rem 0;
+}
+.eth-logo{
+    width: 0.7rem;
+    margin-right: 5px;
+    margin-bottom: -2px;
+}
+.css-79ws1d-MuiModal-root {
+    z-index: 0;
+}
+
+//Preview Modal
+.MuiTypography-root{
+    .content-card {
+        div{
+            button{
+                background-color: #ff01ae;
+                color: azure;
+                font-weight: 500;
+                border: solid;
+                border-color: rgba(0, 0, 0, 0.05);
+                width: 13rem;
+                margin: auto;
+                margin-top: 25px;
+                border-radius: 5px;
+            }
         }
     }
 }

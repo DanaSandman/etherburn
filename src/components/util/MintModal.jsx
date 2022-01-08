@@ -18,7 +18,8 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 400,
   bgcolor: "background.paper",
-  border: "2px solid #000",
+  border: "1px solid rgb(229, 232, 235)",
+  borderRadius: "15px",
   boxShadow: 24,
   p: 4,
 };
@@ -29,7 +30,7 @@ export function MintModal({ nft }) {
     (state) => state.contractModule.contractData
   );
   const [modalStatus, setModalStatus] = React.useState("");
-  const onboard = useSelector((state) => state.walletModule.onboard);
+  // const onboard = useSelector((state) => state.walletModule.onboard);
 
   const [open, setOpen] = React.useState(false);
   const isConnected = localStorage.getItem("isConnected");
@@ -43,7 +44,7 @@ export function MintModal({ nft }) {
   const checkIfConnect = () => {
     const isConnected = localStorage.getItem("isConnected");
     console.log("isConnected", isConnected);
-    if (!isConnected) {
+    if (!isConnected || isConnected === 'false' || isConnected === false) {
       setModalStatus("notConnect");
     } else if (isConnected) {
       setModalStatus("start");
@@ -90,7 +91,7 @@ export function MintModal({ nft }) {
 
   return (
     <div>
-      <Button onClick={handleOpen}>MINT</Button>
+      <Button className='mint-btn' onClick={handleOpen}>MINT</Button>
       <Modal
         open={open}
         onClose={handleClose}
