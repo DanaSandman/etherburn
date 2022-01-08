@@ -1,9 +1,12 @@
 .nft-preview{
     width: fit-content;
-    height: 28.5rem;
+    background-color: rgba(34, 34, 34, 0.966);
+    height: 29.5rem;
     outline: none;
     text-align: center;
     justify-content: space-between;
+    margin-top: 10px;
+    padding-bottom: 25px;
     a{
         text-decoration: none;
     }
@@ -11,7 +14,7 @@
         height: 190px;
         padding: 1rem;
         * {
-            color: rgb(36, 36, 36);
+            color: $text-color;
         }
         .nft-title, span{
             margin: 0.2rem 0 1rem 0;

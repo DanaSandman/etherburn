@@ -1,13 +1,13 @@
 .alice-carousel{
 .item{
     width: fit-content;
-    height: 105%;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(229, 232, 235);
+    height: 32rem;
+    background-color: rgba(34, 34, 34, 0.966);
+    border: 1px solid rgb(23, 23, 24);
     border-radius: 1rem;
 }
 .item:hover{
-    box-shadow: rgb(4 17 29 / 25%) 0px 0px 8px 0px;
+    box-shadow: rgba(204, 208, 212, 0.25) 0px 0px 8px 0px;
     transition: all 0.1s ease 0s;
 }
 .alice-carousel__stage{
@@ -37,7 +37,7 @@
 //     margin-right: 40px;
 // }
 .alice-carousel__next-btn-wrapper, .alice-carousel__prev-btn-wrapper{
-        background-color: rgb(0 0 0 / 5%);
+        background-color: rgba(243, 239, 239, 0.219);
         border: solid;
         border-color: rgb(54 54 54 / 25%);
         border-radius: 50%;

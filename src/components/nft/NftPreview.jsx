@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-// import { Link } from 'react-router-dom';
 import ETHlogo from "../../assets/img/ethLogo.svg";
 import  { MintModal } from "../util/MintModal.jsx"
 import { PreviewModal } from "../util/PreviewModal.jsx"
