@@ -6,7 +6,7 @@ footer{
        display: grid;
        grid-template-columns: 1fr;
        grid-template-rows: 1fr 0.4fr 0.1fr;
-       height: 800px;
+       height: 1000px;
        .footer-main-contant{
         grid: 1/2;
         p{
@@ -165,7 +165,7 @@ footer{
        margin: 0px;
        .main-footer{
                 width: 40.5rem;
-                height: 1050px;
+                height: 1150px;
                 display: grid;
                 grid-template-columns: 1fr;
              .footer-main-contant{
@@ -229,7 +229,7 @@ footer{
       margin: 0%;
        .main-footer{
           width: 20rem;
-          height: 66.5rem;
+          height: 69.5rem;
           margin: 0px;
           display: grid;
           grid-template-columns: 1fr;  
@@ -289,7 +289,7 @@ footer{
              }
          }
     }
- }
+}
  @media screen and (-webkit-min-device-pixel-ratio:0) {
      select:focus,
      textarea:focus,

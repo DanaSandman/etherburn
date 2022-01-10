@@ -1,5 +1,6 @@
 .nft-preview{
     width: fit-content;
+    align-items: center;
     background-color: $secondary-bg-color;
     height: 29.5rem;
     outline: none;
@@ -7,14 +8,20 @@
     justify-content: space-between;
     margin-top: 10px;
     padding-bottom: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.19);
+    // padding: 1rem;
+    border-radius: 24px;
+    box-shadow: rgb(0 0 0 / 2%) 0px 0px 1px, rgb(0 0 0 / 2%) 0px 4px 8px, rgb(0 0 0 / 2%) 0px 16px 24px, rgb(0 0 0 / 2%) 0px 24px 32px;
     a{
         text-decoration: none;
     }
     .content-card{
-        height: 190px;
+        height: 11.875rem;
         padding: 1rem;
+        width: fit-content;
         * {
             color: $text-color;
+            margin-top: .3125rem;
         }
         .nft-title, span{
             margin: 0.2rem 0 1rem 0;
@@ -32,42 +39,22 @@
                 margin-bottom: -2px;
             }
         }
-        .mint-btn{
-            // height: 2.5rem;
-            background-color: #ff01ae;
-            color: azure;
-            font-weight: 500;
-            border: solid;
-            border-color: rgba(0, 0, 0, 0.05);
-            width: 13rem;
-            margin: auto;
-            margin-top: 25px;
-            border-radius: 5px;
-        }
-        .mint-btn:hover{
-            background-color: #ff01afa6;
-        }
-        .minted{
-            color: black;
-            background-color: rgba(202, 200, 200, 0.856);
-        }
-        .minted:hover{
-            background-color: rgba(202, 200, 200, 0.411);
-        }
     }
 }
 //modal
 .content-img-card{
     .nft-img{
-        width: 18rem;
+        margin: 5px 5px 0 5px;
+        width: 15rem;
         border-radius: 0.9rem;
     }
     .nft-video{
         video{
+            margin: 5px 5px 0 5px;
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
             object-fit: contain;
-            width: 250px;
+            width: 15rem;
             height: auto;
         }
     }
@@ -108,23 +95,24 @@
 .css-79ws1d-MuiModal-root {
     z-index: 0;
 }
-
 //Preview Modal
 .MuiTypography-root{
     .content-card {
         div{
             button{
-                background-color: #ff01ae;
-                color: azure;
-                font-weight: 500;
-                border: solid;
-                border-color: rgba(0, 0, 0, 0.05);
-                width: 13rem;
-                margin: auto;
-                margin-top: 25px;
-                border-radius: 5px;
+                color: $text-color;
             }
         }
     }
+    .close-modal-box-btn{
+        color: $text-color;
+        width: fit-content;
+        margin-left: 50px;
+        margin-bottom: 10px;
+    }
 }
+// .css-1e6y48t-MuiButtonBase-root-MuiButton-root{
+//     color: $text-color;
+//     width: fit-content;
+// }
 

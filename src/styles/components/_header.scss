@@ -29,6 +29,20 @@
 }
 
 @include for-mobile-layout{
+    .login{
+        font-weight: 200;
+        height: 35px;
+        padding: 0%;
+        width: 6rem !important;
+        margin: 0% !important;
+    }
+    .logout{
+        font-weight: 200;
+        height: 35px;
+        width: 6rem !important;
+        padding: 0%;
+        margin: 0% !important;
+    }
     .logo{
         margin-left: -20px;
         margin-right: 20px;

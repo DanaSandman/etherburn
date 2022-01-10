@@ -22,7 +22,7 @@ export function NftPreview({ nft }) {
             {(nft.isMinted === "false") ? (
               <MintModal nft={nft}/>
             ):(
-              <button onClick={()=>window.open(`${openSeaLink}`)} className="mint-btn minted">OPENSEA </button> 
+              <button onClick={()=>window.open(`${openSeaLink}`)} className="primery-btn minted">OPENSEA </button> 
             )}
           </div>
       </div>

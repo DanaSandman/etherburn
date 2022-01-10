@@ -32,7 +32,7 @@
     3.75rem;
     }
     .home-page{
-        grid-template-rows: 580px 730px 700px 700px 580px
+        grid-template-rows: 580px 730px 1000px 700px 580px
     }
 }
 @include for-tablet-layout {
@@ -43,7 +43,7 @@
         2.75rem;
     }
     .home-page{
-        grid-template-rows: 580px 690px 1300px 650px 1200px;
+        grid-template-rows: 680px 690px 1300px 650px 1200px;
     }
 }
 @include for-narrow-layout{
@@ -51,7 +51,7 @@
         grid-template-columns: 1.5rem minmax(auto, 31rem) 1.5rem;
     }
     .home-page{
-        grid-template-rows: 580px 690px 1350px 750px 1100px;
+        grid-template-rows: 820px 650px 1250px 750px 1100px;
     }
 }
 @include for-mobile-layout {
@@ -61,7 +61,7 @@
     }
     .home-page{
         padding: 0%;
-        grid-template-rows: 680px 690px 1900px 1220px 1850px;
+        grid-template-rows: 680px 690px 2250px 1220px 1850px;
     }
     .collection-page{
         padding-left: 1.25rem;

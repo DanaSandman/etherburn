@@ -1,13 +1,13 @@
 .alice-carousel{
 .item{
     width: fit-content;
-    height: 32rem;
-    background-color: $secondary-bg-color;
-    border: 1px solid rgb(23, 23, 24);
+    // height: 32rem;
+//  background-color: $secondary-bg-color;
+//     // border: 1px solid rgb(23, 23, 24);
     border-radius: 1rem;
 }
 // .item:hover{
-//     // box-shadow: rgba(255, 255, 255, 0.55) 0px 0px 8px 0px;
+//     box-shadow: rgba(255, 255, 255, 0.55) 0px 0px 8px 0px;
 //     transition: all 0.1s ease 0s;
 // }
 .alice-carousel__stage{
@@ -33,24 +33,23 @@
 .alice-carousel__next-btn{
     margin-right: 6.5625rem;
 }
-// .alice-carousel__prev-btn{
-//     margin-right: 40px;
-// }
+.alice-carousel__prev-btn{
+    margin-right: 40px;
+}
 .alice-carousel__next-btn-wrapper, .alice-carousel__prev-btn-wrapper{
-        background-color: rgba(243, 239, 239, 0.219);
-        border: solid;
-        border-color: rgb(54 54 54 / 25%);
-        border-radius: 50%;
+        background-color: $secondary-bg-color;
+        border: 1px solid rgba(255, 255, 255, 0.19);
+        border-radius: 20px;
 }
 .alice-carousel__next-btn-wrapper:hover, .alice-carousel__prev-btn-wrapper:hover{
-    background-color:#f759ad45;
-    border-color: $primary-color;
+    background-color: $primary-dark-color;
+    border-color: $secondary-bg-color;
 }
 .alice-carousel__next-btn-item, .alice-carousel__prev-btn-item{
     text-align: center;
     padding: 6px;
     *:hover {
-        color: $primary-color;
+        color: $secondary-bg-color;
     }
     span{
         width: 1.25rem;

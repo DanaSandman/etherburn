@@ -38,41 +38,33 @@
             margin-left: 5.8rem;
         }
         .collection-link-main{
-            height: 2.5rem;
-            color: white;
             font-weight: 400;
             text-decoration: none;
-            background-color: #ff01ae;
-            border: solid;
-            border-color: rgb(0 0 0 / 5%);
             width: 13rem;
             margin: auto;
-            padding: .415rem;
-            border-radius: 8px;
             margin-top: 10px;
-        }
-        .collection-link-main:hover{
-            background-color:$primary-color;
+            
         }
     }
     .eco-system-section{
+        justify-content: center;
         .p-description{
             margin-left: 15rem;
             margin-right: 15rem;
         }
         .item-types{
+            justify-content: center;
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
             > * {
-                // border: 1px solid rgb(229, 232, 235);
                 box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 0rem #bc13fe, 0 0 0.8rem #bc13fe, 0 0 1rem #bc13fe, inset 0 0 1.3rem #bc13fe;
                 border-radius: 0.9rem;
                 padding: 1.25rem;
                 margin: 1.25rem; 
                 text-align: start;
                 img{
-                    width: 300px;
+                    width: 16rem;
                 } 
             }
             // > *:hover{
@@ -160,7 +152,7 @@
             background-image: url('../../assets/img/LinkedinTeam.png');
             position:absolute;
             bottom: 18px;
-            right: 18px;
+            right: 2.1875rem;
             }
             .linkedin-team-link:hover{
             background-image: url('../../assets/img/LinkedinTeamHover.png');
@@ -273,9 +265,6 @@
               width: auto;
           }
         }
-        .cards-carousel-section{
-            margin:auto
-        }
         .eco-system-section{
             .p-description{
                 margin: auto;
@@ -304,6 +293,7 @@
     .home-page{
         justify-content: center;
         .hero-section{
+            margin-top: 5rem;
             flex-direction: column;
             .content-hero{
                 width: auto;
@@ -334,13 +324,17 @@
                     }
                 }
                 }
-            }
+        }
         .eco-system-section{
             margin-left: -20px;
             .p-description{
                 margin: auto;
             }
             .item-types > *{
+                flex-direction: column;
+            }
+            .item-types{
+                display: flex;
                 flex-direction: column;
             }
         }

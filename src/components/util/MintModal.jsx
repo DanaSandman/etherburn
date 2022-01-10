@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { initNotify, initOnboard } from "../../services/blockNative.service.js";
 
 import Box from "@mui/material/Box";
@@ -91,7 +91,7 @@ export function MintModal({ nft }) {
 
   return (
     <div>
-      <Button className='mint-btn' onClick={handleOpen}>MINT</Button>
+      <Button className="primery-btn" onClick={handleOpen}>MINT</Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -102,12 +102,12 @@ export function MintModal({ nft }) {
           {modalStatus === "start" && (
             <div>
               <Typography id="modal-modal-title" variant="h6" component="h2">
-              <button onClick={() => handleClose()} className="mint-btn">X</button>
+              <button onClick={() => handleClose()}>X</button>
                 You About To Mint {nft.name}
               </Typography>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                 For {contractData.cost / 1e18} ETH
-                <button onClick={() => mint()} className="mint-btn">
+                <button onClick={() => mint()} className="primery-btn">
                   START
                 </button>
               </Typography>

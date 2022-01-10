@@ -56,7 +56,7 @@ export function PreviewModal({ nft }) {
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             <div className="content-img-modal">
-              <Button className="close-modal-box-btn" onClick={handleClose}>
+              <Button className="close-modal-box-btn primery-btn" onClick={handleClose}>
                 x
               </Button>
               {nft.image ? (
@@ -86,7 +86,7 @@ export function PreviewModal({ nft }) {
               ) : (
                 <button
                   onClick={() => window.open(`${openSeaLink}`)}
-                  className="mint-btn minted"
+                  className="mint-btn minted primery-btn"
                 >
                   OPENSEA{" "}
                 </button>
