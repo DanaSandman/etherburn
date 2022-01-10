@@ -1,22 +1,39 @@
 .primery-btn{
     font-weight: 500;
     width: 10rem;
-    margin: auto;
-    margin-top: 25px;
+    padding: 1rem;
+    // margin: auto;
+    // margin-top: 25px;
     border-radius: 5px;
-    border: 2px solid transparent;
-    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(
-    95.5deg, rgba(15, 53, 255, 0.3) 12.82%, rgba(255, 72, 181, 0.3) 41.96%, rgba(15, 53, 255, 0.08) 75.06%, rgba(15, 53, 255, 0.11) 107.66%);
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-    box-shadow: rgb(53 55 58) 1px 1000px 1px inset;
-    box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 0rem #bc13fe, 0 0 0.8rem #bc13fe, 0 0 1rem #bc13fe, inset 0 0 1.3rem #bc13fe;
-    opacity: 0.9;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-image: linear-gradient(to right, rgb(1, 110, 218), rgb(217, 0, 192)55%);
+    background-size: 200%;
+    border: 0px;
+    transition: all 0.5s ease-in-out 0s;
     color: $text-color;
 }
-.primery-btn:hover{
-    background-color: rgba(202, 200, 200, 0.856);
+
+.mint-main-btn{
+    background-color: #046dda !important;
+    width: 12rem !important;
+}
+.opensea-btn{
+    background-color: #046dda;
+    width: 12rem;
+    padding: 6px 8px;
+    border-radius: 4px;
+    border: none;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    line-height: 1.75;
+    font-size: 0.875rem;
+
+}
+.close-modal-btn{
+    font-weight: 900;
+    margin: 0px;
+    padding: 0px;
+    background-color: $secondary-bg-color;
+    border: none;
+    color: $text-color;
 }
 // .minted{
 //     color: $text-color;

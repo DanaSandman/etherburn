@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 
 //assets
-import logoPink from "../../assets/img/logoPink.png";
+import FullLogo from "../../assets/img/footer/FullLogo.jpg";
 import LinkedinFooter from "../../assets/img/footer/LinkedinFooter.png";
 import TwitterFooter from "../../assets/img/footer/TwitterFooter.png";
 import FacebookFooter from "../../assets/img/footer/FacebookFooter.png";
@@ -22,7 +22,7 @@ export function Footer() {
       <div className="main-footer flex space-between">
         <div className="footer-main-contant">
           <img
-            src={logoPink}
+            src={FullLogo}
             alt="footer-logo-img"
             className="footer-logo"
           ></img>
@@ -63,43 +63,18 @@ export function Footer() {
           <section>
             <ul>
               <li>
-                <img
-                  src={logoPink}
-                  alt="footer-logo-img-li"
-                  className="footer-logo-li"
-                ></img>
                 <Link to="/about">About</Link>
               </li>
               <li>
-              <img
-                  src={logoPink}
-                  alt="footer-logo-img-li"
-                  className="footer-logo-li"
-                ></img>
                 <Link to="/#">Collection</Link>
               </li>
               <li>
-              <img
-                  src={logoPink}
-                  alt="footer-logo-img-li"
-                  className="footer-logo-li"
-                ></img>
                 <Link to="/#">OpenSea</Link>
               </li>
               <li>
-              <img
-                  src={logoPink}
-                  alt="footer-logo-img-li"
-                  className="footer-logo-li"
-                ></img>
                 <Link to="/#">FAQ</Link>
               </li>
               <li>
-              <img
-                  src={logoPink}
-                  alt="footer-logo-img-li"
-                  className="footer-logo-li"
-                ></img>
                 <Link to="/#">RoadMap</Link>
               </li>
             </ul>

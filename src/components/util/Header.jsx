@@ -1,4 +1,4 @@
-import logo from "../../assets/img/LOGO.png";
+import logo from "../../assets/img/Logo.png";
 import { Link } from "react-router-dom";
 import UserWallet from "./UserWallet.jsx";
 //Menu&Burger
@@ -18,7 +18,6 @@ export function Header() {
         <Link to="/">
           <img className="header-logo" src={logo} alt="ETHERBURN logo" />
         </Link>
-        <span className="header-title">Ether Burn</span>
       </div>
       <div className="header-connect-btn flex align-center">
         <UserWallet/>

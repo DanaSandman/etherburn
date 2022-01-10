@@ -10,12 +10,12 @@ import { web3, web3service } from "../services/web3.service.js";
 import NFT from '../assets/NFT.mp4';
 
 //Img
-import HeroImg from "../assets/img/HeroIMG.png";
+// import HeroImg from "../assets/img/HeroIMG.png";
+import HeroImg from "../assets/img/footer/FullLogo.jpg"
 //imgs team
 import TeamImg1 from "../assets/img/team/TeamImg1.png";
 import TeamImg2 from "../assets/img/team/TeamImg2.png";
 import TeamImg3 from "../assets/img/team/TeamImg3.png";
-import TeamImg4 from "../assets/img/team/TeamImg4.png";
 //items-types
 import daily from "../assets/img/items_types/daily.png";
 import weekly from "../assets/img/items_types/weekly.png";
@@ -23,7 +23,6 @@ import monthly from "../assets/img/items_types/monthly.png";
 import yearly from "../assets/img/items_types/yearly.png";
 import million from "../assets/img/items_types/million.png";
 import billion from "../assets/img/items_types/billion.png";
-
 
 export function Home() {
   
@@ -160,9 +159,9 @@ export function Home() {
               <a href={linkedinTeamPath.IsraelPerez} className="linkedin-team-link"></a>
             </div>
             <h3>
-            israel<br></br>perez
+            israel perez
             </h3>
-            <h4>Co-Founder & CEO </h4>
+            <h4>The Crypto Guy</h4>
             <p>
               Entrepreneur, Founder, programer and Product designer with more
               than 10 years of experience.
@@ -174,9 +173,9 @@ export function Home() {
               <a href={linkedinTeamPath.DanaSandman} className="linkedin-team-link"></a>
             </div>
             <h3>
-            dana<br></br>sandman
+            dana sandman
             </h3>
-            <h4>co-founder & Software Developer</h4>
+            <h4>programming lady</h4>
             <p>
               Entrepreneur, Founder, programer and Product designer with more
               than 10 years of experience.
@@ -188,23 +187,9 @@ export function Home() {
               <a href={linkedinTeamPath.MeirZach} className="linkedin-team-link"></a>
             </div>
             <h3>
-              meir<br></br>zach
+              meir zach
             </h3>
-            <h4>co-founder & CFO</h4>
-            <p>
-              Entrepreneur, Founder, programer and Product designer with more
-              than 10 years of experience.
-            </p>
-          </div>
-          <div className="member4">
-            <div className="member-img">
-              <img src={TeamImg4} alt="member4-img"></img>
-              <a href={linkedinTeamPath.IsraelPerez} className="linkedin-team-link"></a>
-            </div>
-            <h3>
-              israel<br></br>perez
-            </h3>
-            <h4>co-founder</h4>
+            <h4>financial guru</h4>
             <p>
               Entrepreneur, Founder, programer and Product designer with more
               than 10 years of experience.

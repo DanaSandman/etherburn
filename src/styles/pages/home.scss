@@ -58,7 +58,7 @@
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
             > * {
-                box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 0rem #bc13fe, 0 0 0.8rem #bc13fe, 0 0 1rem #bc13fe, inset 0 0 1.3rem #bc13fe;
+                box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 0rem #d502c1, 0 0 0.8rem #d502c1, 0 0 1rem #d502c1, inset 0 0 1.3rem #d502c1;
                 border-radius: 0.9rem;
                 padding: 1.25rem;
                 margin: 1.25rem; 
@@ -67,10 +67,6 @@
                     width: 16rem;
                 } 
             }
-            // > *:hover{
-            //     box-shadow: rgb(4 17 29 / 25%) 0px 0px 8px 0px;
-            //     transition: all 0.1s ease 0s;
-            // }
         }
     }
     .road-map-section{
@@ -80,7 +76,8 @@
         }
         .road-map{
             > * {
-                border: 1px solid rgb(229, 232, 235);
+                // border: 1px solid rgb(229, 232, 235);
+                box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 0rem #046dda, 0 0 0.8rem #046dda, 0 0 1rem #046dda, inset 0 0 1.3rem #046dda;
                 border-radius: 0.9rem;
                 padding: 15px;
                 margin: 8px;
@@ -115,8 +112,8 @@
             margin-top: 39px;
             // overflow-x: auto;
             h3{
-                font-size: 25px;
-                text-transform: uppercase;
+                // font-size: 25px;
+                // text-transform: uppercase;
                 // font-family: Poppins;
                 font-style: SemiBold;
             }

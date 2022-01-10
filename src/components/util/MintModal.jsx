@@ -17,8 +17,8 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 400,
-  bgcolor: "background.paper",
-  border: "1px solid rgb(229, 232, 235)",
+  bgcolor: "#1c1c1d",
+  border: "1px solid rgba(255, 255, 255, 0.19)",
   borderRadius: "15px",
   boxShadow: 24,
   p: 4,
@@ -91,7 +91,7 @@ export function MintModal({ nft }) {
 
   return (
     <div>
-      <Button className="primery-btn" onClick={handleOpen}>MINT</Button>
+      <Button className="mint-main-btn" onClick={handleOpen}>MINT</Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -102,7 +102,7 @@ export function MintModal({ nft }) {
           {modalStatus === "start" && (
             <div>
               <Typography id="modal-modal-title" variant="h6" component="h2">
-              <button onClick={() => handleClose()}>X</button>
+              <button className="close-modal-btn" onClick={() => handleClose()}>X</button>
                 You About To Mint {nft.name}
               </Typography>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
@@ -119,8 +119,8 @@ export function MintModal({ nft }) {
             </Typography>
           )}
             {modalStatus === "rejected" && (
-            <Typography id="modal-modal-title" variant="h6" component="h2">
-            <button onClick={() => handleClose()} className="mint-btn">X</button>
+            <Typography id="modal-modal-title flex column" variant="h6" component="h2">
+            <button className="close-modal-btn" onClick={() => handleClose()} className="mint-btn">X</button>
               rejected
             </Typography>
           )}
@@ -138,7 +138,7 @@ export function MintModal({ nft }) {
           )}
           {modalStatus === "done" && (
             <Typography id="modal-modal-title" variant="h6" component="h2">
-          <button onClick={() => handleClose()} className="mint-btn">X</button>
+          <button  className="close-modal-btn" onClick={() => handleClose()} className="mint-btn">X</button>
               greenv
             </Typography>
           )}

@@ -14,9 +14,8 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 400,
-  bgcolor: "rgba(34, 34, 34, 0.966)",
-  border: "1px solid rgb(229, 232, 235)",
-  border: "1px solid rgb(23, 23, 24)",
+  bgcolor: "#1c1c1d",
+  border: "1px solid rgba(255, 255, 255, 0.19)",
   borderRadius: "15px",
   boxShadow: 24,
   p: 4,
@@ -56,7 +55,7 @@ export function PreviewModal({ nft }) {
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             <div className="content-img-modal">
-              <Button className="close-modal-box-btn primery-btn" onClick={handleClose}>
+              <Button className="close-modal-btn" onClick={handleClose}>
                 x
               </Button>
               {nft.image ? (
