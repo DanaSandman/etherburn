@@ -6,12 +6,10 @@ import { setSelectedWallet, setWalletNotify, setWalletOnboard } from "../../stor
 
 export default function UserWallet() {
 
-    // const [isConnected, setIsConnected] = useState(false);
     
     const [onboard, setOnboard] = useState();
     const dispatch = useDispatch();
     const account = useSelector((state) => state.userModule.account);
-    // const onboard = useSelector((content) => content.walletModule.onboard);
 
     const onlogin = async () => {
         const walletSelected = await onboard.walletSelect()

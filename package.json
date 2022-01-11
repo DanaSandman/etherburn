@@ -16,6 +16,7 @@
     "bnc-notify": "^1.9.2",
     "bnc-onboard": "^1.36.0",
     "font-awesome": "^4.7.0",
+    "fortmatic": "^2.2.1",
     "http": "^0.0.1-security",
     "react": "^17.0.2",
     "react-alice-carousel": "^2.5.1",
