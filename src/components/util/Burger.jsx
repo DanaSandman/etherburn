@@ -27,7 +27,7 @@ const StyledBurger = styled.button`
     transform-origin: 1px;
     :first-child {
       transform: ${({open}) => open ? 'rotate(45deg)' : 'rotate(0)'};
-      background: ${({open}) => open ? '#0a0b0d;' : '#fcfcfc;'};
+      background: ${({open}) => open ? '#fcfcfc;' : '#fcfcfc;'};
     }
     :nth-child(2) {
       opacity: ${({open}) => open ? '0' : '1'};
@@ -35,7 +35,7 @@ const StyledBurger = styled.button`
     }
     :nth-child(3) {
       transform: ${({open}) => open ? 'rotate(-45deg)' : 'rotate(0)'};
-      background: ${({open}) => open ? '#0a0b0d;' : '#fcfcfc;'};
+      background: ${({open}) => open ? '#fcfcfc;' : '#fcfcfc;'};
     }
   }
 `

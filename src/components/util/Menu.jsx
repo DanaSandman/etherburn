@@ -6,7 +6,8 @@ const StyledMenu = styled.nav`
   justify-content: center;
   justify-content: flex-start;
   padding-top: 6rem;
-  background: rgb(255 255 255 / 92%);
+  background: #323437e0;
+  border: 1px solid rgba(255, 255, 255, 0.19);
   backdrop-filter: blur(7px);
   transform: ${({open}) => open ? 'translateX(0)' : 'translateX(-100%)'};
   height: 100vh;
@@ -23,7 +24,7 @@ const StyledMenu = styled.nav`
     font-size: 2rem;
     padding: 1rem 2rem;
     font-weight: bold;
-    color: rgb(36, 36, 36);
+    color: #fcfcfc;
     text-decoration: none;
     transition: color 0.3s linear;
     @media (max-width: 576px) {
@@ -31,7 +32,7 @@ const StyledMenu = styled.nav`
       text-align: center;
     }
     &:hover {
-      color: rgb(255, 0, 174);
+      color: #d502c1;
     }
   }
   div {

@@ -30,19 +30,18 @@ export default function UserWallet() {
     //    window.localStorage.removeItem('account address')
     //    window.localStorage.removeItem('selectedWallet')
        window.localStorage.removeItem('isConnected')
-       window.location.reload();
-   };
-
+    //    window.location.reload();
+    };
     const setAccount = (account) => {
         dispatch(setUserAccount(account));
     };
-
     const setWallet = (wallet) => {
         window.ethereum = wallet.provider;
         window.localStorage.setItem('selectedWallet', wallet.name)
     };
 
     useEffect(() => {
+        //need to check how to diconnected firs for the mint btn 
        const selectedWallet =  window.localStorage.getItem('selectedWallet');
         if (selectedWallet === undefined || selectedWallet === 'undefined'){
             window.localStorage.setItem('isConnected', false)
@@ -84,7 +83,7 @@ export default function UserWallet() {
         {account && 
         <div className="connected" >
             <button className="logout primery-btn" onClick={onLogout} >Disconnect</button>
-            {account}
+            <div className="account-address">{account}</div>
             {/* <button onClick={onboard.accountSelect()}>Switch Account</button> */}
         </div>
         }

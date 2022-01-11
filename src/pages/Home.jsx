@@ -11,7 +11,7 @@ import NFT from '../assets/NFT.mp4';
 
 //Img
 // import HeroImg from "../assets/img/HeroIMG.png";
-import HeroImg from "../assets/img/footer/FullLogo.jpg"
+import HeroImg from "../assets/img/FullLogo.png"
 //imgs team
 import TeamImg1 from "../assets/img/team/TeamImg1.png";
 import TeamImg2 from "../assets/img/team/TeamImg2.png";
@@ -175,7 +175,7 @@ export function Home() {
             <h3>
             dana sandman
             </h3>
-            <h4>programming lady</h4>
+            <h4>Programming Lady</h4>
             <p>
               Entrepreneur, Founder, programer and Product designer with more
               than 10 years of experience.
@@ -184,12 +184,12 @@ export function Home() {
           <div className="member3">
             <div className="member-img">
               <img src={TeamImg3} alt="member3-img"></img>
-              <a href={linkedinTeamPath.MeirZach} className="linkedin-team-link"></a>
+              <a href={linkedinTeamPath.MeirZach} className="linkedin-team-link linkedin-team3"></a>
             </div>
             <h3>
               meir zach
             </h3>
-            <h4>financial guru</h4>
+            <h4>Financial Guru</h4>
             <p>
               Entrepreneur, Founder, programer and Product designer with more
               than 10 years of experience.

@@ -43,7 +43,7 @@
         2.75rem;
     }
     .home-page{
-        grid-template-rows: 680px 690px 1300px 650px 1200px;
+        grid-template-rows: 880px 690px 1300px 650px 1200px;
     }
 }
 @include for-narrow-layout{
@@ -61,7 +61,7 @@
     }
     .home-page{
         padding: 0%;
-        grid-template-rows: 680px 690px 2250px 1220px 1850px;
+        grid-template-rows: 720px 750px 2360px 1360px 1450px;
     }
     .collection-page{
         padding-left: 1.25rem;

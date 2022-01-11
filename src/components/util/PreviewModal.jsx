@@ -32,7 +32,7 @@ export function PreviewModal({ nft }) {
   const openSeaLink = `https://opensea.io/assets/${contractData.contractAddress}/${nft.tokenId}`;
 
   return (
-    <div>
+    <div className="preview-modal">
       <Button onClick={handleOpen}>
         <div className="content-img-card">
           {nft.image ? (
@@ -55,9 +55,9 @@ export function PreviewModal({ nft }) {
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             <div className="content-img-modal">
-              <Button className="close-modal-btn" onClick={handleClose}>
+              <button className="close-modal-btn" onClick={handleClose}>
                 x
-              </Button>
+              </button>
               {nft.image ? (
                 <img className="nft-img-modal" src={nft.image} alt={nft.name} />
               ) : (
@@ -85,7 +85,7 @@ export function PreviewModal({ nft }) {
               ) : (
                 <button
                   onClick={() => window.open(`${openSeaLink}`)}
-                  className="mint-btn minted primery-btn"
+                  className="opensea-btn"
                 >
                   OPENSEA{" "}
                 </button>

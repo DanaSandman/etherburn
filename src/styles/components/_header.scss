@@ -1,7 +1,9 @@
 .header{
     display: grid;
-    grid-template-columns: 8.5rem minmax( auto, $desktop-breakpoint ) 10rem;
+    grid-template-columns: 8.5rem minmax( auto, $desktop-breakpoint ) 13rem;
     backdrop-filter: blur(7px);
+    align-content: center;
+    justify-content: center;
     position: fixed;
     z-index: 3;
     width: 100vw;
@@ -29,25 +31,29 @@
 }
 
 @include for-mobile-layout{
+    .header{
+        grid-template-columns: 10.5rem minmax(auto, 1200px) 7rem;
+    }
     .login{
         font-weight: 200;
         height: 35px;
-        padding: 0%;
+        padding: 0px !important;
         width: 6rem !important;
         margin: 0% !important;
     }
     .logout{
-        font-weight: 200;
+        font-weight: 600 !important;
         height: 35px;
-        width: 6rem !important;
-        padding: 0%;
+        width: 5.8rem !important;
+        padding: 0px !important;
         margin: 0% !important;
+        font-size: x-small;
     }
     .logo{
         margin-left: -20px;
         margin-right: 20px;
         .header-logo{
-            width: 4rem;
+            width: 7rem;
         }
     }
     .burger{

@@ -102,12 +102,13 @@ export function MintModal({ nft }) {
           {modalStatus === "start" && (
             <div>
               <Typography id="modal-modal-title" variant="h6" component="h2">
-              <button className="close-modal-btn" onClick={() => handleClose()}>X</button>
+              <button  className="close-modal-btn flex column" onClick={() => handleClose()}>X</button>
                 You About To Mint {nft.name}
               </Typography>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                 For {contractData.cost / 1e18} ETH
-                <button onClick={() => mint()} className="primery-btn">
+                <br></br>
+                <button onClick={() => mint()} className="start-btn primery-btn">
                   START
                 </button>
               </Typography>
@@ -115,12 +116,12 @@ export function MintModal({ nft }) {
           )}
           {modalStatus === "inProcess" && (
             <Typography id="modal-modal-title" variant="h6" component="h2">
-              LOADING
+              LOADING...
             </Typography>
           )}
             {modalStatus === "rejected" && (
-            <Typography id="modal-modal-title flex column" variant="h6" component="h2">
-            <button className="close-modal-btn" onClick={() => handleClose()} className="mint-btn">X</button>
+            <Typography  className="flex column" id="modal-modal-title" variant="h6" component="h2">
+            <button className="close-modal-btn flex column" onClick={() => handleClose()}>X</button>
               rejected
             </Typography>
           )}
@@ -130,15 +131,15 @@ export function MintModal({ nft }) {
                 Connect youre wallet please
               </Typography>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                <button onClick={() => connectWallet()} className="connect-btn">
+                <button onClick={() => connectWallet()} className="primery-btn">
                   connect
                 </button>
               </Typography>
             </div>
           )}
           {modalStatus === "done" && (
-            <Typography id="modal-modal-title" variant="h6" component="h2">
-          <button  className="close-modal-btn" onClick={() => handleClose()} className="mint-btn">X</button>
+            <Typography className="flex column" id="modal-modal-title" variant="h6" component="h2" className="flex column">
+          <button  className="close-modal-btn flex column" onClick={() => handleClose()}>X</button>
               greenv
             </Typography>
           )}

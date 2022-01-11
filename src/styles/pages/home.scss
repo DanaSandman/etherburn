@@ -9,6 +9,7 @@
         letter-spacing: 20%;
         opacity: 0.6;
         font-weight: 400;
+        margin-top: 6.25rem;
     }
     .hero-section{
         margin-bottom: 50px;
@@ -64,7 +65,7 @@
                 margin: 1.25rem; 
                 text-align: start;
                 img{
-                    width: 16rem;
+                    width: 15rem;
                 } 
             }
         }
@@ -76,20 +77,15 @@
         }
         .road-map{
             > * {
-                // border: 1px solid rgb(229, 232, 235);
                 box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 0rem #046dda, 0 0 0.8rem #046dda, 0 0 1rem #046dda, inset 0 0 1.3rem #046dda;
                 border-radius: 0.9rem;
                 padding: 15px;
-                margin: 8px;
+                margin: 2.5rem .5rem .5rem .5rem;
                 text-align: start; 
                 img{
                     width: 100px;
                 } 
             }
-            // > *:hover{
-            //     box-shadow: rgb(4 17 29 / 25%) 0px 0px 8px 0px;
-            //     transition: all 0.1s ease 0s;
-            // }
         }
     }
     .team-section{
@@ -118,14 +114,12 @@
                 font-style: SemiBold;
             }
             h4{
-                // font-family: Poppins Light;
                 font-style: lighter;
-                font-size: 16px;
+                font-size: 18px;
                 color: $primary-color;
+                text-transform: none !important;
             }
             P{
-                // width: 220px;
-                // font-family: Antikor Mono;
                 font-size: 16px;
                 color: $text-color;
                 opacity:  0.6;
@@ -149,7 +143,7 @@
             background-image: url('../../assets/img/LinkedinTeam.png');
             position:absolute;
             bottom: 18px;
-            right: 2.1875rem;
+            right: 5.1875rem;
             }
             .linkedin-team-link:hover{
             background-image: url('../../assets/img/LinkedinTeamHover.png');
@@ -243,6 +237,16 @@
                 .linkedin-team-link{
                     right: 44px;
                 }
+                .member3{
+                    grid-column: 1/3;
+                    p{
+                        padding: 0 7.5rem 0 7.5rem;
+                    }
+                }
+                .linkedin-team3{
+                    grid-column: 1/3;
+                    right: 12.5rem;
+                }
             }
             // .members > *{
             //     p{
@@ -282,6 +286,16 @@
                 .linkedin-team-link{
                     right: 1.1875rem;
                 }
+                .member3{
+                    grid-column: 1/3;
+                    p{
+                        padding: 0 7rem 0 7rem;
+                    }
+                }
+                .linkedin-team3{
+                    grid-column: 1/3;
+                    right: 9.5rem;
+                }
             }
         }
     }
@@ -297,7 +311,7 @@
                 text-align: center;
             }
             .hero-img{
-                width: 15.5rem;
+                width: 20rem;
                 margin: auto;
             }
             p{

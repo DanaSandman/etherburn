@@ -53,7 +53,7 @@
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
             object-fit: contain;
-            width: 15rem;
+            width: 14.8rem;
             height: auto;
         }
     }
@@ -65,7 +65,7 @@
 }
 .content-card{
     h4{
-        margin-bottom: 1rem;
+        margin-bottom: 3.8rem;
     }
 }
 .content-img-modal{
@@ -91,9 +91,6 @@
     margin-right: 5px;
     margin-bottom: -2px;
 }
-.css-79ws1d-MuiModal-root {
-    z-index: 0;
-}
 //Preview Modal
 .MuiTypography-root{
     .content-card {
@@ -103,16 +100,20 @@
             }
         }
     }
-    .close-modal-box-btn{
-        color: $text-color;
-        width: fit-content;
-        margin-left: 50px;
-        margin-bottom: 10px;
+}
+
+// .css-zwvx5y {
+//     bottom: -40%;
+// }
+
+@include for-mobile-layout{
+.content-card{
+    h4{
+        margin-bottom: 1.5rem;
     }
 }
-// .css-1e6y48t-MuiButtonBase-root-MuiButton-root{
-//     color: $text-color;
-//     width: fit-content;
-// }
+}
+
+
 
 

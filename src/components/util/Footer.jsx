@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 
 //assets
-import FullLogo from "../../assets/img/footer/FullLogo.jpg";
+import FullLogo from "../../assets/img/FullLogo.png";
 import LinkedinFooter from "../../assets/img/footer/LinkedinFooter.png";
 import TwitterFooter from "../../assets/img/footer/TwitterFooter.png";
 import FacebookFooter from "../../assets/img/footer/FacebookFooter.png";
@@ -66,7 +66,7 @@ export function Footer() {
                 <Link to="/about">About</Link>
               </li>
               <li>
-                <Link to="/#">Collection</Link>
+                <Link to="/collection">Collection</Link>
               </li>
               <li>
                 <Link to="/#">OpenSea</Link>
@@ -75,7 +75,7 @@ export function Footer() {
                 <Link to="/#">FAQ</Link>
               </li>
               <li>
-                <Link to="/#">RoadMap</Link>
+                <Link to="/#" onClick={()=>{window.scrollTo(0, 3780)}}>RoadMap</Link>
               </li>
             </ul>
           </section>
