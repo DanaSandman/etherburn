@@ -1,5 +1,5 @@
 footer{
-   border-top: 1px solid rgba(255, 255, 255, 0.19);
+   // border-top: 1px solid rgba(255, 255, 255, 0.19);
     color: $text-color;
     margin-top: 5rem;
     background-color: $secondary-bg-color;
@@ -89,11 +89,11 @@ footer{
           background-color: rgba(255, 255, 255, 0.1);
           img{
              padding: 35%;
-             border-radius: 8px;
+             border-radius: 24px;
              width: 3.6875rem;
              height: 3.6875rem;
-             box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 0rem #d502c1, 0 0 0.8rem #d502c1, 0 0 1rem #d502c1, inset 0 0 1.3rem #d502c1;
-          }
+            box-shadow: 0 0 0.1rem #fff, 0 0 0.1rem #fff, 0 0 0rem #d502c1, 0 0 0.8rem #d502c1, 0 0 0.5rem #d502c1, inset 0 0 0.5rem #d502c1;
+            }
        }
     
        .footer-policy-links{

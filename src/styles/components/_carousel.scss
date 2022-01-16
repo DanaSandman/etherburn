@@ -1,4 +1,5 @@
 .alice-carousel{
+    margin-left: -2.875rem !important;
 .item{
     width: fit-content;
     // height: 32rem;
@@ -18,54 +19,64 @@
     }
 }
 .alice-carousel__dots{
-    display: none;
+    // display: none;
         .alice-carousel__dots-item{
-            background-color: rgba(54, 54, 54, 0.301);
+            background-color: #333;
         }
         .alice-carousel__dots-item:not(.__custom).__active{
             background-color: $primary-color;
         }
 }
 .alice-carousel__prev-btn, .alice-carousel__next-btn{
-    margin-top: .625rem;
-    width: 3.125rem; 
+    display: none;
+//     margin-top: .625rem;
+//     width: 3.125rem; 
 }
-.alice-carousel__next-btn{
-    margin-right: 6.5625rem;
+// .alice-carousel__next-btn{
+//     margin-right: 6.5625rem;
+// }
+// .alice-carousel__prev-btn{
+//     margin-right: 40px;
+// }
+// .alice-carousel__next-btn-wrapper, .alice-carousel__prev-btn-wrapper{
+//         background-color: $secondary-bg-color;
+//         border: 1px solid rgba(255, 255, 255, 0.19);
+//         border-radius: 20px;
+// }
+// .alice-carousel__next-btn-wrapper:hover, .alice-carousel__prev-btn-wrapper:hover{
+//     background-color: $primary-dark-color;
+//     border-color: $secondary-bg-color;
+// }
+// .alice-carousel__next-btn-item, .alice-carousel__prev-btn-item{
+//     text-align: center;
+//     padding: 6px;
+//     *:hover {
+//         color: $secondary-bg-color;
+//     }
+//     span{
+//         width: 1.25rem;
+//         font-weight: 600;
+//         color: rgb(63, 63, 63);
+//         }
+// }
+// .alice-carousel__next-btn-item{
+//    span{
+//      margin-left: 4px;  
+//    }
+// }
+// .alice-carousel__prev-btn-item{
+//     span{
+//         margin-right: 4px;
+//     }
+// }
 }
-.alice-carousel__prev-btn{
-    margin-right: 40px;
-}
-.alice-carousel__next-btn-wrapper, .alice-carousel__prev-btn-wrapper{
-        background-color: $secondary-bg-color;
-        border: 1px solid rgba(255, 255, 255, 0.19);
-        border-radius: 20px;
-}
-.alice-carousel__next-btn-wrapper:hover, .alice-carousel__prev-btn-wrapper:hover{
-    background-color: $primary-dark-color;
-    border-color: $secondary-bg-color;
-}
-.alice-carousel__next-btn-item, .alice-carousel__prev-btn-item{
-    text-align: center;
-    padding: 6px;
-    *:hover {
-        color: $secondary-bg-color;
+@include for-tablet-layout{
+    .alice-carousel{
+        margin-left: 0px !important;
     }
-    span{
-        width: 1.25rem;
-        font-weight: 600;
-        color: rgb(63, 63, 63);
-        }
 }
-.alice-carousel__next-btn-item{
-   span{
-     margin-left: 4px;  
-   }
+@include for-mobile-layout{
+    .alice-carousel{
+        margin-left: 0px !important;
+    }  
 }
-.alice-carousel__prev-btn-item{
-    span{
-        margin-right: 4px;
-    }
-}
-}
-

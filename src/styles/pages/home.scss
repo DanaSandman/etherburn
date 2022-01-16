@@ -59,11 +59,12 @@
             grid-template-columns: 1fr 1fr;
             grid-template-rows: 1fr 1fr;
             > * {
-                box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 0rem #d502c1, 0 0 0.8rem #d502c1, 0 0 1rem #d502c1, inset 0 0 1.3rem #d502c1;
+                // box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 0rem #d502c1, 0 0 0.8rem #d502c1, 0 0 1rem #d502c1, inset 0 0 1.3rem #d502c1;
                 border-radius: 0.9rem;
                 padding: 1.25rem;
                 margin: 1.25rem; 
                 text-align: start;
+                border: 1px solid #fcfcfc;
                 img{
                     width: 15rem;
                 } 
@@ -77,7 +78,8 @@
         }
         .road-map{
             > * {
-                box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 0rem #046dda, 0 0 0.8rem #046dda, 0 0 1rem #046dda, inset 0 0 1.3rem #046dda;
+                // box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 0rem #046dda, 0 0 0.8rem #046dda, 0 0 1rem #046dda, inset 0 0 1.3rem #046dda;
+                border: 1px solid #fcfcfc;
                 border-radius: 0.9rem;
                 padding: 15px;
                 margin: 2.5rem .5rem .5rem .5rem;
@@ -127,7 +129,6 @@
             img{
                 width: 220px;
                 height: 220px;
-                border: 1px solid rgb(229, 232, 235);
                 border-radius: 0.9rem;
             }
             .members *{

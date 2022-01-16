@@ -1,4 +1,7 @@
 //MetaMask Modal
 .bn-onboard-custom , .bn-onboard-modal {
     z-index: 2000;
+    p , a, h1, h2, h3, h4, h5, h6, span{
+        color: $primary-bg-color;
+    }
 }

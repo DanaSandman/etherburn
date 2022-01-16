@@ -77,10 +77,10 @@ export default function UserWallet() {
   return (
     <div>
 
-      {!account && <button className="login primery-btn" onClick={onlogin} >Connect</button>}
+      {!account && <button className="login connect-btn" onClick={onlogin} >Connect</button>}
         {account && 
         <div className="connected" >
-            <button className="logout primery-btn" onClick={onLogout} >Disconnect</button>
+            <button className="logout connect-btn" onClick={onLogout} >Disconnect</button>
             <div className="account-address">{account}</div>
             {/* <button onClick={onboard.accountSelect()}>Switch Account</button> */}
         </div>
