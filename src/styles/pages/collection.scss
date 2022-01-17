@@ -40,6 +40,9 @@
     .filter-collection::-webkit-scrollbar{
         width: 0;
     }
+    .nft-list-container > *{
+        margin-bottom: 70px;
+    }
 }
 
 @include for-tablet-layout{
@@ -63,7 +66,7 @@
             font-size: 16px;
         }
         ul{
-            width: 18rem;
+            width: 21rem;
             padding: 0px;
                 button{
                     width: 75px;

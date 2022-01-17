@@ -16,7 +16,7 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width: 325,
   bgcolor: "#1c1c1d",
   border: "1px solid rgba(255, 255, 255, 0.19)",
   borderRadius: "15px",
@@ -31,7 +31,6 @@ export function MintModal({ nft }) {
   );
   const [modalStatus, setModalStatus] = React.useState("");
   // const onboard = useSelector((state) => state.walletModule.onboard);
-
   const [open, setOpen] = React.useState(false);
   const isConnected = localStorage.getItem("isConnected");
 
@@ -88,7 +87,6 @@ export function MintModal({ nft }) {
     setModalStatus("start");
     setOpen(true);
   };
-
   return (
     <div>
       <Button className="mint-main-btn" onClick={handleOpen}>MINT</Button>

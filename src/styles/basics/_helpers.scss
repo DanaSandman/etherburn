@@ -16,6 +16,9 @@
     &.space-between {
         justify-content: space-between;
     }
+    &.wrap {
+        flex-wrap: wrap;
+    }
 }
 // COLORS
 // .secondary-color{
@@ -29,4 +32,7 @@
 // MARGIN
 .margin-auto{
     margin: auto;
+}
+.margin-zero{
+    margin: 0px;
 }

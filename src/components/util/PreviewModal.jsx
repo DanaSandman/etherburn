@@ -13,7 +13,7 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width: 378,
   bgcolor: "#1c1c1d",
   border: "1px solid rgba(255, 255, 255, 0.19)",
   borderRadius: "15px",
@@ -21,7 +21,7 @@ const style = {
   p: 4,
 };
 
-export function PreviewModal({ nft }) {
+export function PreviewModal({ nft, page }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -39,7 +39,7 @@ export function PreviewModal({ nft }) {
             <img className="nft-img" src={nft.image} alt={nft.name} />
           ) : (
             <div className="nft-video">
-              <video loop autoPlay muted>
+              <video className={(page === 'collection' ? ' card-width' : '')} loop autoPlay muted>
                 <source src={nft.video} type="video/mp4" />
               </video>
             </div>

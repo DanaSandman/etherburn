@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 import { loadNfts } from "../store/nft/nft.action.js";
 import { loadContractData } from "../store/contract/contract.action.js";
 //Cmps
-import { NftListCarousel } from "../components/util/Carousel.jsx";
+// import { NftListCarousel } from "../components/util/Carousel.jsx";
 import { web3, web3service } from "../services/web3.service.js";
+import { NftList } from '../components/nft/NftList.jsx'
 import NFT from '../assets/NFT.mp4';
 
 //Img
@@ -56,7 +57,7 @@ export function Home() {
         </div>
       </section>
       <section className="cards-carousel-section flex column">
-      {nfts ? ( <div className="home-carousel"><NftListCarousel /></div> ):(<h1>loding</h1>)}
+      {nfts ? ( <div className="home-carousel"><NftList nfts={nfts}  page='home'/></div> ):(<h1>loding</h1>)}
         <Link to="/collection" className="collection-link-main primery-btn">
           ALL COLLECTION
         </Link>

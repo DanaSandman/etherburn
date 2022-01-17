@@ -34,9 +34,11 @@
         }
     }
     .cards-carousel-section{
+        grid-column: 2/4;
         margin-bottom: .5rem;
         .home-carousel{
             margin-left: 5.8rem;
+            overflow-x: auto;
         }
         .collection-link-main{
             font-weight: 400;
@@ -45,6 +47,9 @@
             margin: auto;
             margin-top: 10px;
             
+        }
+        .home-carousel::-webkit-scrollbar{
+            width: 0;
         }
     }
     .eco-system-section{
@@ -62,7 +67,7 @@
                 // box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 0rem #d502c1, 0 0 0.8rem #d502c1, 0 0 1rem #d502c1, inset 0 0 1.3rem #d502c1;
                 border-radius: 0.9rem;
                 padding: 1.25rem;
-                margin: 1.25rem; 
+                margin: 1rem; 
                 text-align: start;
                 border: 1px solid #fcfcfc;
                 img{
@@ -82,7 +87,7 @@
                 border: 1px solid #fcfcfc;
                 border-radius: 0.9rem;
                 padding: 15px;
-                margin: 2.5rem .5rem .5rem .5rem;
+                margin: 2rem 1rem 2rem 1rem;
                 text-align: start; 
                 img{
                     width: 100px;
@@ -220,6 +225,9 @@
                     margin-right: 1.625rem;
                 }
             }
+            .home-carousel::-webkit-scrollbar{
+                width: 1;
+            }
         }
         .eco-system-section{
             .p-description{
@@ -267,6 +275,11 @@
               width: auto;
           }
         }
+        .cards-carousel-section{
+            .home-carousel::-webkit-scrollbar{
+                    width: 1;
+                }    
+        }
         .eco-system-section{
             .p-description{
                 margin: auto;
@@ -304,6 +317,9 @@
 @include for-mobile-layout{
     .home-page{
         justify-content: center;
+        h2{
+            margin-top: 0px;
+        }
         .hero-section{
             margin-top: 5rem;
             flex-direction: column;
@@ -336,9 +352,11 @@
                     }
                 }
                 }
+            .home-carousel::-webkit-scrollbar{
+                    width: 1 !important;
+                }    
         }
         .eco-system-section{
-            margin-left: -20px;
             .p-description{
                 margin: auto;
             }
@@ -351,6 +369,7 @@
             }
         }
         .road-map-section{
+            margin-top: 100px;
             .p-description{
                 margin: 0px;
                 padding: 10px;
@@ -362,7 +381,7 @@
                 display: grid;
                 grid-template-columns: 1fr;
                 .linkedin-team-link{
-                    right: 2.375rem;
+                    right: 3.375rem;
                 }
             }
         }

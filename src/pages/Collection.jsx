@@ -63,7 +63,7 @@ export function Collection() {
       <section className="nft-list-section">
         {nftsData && (
           <div className="nft-list-container flex justify-center">
-            <NftList nfts={nftsData} />
+            <NftList nfts={nftsData} page='collection' />
           </div>
         )}
       </section>

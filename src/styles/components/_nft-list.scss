@@ -4,10 +4,7 @@
 }
 .nft-list{
     justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 70px;
     > * {
-        // border: 1px solid rgb(229, 232, 235);
         border-radius: 0.9rem;
         margin: 10px; 
     }
@@ -16,4 +13,8 @@
         transition: all 0.1s ease 0s;
     }
 }
-
+@include for-mobile-layout{
+    .nft-list{
+        margin: 0 0 30px 15px;
+    }
+}
