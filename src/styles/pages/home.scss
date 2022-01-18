@@ -28,16 +28,16 @@
             text-align: start;
             margin: auto;
             width: 45rem;
+            align-items: center;
             h2{
                 margin-bottom: 1.125rem;
             }
         }
     }
     .cards-carousel-section{
-        grid-column: 2/4;
+        grid-column: 2/3;
         margin-bottom: .5rem;
         .home-carousel{
-            margin-left: 5.8rem;
             overflow-x: auto;
         }
         .collection-link-main{
@@ -132,8 +132,10 @@
                 opacity:  0.6;
             }
             img{
-                width: 220px;
-                height: 220px;
+                // width: 220px;
+                // height: 220px;
+                width: 227px;
+                height: auto;
                 border-radius: 0.9rem;
             }
             .members *{
@@ -177,6 +179,9 @@
             margin: auto;
             width: 80%;
         }
+        .cards-carousel-section{
+            grid-column: 2/4 !important;
+        }
         .eco-system-section{
             .p-description{
                 margin-left: 1rem;
@@ -219,6 +224,7 @@
           }
         }
         .cards-carousel-section {
+            grid-column: 2/4 !important;
             .home-carousel {
                 margin-left: 1.5rem;
                 .alice-carousel .alice-carousel__next-btn {
@@ -276,6 +282,7 @@
           }
         }
         .cards-carousel-section{
+            grid-column: 2/4 !important;
             .home-carousel::-webkit-scrollbar{
                     width: 1;
                 }    
@@ -336,6 +343,7 @@
             }
         }
         .cards-carousel-section{
+            grid-column: 2/4 !important;
             margin-left: -20px;
             .home-carousel{
                 margin: 0px;

@@ -15,7 +15,7 @@ import NFT from '../assets/NFT.mp4';
 import HeroImg from "../assets/img/FullLogo.png"
 //imgs team
 import TeamImg1 from "../assets/img/team/TeamImg1.png";
-import TeamImg2 from "../assets/img/team/TeamImg2.png";
+import TeamImg2 from "../assets/img/team/TeamImg2.jpeg";
 import TeamImg3 from "../assets/img/team/TeamImg3.png";
 //items-types
 import daily from "../assets/img/items_types/daily.png";

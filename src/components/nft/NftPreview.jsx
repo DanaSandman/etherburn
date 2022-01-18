@@ -19,11 +19,13 @@ export function NftPreview({ nft, page }) {
             </div>
             <h6>Price</h6>
             <h4><img className='eth-logo' src={ETHlogo} alt="eth-logo" />{contractData.cost / 1e18}</h4>
+            <div className={(page === 'collection' ? 'card-btn-collection' : '')}>
             {(nft.isMinted === false) ? (
               <MintModal nft={nft}/>
             ):(
               <button onClick={()=>window.open(`${openSeaLink}`)} className="opensea-btn">OPENSEA </button> 
             )}
+          </div>
           </div>
       </div>
   );

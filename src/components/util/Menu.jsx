@@ -6,8 +6,7 @@ const StyledMenu = styled.nav`
   justify-content: center;
   justify-content: flex-start;
   padding-top: 6rem;
-  background: #323437e0;
-  border: 1px solid rgba(255, 255, 255, 0.19);
+  background: #1d1d1de3;
   backdrop-filter: blur(7px);
   transform: ${({open}) => open ? 'translateX(0)' : 'translateX(-100%)'};
   height: 100vh;
@@ -61,13 +60,21 @@ export const ICON_ITEMS = 'icon';
 
 export const MENU_ITEMS = [
     {
-        title: 'Home',
+        title: 'About',
         type: PRIMARY_ITEM,
         path: `${BASE_ETHERBURN_APP_URL}/#/`,
     }, {
         title: 'Collection',
         type: PRIMARY_ITEM,
         path: `${BASE_ETHERBURN_APP_URL}/#/collection`,
+    },{
+        title: 'Roadmap',
+        type: PRIMARY_ITEM,
+        path: `${BASE_ETHERBURN_APP_URL}/#/`,
+    },{
+        title: 'Team',
+        type: PRIMARY_ITEM,
+        path: `${BASE_ETHERBURN_APP_URL}/#/`,
     },{
         type: ICON_ITEMS,
         children: [

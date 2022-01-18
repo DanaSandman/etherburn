@@ -2,8 +2,6 @@
     font-weight: 500;
     width: 10rem;
     padding: 1rem;
-    // margin: auto;
-    // margin-top: 25px;
     border-radius: 24px;
     background-image: linear-gradient(to right, rgb(1, 110, 218), rgb(217, 0, 192)55%);
     background-size: 200%;
@@ -12,15 +10,16 @@
     color: $text-color;
 }
 .mint-main-btn{
-    // background-color: #046dda !important;
     background-color:$secondary-bg-color !important;
     border: 0.5px solid #fcfcfc !important;
-    width: 12rem !important;
+    width: 15.625rem !important;
+}
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root{
+  padding: 10px 8px !important;
 }
 .opensea-btn{
     background-color: $secondary-bg-color;
     border: 0.5px solid #fcfcfc !important;
-    width: 12rem;
     padding: 10px 8px;
     border-radius: 24px;
     border: none;
@@ -28,17 +27,101 @@
     line-height: 1.75;
     font-size: 0.875rem;
     color: $text-color;
+    width: 15.625rem;
 }
+
 .close-modal-btn{
-    font-weight: 900;
-    font-size: 1.5625rem;
-    margin: 0px;
-    padding: 0px;
-    margin-bottom: 5px;
-    background-color: $secondary-bg-color;
+  margin: 5px;
     border: none;
-    color: $text-color;
-}
+    background:#1c1c1d;
+  }
+  $button-size: 20px;
+  $close-width: ($button-size / 5);
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .close-button {
+    display: block;
+    width: $button-size;
+    height: $button-size;
+    position: relative;
+    overflow: hidden;
+    > div {
+      position: relative;
+    }
+    &-block {
+      width: 20px;
+      height: 10px;
+      position: relative;
+      overflow: hidden;
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: calc(50% - 2.2px);
+        display: block;
+        width: 4px;
+        height: 25px;
+        transform-origin: bottom center;
+        background: #e9ecec85;
+        transition: all ease-out 280ms;
+      }
+      &:last-of-type {
+        transform: rotate(180deg);
+      }
+    }
+    .in {
+      .close-button-block {
+        &:before {
+          transition-delay: 280ms;
+          transform: translateX(10px) translateY(-20px) rotate(45deg);
+        }
+        &:after {
+          transition-delay: 280ms;
+          transform: translateX(-22px) translateY(-22px) rotate(-45deg);
+        }
+      }
+    }
+    .out {
+      position: absolute;
+      top: 0;
+      left: 0;
+      .close-button-block {
+        &:before {
+          transform: translateX(-5px) translateY(5px) rotate(45deg);
+        }
+        &:after {
+          transform: translateX(5px) translateY(5px) rotate(-45deg);
+        }
+      }
+    }
+    &:hover {
+      .in {
+        .close-button-block {
+          &:before {
+            transform: translateX(-5px) translateY(5px) rotate(45deg);
+          }
+          &:after {
+            transform: translateX(5px) translateY(5px) rotate(-45deg);
+          }
+        }
+      }
+      .out {
+        .close-button-block {
+          &:before {
+            transform: translateX(-20px) translateY(20px) rotate(45deg);
+          }
+          &:after {
+            transform: translateX(20px) translateY(20px) rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
 .start-btn{
     margin-top: .625rem;
     margin-left: 5rem;
@@ -46,7 +129,7 @@
 .connect-btn{
     font-weight: 500;
     width: 10rem;
-    padding: 1rem;
+    padding: 0.6rem;
     border-radius: 24px;
     background-size: 200%;
     border: 0.5px solid $text-color;
@@ -56,15 +139,4 @@
     // box-shadow: 0 0 0.1rem #f3a975, 0 0 0.1rem #fff, 0 0 0rem #ca8656, 0 0 0.5rem #ca8656, 0 0 0.2rem #ca8656, inset 0 0 0.5rem #ca8656;
     // box-shadow: 0 0 0.1rem #fff, 0 0 0.1rem #fff, 0 0 0rem #d502c1, 0 0 0.8rem #d502c1, 0 0 0.5rem #d502c1, inset 0 0 0.5rem #d502c1;
 }
-
-// .connect-btn:hover{
-//     background-color: #ea3a9e46;
-// }
-// .minted{
-//     color: $text-color;
-//     background-color: rgba(202, 200, 200, 0.411);
-// }
-// .minted:hover{
-//     background-color: rgba(202, 200, 200, 0.856);
-// }
 

@@ -100,7 +100,20 @@ export function MintModal({ nft }) {
           {modalStatus === "start" && (
             <div>
               <Typography id="modal-modal-title" variant="h6" component="h2">
-              <button  className="close-modal-btn flex column" onClick={() => handleClose()}>X</button>
+              <button  className="close-modal-btn flex column" onClick={() => handleClose()}> 
+              <div class="wrapper">
+                  <a href="#" class="close-button">
+                    <div class="in">
+                      <div class="close-button-block"></div>
+                      <div class="close-button-block"></div>
+                    </div>
+                    <div class="out">
+                      <div class="close-button-block"></div>
+                      <div class="close-button-block"></div>
+                    </div>
+                  </a>
+                </div>
+                </button>
                 You About To Mint {nft.name}
               </Typography>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
@@ -119,7 +132,20 @@ export function MintModal({ nft }) {
           )}
             {modalStatus === "rejected" && (
             <Typography  className="flex column" id="modal-modal-title" variant="h6" component="h2">
-            <button className="close-modal-btn flex column" onClick={() => handleClose()}>X</button>
+            <button className="close-modal-btn flex column" onClick={() => handleClose()}>
+            <div class="wrapper">
+                  <a href="#" class="close-button">
+                    <div class="in">
+                      <div class="close-button-block"></div>
+                      <div class="close-button-block"></div>
+                    </div>
+                    <div class="out">
+                      <div class="close-button-block"></div>
+                      <div class="close-button-block"></div>
+                    </div>
+                  </a>
+                </div>
+            </button>
               rejected
             </Typography>
           )}

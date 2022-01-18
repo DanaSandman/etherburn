@@ -7,9 +7,8 @@
     text-align: center;
     justify-content: space-between;
     margin-top: 10px;
-    padding-bottom: 25px;
+    padding-bottom: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.19);
-    // padding: 1rem;
     border-radius: 24px;
     box-shadow: rgb(0 0 0 / 2%) 0px 0px 1px, rgb(0 0 0 / 2%) 0px 4px 8px, rgb(0 0 0 / 2%) 0px 16px 24px, rgb(0 0 0 / 2%) 0px 24px 32px;
     a{
@@ -18,7 +17,7 @@
     .content-card{
         height: 11.875rem;
         padding: 1rem;
-        width: fit-content;
+        width: -webkit-fill-available;
         * {
             color: $text-color;
             border-radius: 24px;
@@ -41,6 +40,15 @@
         }
     }
 }
+.card-btn-collection{
+    margin-top: -1rem;
+    width: 18.625rem ;
+    border: 0.5px solid #fcfcfc;
+    button {
+        border: none !important;
+    }
+}
+
 //modal
 .content-img-card{
     .nft-img{
@@ -81,9 +89,10 @@
         height: 26rem;
         video{
             object-fit: cover;
-            width: 21.2rem;
-            height: 26.5rem;
-            margin-left: -0.8rem;
+            width: 20.1rem;
+            height: 36rem;
+            margin-left: 1.5rem;
+        
         }
     }
 }
@@ -96,19 +105,19 @@
     margin-bottom: -2px;
 }
 //Preview Modal
-.MuiTypography-root{
-    .content-card {
-        div{
-            button{
-                color: $text-color;
-            }
-        }
+.css-68y8mo{
+    padding: 4px !important;
+}
+//Mint Modal
+.css-4wpkim{
+    padding: 15px !important;
+    .close-modal-btn{
+        margin-left: -5px;
     }
 }
-
-// .css-zwvx5y {
-//     bottom: -40%;
-// }
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root:hover {
+    background-color: $secondary-bg-color;
+}
 
 @include for-mobile-layout{
 .content-card{
