@@ -6,12 +6,8 @@ footer{
     .main-footer{
       max-width: 1000px;
       margin: auto;
-      //  display: grid;
-      //  grid-template-columns: 1fr 1fr;
-      //  grid-template-rows: 1fr 0.4fr 0.1fr;
-      //  height: 1000px;
+      padding-bottom: 3.125rem;
        .footer-main-contant{
-      //   grid: 1/2;
         p{
           margin-bottom: 7rem;
        }
@@ -35,17 +31,10 @@ footer{
        .footer-logo{
           width: 25rem;
        }
-      //  span{
-      //    margin: 2rem 0 2rem 0;
-      //    font-size: 14px;
-      //    letter-spacing: 5%;
-      //    margin-bottom: 5rem;
-      //  }
     }
     .footer-social-media-links{
       margin-top: 11.56rem;
       width: 250px;
-      // max-width: 46.5rem;
        .linkedin-footer-link,
        .twitter-footer-link,
        .instegram-footer-link{
@@ -104,16 +93,12 @@ footer{
        .main-footer{
                 width: 41.5rem;
                 height: 81rem;
-               //  display: grid;
-               //  grid-template-columns: 1fr;
              .footer-main-contant{
-               //  grid-row: 1/2;
               p{
                 height: 5rem;
               }
              }
              .footer-social-media-links{
-               //  grid-row: 4/5;
                 margin-bottom: 1.25rem;
                 h6{
                    margin-bottom: 1.6rem;
@@ -124,10 +109,6 @@ footer{
     @include for-narrow-layout {
        .main-footer{
           height: auto;
-         //  .footer-social-media-links{
-         //    // grid-column: 1/2;
-         //    // grid-row: 3/4;
-         //  }
        }
     }
     @include for-mobile-layout{
@@ -140,14 +121,10 @@ footer{
           width: 20rem;
           height: 75.5rem;
           margin: 0px;
-         //  display: grid;
-         //  grid-template-columns: 1fr;  
-         //  grid-template-columns: 1fr;  
           div{
             width: 365px;
           }         
              .footer-main-contant{
-               //  grid-row: 1/2;
                 p{
                    width: 365px;
                    margin:2rem 0 2rem 1.5rem;
@@ -155,8 +132,6 @@ footer{
 
              }
              .footer-social-media-links{
-               //  grid-row: 4/5;
-               //  grid-column: 1/2;
                 margin: 2rem;
                 h6{
                    font-size: 18px; 

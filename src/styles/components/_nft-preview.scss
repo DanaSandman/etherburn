@@ -25,11 +25,6 @@
         .nft-title, span{
             margin: 0.2rem 0 1rem 0;
         }
-        h6{
-            text-align: start;
-            font-weight: 300;
-            margin-bottom: 5px;
-        }
         h4{
             text-align: start;
             .eth-logo{
@@ -61,13 +56,14 @@
             margin: 5px 5px 0 5px;
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
-            object-fit: contain;
+            object-fit: unset;
             width: 16rem;
-            height: auto;
+            height: 19rem;
         }
     }
     .card-width{
         width: 19rem !important;
+        height: 20rem !important;
     }
 }
 .close-modal-box-btn{

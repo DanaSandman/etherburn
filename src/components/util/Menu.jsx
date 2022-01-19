@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { scroller } from "react-scroll";
 
 const StyledMenu = styled.nav`
   display: flex;
@@ -8,7 +10,7 @@ const StyledMenu = styled.nav`
   padding-top: 6rem;
   background: #1d1d1de3;
   backdrop-filter: blur(7px);
-  transform: ${({open}) => open ? 'translateX(0)' : 'translateX(-100%)'};
+  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
   height: 100vh;
   text-align: left;
   position: absolute;
@@ -40,7 +42,7 @@ const StyledMenu = styled.nav`
     padding-bottom: 20%;
     bottom: 0;
   }
-`
+`;
 const StyledMenuIcons = styled.div`
   display: inline;
   text-align: center;
@@ -49,84 +51,131 @@ const StyledMenuIcons = styled.div`
     font-size: 2rem;
     padding: 1rem 1rem;
   }
-`
-export const BASE_ETHERBURN_APP_URL = 'http://localhost:3000/';
+`;
+export const BASE_ETHERBURN_APP_URL = "http://localhost:3000/";
 // export const BASE_UNITS_APP_URL = 'https://app.units.finance';
-export const DOCUMENTATION_URL = 'https://unitsprotocol.gitbook.io/unitsprotocol';
+export const DOCUMENTATION_URL =
+  "https://unitsprotocol.gitbook.io/unitsprotocol";
 
-export const PRIMARY_ITEM = 'primary';
-export const SUB_ITEMS = 'sub';
-export const ICON_ITEMS = 'icon';
+export const PRIMARY_ITEM = "primary";
+export const SUB_ITEMS = "sub";
+export const ICON_ITEMS = "icon";
 
 export const MENU_ITEMS = [
-    {
-        title: 'About',
-        type: PRIMARY_ITEM,
-        path: `${BASE_ETHERBURN_APP_URL}/#/`,
-    }, {
-        title: 'Collection',
-        type: PRIMARY_ITEM,
-        path: `${BASE_ETHERBURN_APP_URL}/#/collection`,
-    },{
-        title: 'Roadmap',
-        type: PRIMARY_ITEM,
-        path: `${BASE_ETHERBURN_APP_URL}/#/`,
-    },{
-        title: 'Team',
-        type: PRIMARY_ITEM,
-        path: `${BASE_ETHERBURN_APP_URL}/#/`,
-    },{
-        type: ICON_ITEMS,
-        children: [
-            {
-                icon: <i className="fa fa-twitter"/>,
-                path: 'https://twitter.com/units_protocol'
-            },
-            {
-                icon: <i className="fa fa-telegram"/>,
-                path: 'https://t.me/joinchat/rTmvLN5Egqo0Nzhk'
-            },
-            {
-                icon: <i className="fa fa-medium"/>,
-                path: 'https://medium.com/@UNITSDAO'
-            },
-            {
-                icon: <i className="fa fa-github"/>,
-                path: 'https://github.com/Units-DAO'
-            }
-        ]
+  {
+    title: "About",
+    type: PRIMARY_ITEM,
+    // path: `${BASE_ETHERBURN_APP_URL}/#/`,
+    path: "/",
+  },
+  {
+    title: "Collection",
+    type: PRIMARY_ITEM,
+    // path: `${BASE_ETHERBURN_APP_URL}/#/collection`,
+    path: "/collection",
+  },
+  {
+    title: "Roadmap",
+    type: PRIMARY_ITEM,
+    // path: `${BASE_ETHERBURN_APP_URL}/#/`,
+    path: "/",
+  },
+  {
+    title: "Team",
+    type: PRIMARY_ITEM,
+    // path: `${BASE_ETHERBURN_APP_URL}/#/`,
+    path: "/",
+  },
+  {
+    type: ICON_ITEMS,
+    children: [
+      {
+        icon: <i className="fa fa-twitter" />,
+        path: "https://twitter.com/units_protocol",
+      },
+      {
+        icon: <i className="fa fa-telegram" />,
+        path: "https://t.me/joinchat/rTmvLN5Egqo0Nzhk",
+      },
+      {
+        icon: <i className="fa fa-medium" />,
+        path: "https://medium.com/@UNITSDAO",
+      },
+      {
+        icon: <i className="fa fa-github" />,
+        path: "https://github.com/Units-DAO",
+      },
+    ],
+  },
+];
+const Menu = ({ open, setOpen }) => {
+  const move = (item) => {
+    console.log("menu item", item);
+    switch (item) {
+    case "About":
+        return(
+            scroller.scrollTo("hero-section", {
+              duration: 800,
+              delay: 0,
+              smooth: "easeInOutQuart",
+        }))
+      case "Roadmap":
+        return(
+        scroller.scrollTo("road-map-section", {
+          duration: 800,
+          delay: 0,
+          smooth: "easeInOutQuart",
+        }))
+      case "Team":
+        return(
+        scroller.scrollTo("team-section", {
+          duration: 800,
+          delay: 0,
+          smooth: "easeInOutQuart",
+        }))
+        // case "Collection":
+        //     return(
+        //     scroller.scrollTo("filter-collection", {
+        //       duration: 800,
+        //       delay: 0,
+        //       smooth: "easeInOutQuart",
+        //     }))
+    // default:
+    //     return(
+    //     scroller.scrollTo("hero-section", {
+    //         duration: 800,
+    //         delay: 0,
+    //         smooth: "easeInOutQuart",
+    //   }))
     }
+  };
 
-]
-const Menu = ({open, setOpen}) => {
-    const renderMenuItem = (item, index) => {
-        switch (item.type) {
-            case PRIMARY_ITEM:
-                return (
-                    <a id={index}
-                       href={item.path}>
-                        {item.title}
-                    </a>
-                );
-            case ICON_ITEMS:
-                return (
-                    <StyledMenuIcons open={open}>
-                        {item.children.map(child => (
-                            <a id={index}
-                               href={child.path}>
-                                {child.icon}
-                            </a>
-                        ))}
-                    </StyledMenuIcons>
-                );
-        }
+  const renderMenuItem = (item, index) => {
+    switch (item.type) {
+      case PRIMARY_ITEM:
+        return (
+          <Link id={index} to={item.path} onClick={() => move(item.title)}>
+            {item.title}
+          </Link>
+        );
+      case ICON_ITEMS:
+        return (
+          <StyledMenuIcons open={open}>
+            {item.children.map((child) => (
+              <a id={index} href={child.path}>
+                {child.icon}
+              </a>
+            ))}
+          </StyledMenuIcons>
+        );
     }
+  };
 
-    return (
-        <StyledMenu onClick={() => setOpen(!open)} open={open}>
-            {MENU_ITEMS.map(renderMenuItem)}
-        </StyledMenu>
-    )
-}
+  return (
+    <StyledMenu onClick={() => setOpen(!open)} open={open}>
+      {MENU_ITEMS.map(renderMenuItem)}
+    </StyledMenu>
+  );
+};
 
 export default Menu;

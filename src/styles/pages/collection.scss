@@ -22,13 +22,12 @@
                 margin-right: 1.2px;
                 border: none;
                 border-radius: 24px;
-                // background-color: -1px 1px 0px 2.5px rgb(0 0 0 / 3%);
                 background-color: $secondary-bg-color;
              }
              button:hover{
                 background-color: hsla(0, 0%, 100%, 0.11);
              }
-             button:focus{
+            .active{
                 border-bottom: 4px solid $primary-color;
              }
              button:focus-visible {

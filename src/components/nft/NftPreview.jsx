@@ -13,12 +13,11 @@ export function NftPreview({ nft, page }) {
       <div className="nft-preview flex column">
           <PreviewModal page={page} nft={nft}/>
           <div className="content-card flex column">
+            <h4 className="nft-title">{nft.name}</h4>
             <div className="flex space-between">
-              <h4 className="nft-title">{nft.name}</h4>
-              <span>1/1</span>
-            </div>
-            <h6>Price</h6>
             <h4><img className='eth-logo' src={ETHlogo} alt="eth-logo" />{contractData.cost / 1e18}</h4>
+            <span>1/1</span>
+            </div>
             <div className={(page === 'collection' ? 'card-btn-collection' : '')}>
             {(nft.isMinted === false) ? (
               <MintModal nft={nft}/>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 //Cmps
 import { NftList } from '../components/nft/NftList.jsx'
@@ -9,11 +9,10 @@ export function Collection() {
   const dispatch = useDispatch()
   const nfts = useSelector((state) => state.nftModule.nfts)
   const [nftsData, setNftsData] = useState()
-  const btnRef = useRef(null);
+  const [activeCategory, setActiveCategory] = useState('all');
 
   useEffect(() => {
-   if (!nfts[0]) dispatch(loadNfts())  
-   btnRef.current.focus();
+   if (!nfts[0]) dispatch(loadNfts())
   }, [])
 
   useEffect(() => {
@@ -21,44 +20,38 @@ export function Collection() {
   }, [nfts])
 
   const filter = (category) => {
+    console.log('filter category', category);
+    setActiveCategory(category);
     if (category === 'all') {
       setNftsData(nfts)
     } else {
       const items = nfts.filter((nft) => {
         return nft.category === category
       })
-      console.log('items', items)
       setNftsData(items)
     }
   }
+
+  const categories = ['all', 'daily', 'weekly', 'monthly', 'million', 'yearly', 'billion'];
+  const item = categories.map((category, index) => {
+    return (
+      <button
+        key={index}
+        onClick={() => filter(category)}
+        className={activeCategory === category ? "active" : "unactive"}
+      >
+        {category}
+      </button>
+    );
+  });
 
   return (
     <div className="collection-page">
       <section className="filter-collection margin-auto">
          <h2>ETHER BURN COLLECTION</h2>
-        <ul className="margin-auto flex">
-          <li>
-            <button onClick={() => filter('all')} ref={btnRef} >ALL</button>
-          </li>
-          <li>
-            <button onClick={() => filter('daily')}>Daily</button>
-          </li>
-          <li>
-            <button onClick={() => filter('weekly')}>Weekly</button>
-          </li>
-          <li>
-            <button onClick={() => filter('monthly')}>Monthly</button>
-          </li>
-          <li>
-            <button onClick={() => filter('million')}>Million</button>
-          </li>
-          <li>
-            <button onClick={() => filter('yearly')}>Yearly</button>
-          </li>
-          <li>
-            <button onClick={() => filter('billion')}>Billion</button>
-          </li>
-        </ul>
+         <ul>
+           <li>{item}</li>
+         </ul>
       </section>
       <section className="nft-list-section">
         {nftsData && (
