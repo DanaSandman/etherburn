@@ -7,7 +7,6 @@ router.get('/', getNfts) //LIST
 router.get('/:id', getNft)//DETAILS
 router.put('/', updateNft)//UPDATE
 // router.post('/',saveNft)//ADD
-// router.put('/',saveNft)//UPDATE
 // router.delete('/:id',deleteNft)//REMOVE/DELETE
 
 module.exports = router

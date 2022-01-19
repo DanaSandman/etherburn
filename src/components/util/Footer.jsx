@@ -3,16 +3,12 @@ import { Link } from "react-router-dom";
 
 //assets
 import FullLogo from "../../assets/img/FullLogo.png";
-import LinkedinFooter from "../../assets/img/footer/LinkedinFooter.png";
-import TwitterFooter from "../../assets/img/footer/TwitterFooter.png";
-import FacebookFooter from "../../assets/img/footer/FacebookFooter.png";
-import InstegramFooter from "../../assets/img/footer/InstegramFooter.png";
-import YoutubeFooter from "../../assets/img/footer/YoutubeFooter.png";
+import LinkedinFooter from "../../assets/img/LinkedinFooter.png";
 
 export function Footer() {
   const socialPath = {
     linkedin: "https://www.linkedin.com/company/flype-protocol/",
-    twitter: "https://twitter.com/FlypeAnalytics",
+    twitter: "https://twitter.com/EtherBurnNFT",
     instegram: "https://flype-website.herokuapp.com/#/home",
   };
   return (
@@ -43,10 +39,10 @@ export function Footer() {
               className="twitter-footer-link"
               target="_blank"
             >
-              <img src={TwitterFooter} alt="twitter-footer-icon"></img>
+              <i className="fa fa-twitter" />
             </a>
             <a href={socialPath.instegram} className="instegram-footer-link">
-              <img src={InstegramFooter} alt="instegram-footer-icon"></img>
+              <i className="fa fa-instagram" />
             </a>
           </div>
           <span>© 2021 EtherBurn. </span>

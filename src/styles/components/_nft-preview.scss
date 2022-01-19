@@ -34,7 +34,13 @@
             }
         }
     }
-}
+    .preview-modal :hover{
+        background-color: rgba(255, 255, 255, 0);
+         }
+         button :hover{
+             background-color: rgba(255, 255, 255, 0);
+         }
+    }
 .card-btn-collection{
     margin-top: -1rem;
     width: 18.625rem ;

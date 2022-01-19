@@ -146,7 +146,7 @@ export function MintModal({ nft }) {
                   </a>
                 </div>
             </button>
-              rejected
+              rejected<br></br> try again
             </Typography>
           )}
           {modalStatus === "notConnect" && (

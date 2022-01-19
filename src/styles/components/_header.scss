@@ -1,6 +1,7 @@
 .header{
     display: grid;
     grid-template-columns: 8.5rem minmax( auto, $desktop-breakpoint ) 13rem;
+    // grid-template-columns: 8.5rem minmax( auto, $desktop-breakpoint ) 25rem;
     backdrop-filter: blur(7px);
     align-content: center;
     justify-content: center;
@@ -42,7 +43,6 @@
         margin: 0% !important;
     }
     .logout{
-        font-weight: 600 !important;
         height: 35px;
         width: 5.8rem !important;
         padding: 0px !important;

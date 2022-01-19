@@ -94,15 +94,11 @@ export const MENU_ITEMS = [
         path: "https://twitter.com/units_protocol",
       },
       {
-        icon: <i className="fa fa-telegram" />,
+        icon: <i className="fa fa-instagram" />,
         path: "https://t.me/joinchat/rTmvLN5Egqo0Nzhk",
       },
       {
-        icon: <i className="fa fa-medium" />,
-        path: "https://medium.com/@UNITSDAO",
-      },
-      {
-        icon: <i className="fa fa-github" />,
+        icon: <i className="fa-brands fa-discord"/> ,
         path: "https://github.com/Units-DAO",
       },
     ],
@@ -133,20 +129,20 @@ const Menu = ({ open, setOpen }) => {
           delay: 0,
           smooth: "easeInOutQuart",
         }))
-        // case "Collection":
-        //     return(
-        //     scroller.scrollTo("filter-collection", {
-        //       duration: 800,
-        //       delay: 0,
-        //       smooth: "easeInOutQuart",
-        //     }))
-    // default:
-    //     return(
-    //     scroller.scrollTo("hero-section", {
-    //         duration: 800,
-    //         delay: 0,
-    //         smooth: "easeInOutQuart",
-    //   }))
+        case "Collection":
+            return(
+            scroller.scrollTo("filter-collection", {
+              duration: 800,
+              delay: 0,
+              smooth: "easeInOutQuart",
+            }))
+    default:
+        return(
+        scroller.scrollTo("hero-section", {
+            duration: 800,
+            delay: 0,
+            smooth: "easeInOutQuart",
+      }))
     }
   };
 
@@ -154,7 +150,7 @@ const Menu = ({ open, setOpen }) => {
     switch (item.type) {
       case PRIMARY_ITEM:
         return (
-          <Link id={index} to={item.path} onClick={() => move(item.title)}>
+          <Link id={index} to={item.path} onClick={()=> move(item.title)}>
             {item.title}
           </Link>
         );

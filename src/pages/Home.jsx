@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 //Store
 import { loadNfts } from "../store/nft/nft.action.js";
 import { loadContractData } from "../store/contract/contract.action.js";
 //Cmps
-// import { NftListCarousel } from "../components/util/Carousel.jsx";
-import { web3, web3service } from "../services/web3.service.js";
+import { web3 } from "../services/web3.service.js";
 import { NftList } from '../components/nft/NftList.jsx'
+import { Loader } from "../components/util/Loader.jsx";
+
 import NFT from '../assets/NFT.mp4';
 
 //Img
-// import HeroImg from "../assets/img/HeroIMG.png";
 import HeroImg from "../assets/img/FullLogo.png"
 //imgs team
 import TeamImg1 from "../assets/img/team/TeamImg1.png";
@@ -29,7 +29,6 @@ export function Home() {
   
   const dispatch = useDispatch();
   const nfts = useSelector((state) => state.nftModule.nfts);
-  // const contractData = useSelector((state) => state.contractModule.contractData);
   const linkedinTeamPath = {
     IsraelPerez: "https://www.linkedin.com/in/israel-perez-84b69322/",
     DanaSandman: "https://www.linkedin.com/in/dana-sandman-451a2b168/",
@@ -37,11 +36,13 @@ export function Home() {
   };
 
   useEffect(() => {
+    window.scrollTo(0,0)
     dispatch(loadNfts());
     dispatch(loadContractData());
     web3.eth.getBlockNumber().then((num) => console.log("web3 block num", num));
   }, []);
 
+  if (!nfts) return <div> <Loader /></div>
   return (
     <div className="home-page">
       <section className="hero-section flex">
@@ -201,24 +202,3 @@ export function Home() {
     </div>
   );
 }
-//למחוק גם בסיאסאס
-  {/* <section className="collection-data-section flex column">
-        <div className="table-collection-data">
-          <div className="flex column">
-            <h3>13.8</h3>
-            <h5>items</h5>
-          </div>
-          <div className="flex column">
-            <h3>286</h3>
-            <h5>owners</h5>
-          </div>
-          <div className="flex column">
-            <h3>3.99 ETH</h3>
-            <h5>floor price</h5>
-          </div>
-          <div className="flex column">
-            <h3>12.8K ETH</h3>
-            <h5>volume traded</h5>
-          </div>
-        </div>
-      </section> */}//למחוק גם בסיאסאס

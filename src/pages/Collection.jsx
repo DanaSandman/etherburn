@@ -12,6 +12,7 @@ export function Collection() {
   const [activeCategory, setActiveCategory] = useState('all');
 
   useEffect(() => {
+    window.scrollTo(0,0)
    if (!nfts[0]) dispatch(loadNfts())
   }, [])
 

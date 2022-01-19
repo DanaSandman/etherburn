@@ -38,16 +38,14 @@ footer{
        .linkedin-footer-link,
        .twitter-footer-link,
        .instegram-footer-link{
-          width: 60px;
-          height: 60px;
           margin-bottom: 33px;
-          background-color: rgba(255, 255, 255, 0.1);
-          img{
+          i{
              padding: 35%;
              border-radius: 24px;
              width: 3.6875rem;
              height: 3.6875rem;
-            box-shadow: 0 0 0.1rem #fff, 0 0 0.1rem #fff, 0 0 0rem #d502c1, 0 0 0.8rem #d502c1, 0 0 0.5rem #d502c1, inset 0 0 0.5rem #d502c1;
+             box-shadow: 0 0 0.1rem #fff, 0 0 0.1rem #fff, 0 0 0rem #d502c1, 0 0 0.8rem #d502c1, 0 0 0.5rem #d502c1, inset 0 0 0.5rem #d502c1;
+             color: $text-color;
             }
        }
     
@@ -91,8 +89,9 @@ footer{
        }
        margin: 0px;
        .main-footer{
+                flex-direction: column;
                 width: 41.5rem;
-                height: 81rem;
+                height: 62rem;
              .footer-main-contant{
               p{
                 height: 5rem;
@@ -118,8 +117,9 @@ footer{
       padding: 0%;
       margin: 0%;
        .main-footer{
+         flex-direction: column;
           width: 20rem;
-          height: 75.5rem;
+          height: 62rem;
           margin: 0px;
           div{
             width: 365px;
@@ -129,7 +129,9 @@ footer{
                    width: 365px;
                    margin:2rem 0 2rem 1.5rem;
                  }
-
+                 img{
+                  margin-top: 55px;
+                 }
              }
              .footer-social-media-links{
                 margin: 2rem;

@@ -15,7 +15,7 @@ export function Header() {
         <Menu open={open} setOpen={setOpen} />
       </div>
       <div className="logo flex align-center ">
-        <Link to="/">
+        <Link to="/" onClick={window.scrollTo(0,0)}>
           <img className="header-logo" src={logo} alt="ETHERBURN logo" />
         </Link>
       </div>
