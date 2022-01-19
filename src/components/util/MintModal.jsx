@@ -1,15 +1,16 @@
 import React from "react";
-import { initNotify, initOnboard } from "../../services/blockNative.service.js";
-
+import { useSelector, useDispatch } from "react-redux";
+//Service
+import { web3service } from "../../services/web3.service.js";
+import { initOnboard } from "../../services/blockNative.service.js";
+//Redux
+import { setUserAccount } from "../../store/user/user.action.js";
+import { loadNfts } from "../../store/nft/nft.action.js";
+//MeterialUi
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import { useSelector, useDispatch } from "react-redux";
-import { setUserAccount } from "../../store/user/user.action.js";
-
-import { loadNfts } from "../../store/nft/nft.action.js";
-import { web3service } from "../../services/web3.service.js";
 
 const style = {
   position: "absolute",
@@ -30,7 +31,6 @@ export function MintModal({ nft }) {
     (state) => state.contractModule.contractData
   );
   const [modalStatus, setModalStatus] = React.useState("");
-  // const onboard = useSelector((state) => state.walletModule.onboard);
   const [open, setOpen] = React.useState(false);
   const isConnected = localStorage.getItem("isConnected");
 

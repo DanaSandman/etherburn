@@ -1,6 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
+//Img
 import ETHlogo from "../../assets/img/ethLogo.svg";
+//Cmps
 import  { MintModal } from "../util/MintModal.jsx"
 import { PreviewModal } from "../util/PreviewModal.jsx"
 

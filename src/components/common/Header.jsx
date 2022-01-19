@@ -1,6 +1,6 @@
 import logo from "../../assets/img/Logo.png";
 import { Link } from "react-router-dom";
-import UserWallet from "./UserWallet.jsx";
+import UserWallet from "../util/UserWallet.jsx";
 //Menu&Burger
 import React, { useState } from "react";
 import Burger from "./Burger";

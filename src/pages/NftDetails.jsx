@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from 'react-redux'
-import { Loader } from "../components/util/Loader.jsx";
-import { setSelectedNft } from '../store/nft/nft.action.js';
 import { useParams } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux'
+import { Loader } from "../components/common/Loader.jsx";
+import { setSelectedNft } from '../store/nft/nft.action.js';
 
   export const NftDetails = () => {
 

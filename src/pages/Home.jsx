@@ -7,10 +7,8 @@ import { loadContractData } from "../store/contract/contract.action.js";
 //Cmps
 import { web3 } from "../services/web3.service.js";
 import { NftList } from '../components/nft/NftList.jsx'
-import { Loader } from "../components/util/Loader.jsx";
-
+import { Loader } from "../components/common/Loader.jsx";
 import NFT from '../assets/NFT.mp4';
-
 //Img
 import HeroImg from "../assets/img/FullLogo.png"
 //imgs team

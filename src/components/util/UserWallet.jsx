@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { initNotify, initOnboard } from "../../services/blockNative.service.js";
 import { setUserAccount } from "../../store/user/user.action.js";
-import { useDispatch, useSelector } from "react-redux";
 import { setSelectedWallet, setWalletNotify, setWalletOnboard } from "../../store/wallet/wallet.action.js";
 
 export default function UserWallet() {
 
-    
     const [onboard, setOnboard] = useState();
     const dispatch = useDispatch();
     const account = useSelector((state) => state.userModule.account);
@@ -17,16 +16,12 @@ export default function UserWallet() {
         const readyToTransact = await onboard.walletCheck()
         
         window.localStorage.setItem('isConnected', true)
-        // setIsConnected(true);
         console.log('walletSelected',walletSelected);
         console.log('readyToTransact',readyToTransact);
         }
     };
     const onLogout = async () => {
        onboard.walletReset();
-    //    setIsConnected(false);
-    //    window.localStorage.removeItem('account address')
-    //    window.localStorage.removeItem('selectedWallet')
        window.localStorage.removeItem('isConnected')
     //    window.location.reload();
     };
