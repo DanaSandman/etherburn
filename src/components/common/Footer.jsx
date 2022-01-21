@@ -45,6 +45,10 @@ export function Footer() {
               <i className="fa fa-instagram" />
             </a>
           </div>
+          <button className="join-our-discord-btn">           
+          <a href={socialPath.linkedin}>
+            JOIN OUR DISCORD
+          </a></button>
           <span>© 2021 EtherBurn. </span>
         </div>
       </div>

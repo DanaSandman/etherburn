@@ -38,7 +38,7 @@ footer{
       .discord-footer-link,
       .twitter-footer-link,
       .instegram-footer-link{
-         margin-bottom: 33px;
+         margin-bottom: 1.01rem;
          i, svg{
             padding: 35%;
             border-radius: 24px;
@@ -48,14 +48,16 @@ footer{
             color: $text-color;
            }
       }
-   
-      .footer-policy-links{
-         width: 280px;
+      .join-our-discord-btn{
+         margin-bottom: 1rem;
+         font-weight: bold;
+         border-radius: 18px;
+         padding: 1rem 40px;
+         font-size: 18px;
+         border: none;
          a{
-           //  font-family: Poppins;
-            font-size: 14px;
-            letter-spacing: 0.2px;
-            color:  $primary-bg-color;
+            text-decoration: none;
+            color: $primary-bg-color;
          }
       }
    }
