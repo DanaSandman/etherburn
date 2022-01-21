@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
-
 //assets
 import FullLogo from "../../assets/img/FullLogo.png";
-import LinkedinFooter from "../../assets/img/LinkedinFooter.png";
+//FontAwesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faDiscord } from "@fortawesome/free-brands-svg-icons"
 
 export function Footer() {
   const socialPath = {
@@ -31,8 +31,8 @@ export function Footer() {
         <div className="footer-social-media-links flex column">
           <h6>Follow Us</h6>
           <div className="social-links flex space-between">
-            <a href={socialPath.linkedin} className="linkedin-footer-link">
-              <img src={LinkedinFooter} alt="linkedin-footer-icon"></img>
+            <a href={socialPath.linkedin} className="discord-footer-link">
+              <FontAwesomeIcon  className="discord-footer-link" icon={faDiscord} />
             </a>
             <a
               href={socialPath.twitter}

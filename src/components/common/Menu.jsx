@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { scroller } from "react-scroll";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faDiscord } from "@fortawesome/free-brands-svg-icons"
 
 const StyledMenu = styled.nav`
   display: flex;
@@ -98,7 +100,7 @@ export const MENU_ITEMS = [
         path: "https://t.me/joinchat/rTmvLN5Egqo0Nzhk",
       },
       {
-        icon: <i className="fa-brands fa-discord"/> ,
+        icon: <FontAwesomeIcon icon={faDiscord} />,
         path: "https://github.com/Units-DAO",
       },
     ],

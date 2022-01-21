@@ -35,11 +35,11 @@ footer{
    .footer-social-media-links{
      margin-top: 11.56rem;
      width: 250px;
-      .linkedin-footer-link,
+      .discord-footer-link,
       .twitter-footer-link,
       .instegram-footer-link{
          margin-bottom: 33px;
-         i{
+         i, svg{
             padding: 35%;
             border-radius: 24px;
             width: 3.6875rem;
@@ -141,7 +141,7 @@ footer{
                .social-links{
                   width: 19.7rem;
                }
-               .linkedin-footer-link,
+               // .discord-footer-link,
                .twitter-footer-link,
                .instegram-footer-link{
                  width: 4rem;
