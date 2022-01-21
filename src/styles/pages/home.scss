@@ -11,7 +11,7 @@
         margin-left: -10.25rem;
         color: $text-color;
         opacity: 0.9;
-        }
+    }
     .hero-section{
         margin-bottom: 50px;
         .account-details{
@@ -367,6 +367,7 @@
             }
             .item-types > *{
                 flex-direction: column;
+                margin: 1rem 0 1rem 0;
             }
             .item-types{
                 display: flex;
@@ -378,6 +379,9 @@
             .p-description{
                 margin: 0px;
                 padding: 10px;
+            }
+            .road-map > *{
+                margin: 1rem 0 1rem 0;
             }
         }
         .team-section{

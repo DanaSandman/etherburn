@@ -15,7 +15,8 @@
         text-decoration: none;
     }
     .content-card{
-        height: 11.875rem;
+        // height: 11.875rem;
+        height: 9.3rem;
         padding: 1rem;
         width: -webkit-fill-available;
         * {
@@ -125,6 +126,9 @@
 .content-card{
     h4{
         margin-bottom: 1.5rem;
+    }
+    .card-btn-collection{
+        margin-top: 0.3rem;
     }
 }
 }

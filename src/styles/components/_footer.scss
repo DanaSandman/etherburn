@@ -60,6 +60,9 @@ footer{
             color: $primary-bg-color;
          }
       }
+      span{
+         margin-top: 185px;
+      }
    }
    // Responsive
    @include for-normal-layout {
