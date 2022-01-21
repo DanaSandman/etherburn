@@ -9,7 +9,6 @@ const dappId = '187fa55a-7d23-4eb8-b72c-4c19f9a5be2d';
 // const networkId = 1; //Ethereum
 const networkId = 4; //Rinkeby
 
-
 export function initOnboard(subscriptions) {
     return Onboard({
         dappId,
@@ -32,7 +31,6 @@ export function initOnboard(subscriptions) {
         ]
     })
 }
-
 export function initNotify() {
     return Notify({
         dappId,

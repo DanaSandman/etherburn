@@ -1,16 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 //Service
 import { web3service } from "../../services/web3.service.js";
-import { initOnboard } from "../../services/blockNative.service.js";
 //Redux
-import { setUserAccount } from "../../store/user/user.action.js";
 import { loadNfts } from "../../store/nft/nft.action.js";
 //MeterialUi
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+//Cmps
+import UserWallet from "./UserWallet.jsx";
 
 const style = {
   position: "absolute",
@@ -30,6 +30,7 @@ export function MintModal({ nft }) {
   const contractData = useSelector(
     (state) => state.contractModule.contractData
   );
+  const account = useSelector((state) => state.userModule.account);
   const [modalStatus, setModalStatus] = React.useState("");
   const [open, setOpen] = React.useState(false);
   const isConnected = localStorage.getItem("isConnected");
@@ -41,7 +42,13 @@ export function MintModal({ nft }) {
   };
   const checkIfConnect = () => {
     const isConnected = localStorage.getItem("isConnected");
-    if (!isConnected || isConnected === 'false' || isConnected === false ||  isConnected === undefined ||  isConnected === "undefined" ) {
+    if (
+      !isConnected ||
+      isConnected === "false" ||
+      isConnected === false ||
+      isConnected === undefined ||
+      isConnected === "undefined"
+    ) {
       setModalStatus("notConnect");
     } else if (isConnected) {
       setModalStatus("start");
@@ -52,43 +59,28 @@ export function MintModal({ nft }) {
     console.log("isConnected", isConnected);
     setModalStatus("inProcess");
     try {
-      await web3service.mint([Math.round(nft.tokenId)])
-      setModalStatus("done")
+      await web3service.mint([Math.round(nft.tokenId)]);
+      setModalStatus("done");
       dispatch(loadNfts());
     } catch (error) {
-      console.error('rejectedd',error);
+      console.error("rejectedd", error);
       setModalStatus("rejected");
-      setTimeout(() =>{
-        handleClose()
-        }, 3000);
-    };
+      setTimeout(() => {
+        handleClose();
+      }, 3000);
+    }
   };
-  const connectWallet = async () => {
-    handleClose();
-    const setAccount = (account) => {
-      dispatch(setUserAccount(account));
-    };
-    const setWallet = (wallet) => {
-      window.ethereum = wallet.provider;
-      window.localStorage.setItem("selectedWallet", wallet.name);
-    };
-    const onboard = initOnboard({
-      address: setAccount,
-      // network: setChainId,
-      // balance: setBalance,
-      wallet: setWallet,
-    });
-    await onboard.walletSelect();
-    await onboard.walletCheck()
-
-    window.localStorage.setItem("isConnected", true);
-    setModalStatus("start");
-    setOpen(true);
-  };
+  useEffect(() => {
+    if (account) {
+      setModalStatus("start");
+    }
+  }, [account]);
 
   return (
     <div>
-      <Button className="mint-main-btn" onClick={handleOpen}>MINT</Button>
+      <Button className="mint-main-btn" onClick={handleOpen}>
+        MINT
+      </Button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -99,26 +91,32 @@ export function MintModal({ nft }) {
           {modalStatus === "start" && (
             <div>
               <Typography id="modal-modal-title" variant="h6" component="h2">
-              <button  className="close-modal-btn flex column" onClick={() => handleClose()}> 
-              <div class="wrapper">
-                  <a href="#" class="close-button">
-                    <div class="in">
-                      <div class="close-button-block"></div>
-                      <div class="close-button-block"></div>
-                    </div>
-                    <div class="out">
-                      <div class="close-button-block"></div>
-                      <div class="close-button-block"></div>
-                    </div>
-                  </a>
-                </div>
+                <button
+                  className="close-modal-btn flex column"
+                  onClick={() => handleClose()}
+                >
+                  <div class="wrapper">
+                    <a href="#" class="close-button">
+                      <div class="in">
+                        <div class="close-button-block"></div>
+                        <div class="close-button-block"></div>
+                      </div>
+                      <div class="out">
+                        <div class="close-button-block"></div>
+                        <div class="close-button-block"></div>
+                      </div>
+                    </a>
+                  </div>
                 </button>
                 You About To Mint {nft.name}
               </Typography>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                 For {contractData.cost / 1e18} ETH
                 <br></br>
-                <button onClick={() => mint()} className="start-btn primery-btn">
+                <button
+                  onClick={() => mint()}
+                  className="start-btn primery-btn"
+                >
                   START
                 </button>
               </Typography>
@@ -129,10 +127,18 @@ export function MintModal({ nft }) {
               LOADING...
             </Typography>
           )}
-            {modalStatus === "rejected" && (
-            <Typography  className="flex column" id="modal-modal-title" variant="h6" component="h2">
-            <button className="close-modal-btn flex column" onClick={() => handleClose()}>
-            <div class="wrapper">
+          {modalStatus === "rejected" && (
+            <Typography
+              className="flex column"
+              id="modal-modal-title"
+              variant="h6"
+              component="h2"
+            >
+              <button
+                className="close-modal-btn flex column"
+                onClick={() => handleClose()}
+              >
+                <div class="wrapper">
                   <a href="#" class="close-button">
                     <div class="in">
                       <div class="close-button-block"></div>
@@ -144,25 +150,51 @@ export function MintModal({ nft }) {
                     </div>
                   </a>
                 </div>
-            </button>
+              </button>
               rejected<br></br> try again
             </Typography>
           )}
           {modalStatus === "notConnect" && (
             <div>
               <Typography id="modal-modal-title" variant="h6" component="h2">
+              <button
+                className="close-modal-btn flex column"
+                onClick={() => handleClose()}
+              >
+                <div class="wrapper">
+                  <a href="#" class="close-button">
+                    <div class="in">
+                      <div class="close-button-block"></div>
+                      <div class="close-button-block"></div>
+                    </div>
+                    <div class="out">
+                      <div class="close-button-block"></div>
+                      <div class="close-button-block"></div>
+                    </div>
+                  </a>
+                </div>
+              </button>
                 Connect youre wallet please
               </Typography>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                <button onClick={connectWallet} className="primery-btn">
-                  connect
-                </button>
+                <UserWallet />
               </Typography>
             </div>
           )}
           {modalStatus === "done" && (
-            <Typography className="flex column" id="modal-modal-title" variant="h6" component="h2" className="flex column">
-          <button  className="close-modal-btn flex column" onClick={() => handleClose()}>X</button>
+            <Typography
+              className="flex column"
+              id="modal-modal-title"
+              variant="h6"
+              component="h2"
+              className="flex column"
+            >
+              <button
+                className="close-modal-btn flex column"
+                onClick={() => handleClose()}
+              >
+                X
+              </button>
               greenv
             </Typography>
           )}
