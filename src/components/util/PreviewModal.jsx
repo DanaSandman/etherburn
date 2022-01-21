@@ -38,6 +38,8 @@ export function PreviewModal({ nft, page }) {
                 className={page === "collection" ? " card-width" : ""}
                 loop
                 autoPlay
+                preload="auto"
+                playsinline
                 muted
               >
                 <source src={nft.video} type="video/mp4" />

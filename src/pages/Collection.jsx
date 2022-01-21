@@ -33,7 +33,7 @@ export function Collection() {
     }
   }
 
-  const categories = ['all', 'daily', 'weekly', 'monthly', 'million', 'yearly', 'billion'];
+  const categories = ['all', 'daily', 'weekly', 'monthly', 'million', 'yearly', 'anniversary'];
   const item = categories.map((category, index) => {
     return (
       <button

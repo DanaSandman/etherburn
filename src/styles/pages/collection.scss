@@ -37,7 +37,7 @@
         }
     }
     .filter-collection::-webkit-scrollbar{
-        width: 0;
+        width: 1;
     }
     .nft-list-container > *{
         margin-bottom: 70px;
@@ -49,14 +49,15 @@
         ul{
             width: 31.25rem;
         }
+        // grid-column: 2/4 !important;
     }
-
 }
 @include for-narrow-layout{
     .filter-collection{
         ul{
             width: 19rem;
         }
+        // grid-column: 2/4 !important;
     }
 }
 @include for-mobile-layout{
@@ -66,6 +67,7 @@
         }
         ul{
             width: 21rem;
+            // grid-column: 2/4 !important;
             padding: 0px;
                 button{
                     width: 75px;

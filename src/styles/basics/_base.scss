@@ -28,6 +28,8 @@ h6 {
 }
 p{
   color: $text-color;
+  font-size: larger;
+  opacity: 0.8;
 }
 input,
 select,
@@ -37,14 +39,3 @@ button {
   text-transform: uppercase;
   font-family: 'Neon-Tubes';
 }
-// button {
-// // background-color:rgba(72, 172, 186, 0.365);
-// background-color: rgba(202, 200, 200, 0.411);
-// border-radius: 0.5rem;
-
-// margin: 0 1rem 0 1rem;
-// border: none;
-// } 
-//  button:hover{
-//   background-color: #9efcf6;
-// }

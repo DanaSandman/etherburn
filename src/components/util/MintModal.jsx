@@ -39,17 +39,14 @@ export function MintModal({ nft }) {
     checkIfConnect();
     setOpen(true);
   };
-
   const checkIfConnect = () => {
     const isConnected = localStorage.getItem("isConnected");
-    console.log("isConnected", isConnected);
-    if (!isConnected || isConnected === 'false' || isConnected === false) {
+    if (!isConnected || isConnected === 'false' || isConnected === false ||  isConnected === undefined ||  isConnected === "undefined" ) {
       setModalStatus("notConnect");
     } else if (isConnected) {
       setModalStatus("start");
     }
   };
-
   const mint = async () => {
     console.log("start minting");
     console.log("isConnected", isConnected);
@@ -66,7 +63,6 @@ export function MintModal({ nft }) {
         }, 3000);
     };
   };
-
   const connectWallet = async () => {
     handleClose();
     const setAccount = (account) => {
@@ -83,10 +79,13 @@ export function MintModal({ nft }) {
       wallet: setWallet,
     });
     await onboard.walletSelect();
+    await onboard.walletCheck()
+
     window.localStorage.setItem("isConnected", true);
     setModalStatus("start");
     setOpen(true);
   };
+
   return (
     <div>
       <Button className="mint-main-btn" onClick={handleOpen}>MINT</Button>
@@ -155,7 +154,7 @@ export function MintModal({ nft }) {
                 Connect youre wallet please
               </Typography>
               <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                <button onClick={() => connectWallet()} className="primery-btn">
+                <button onClick={connectWallet} className="primery-btn">
                   connect
                 </button>
               </Typography>
