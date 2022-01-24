@@ -6,7 +6,6 @@ import { Collection } from "./pages/Collection.jsx";
 //components
 import { Header } from "./components/common/Header.jsx";
 import { Footer } from "./components/common/Footer.jsx";
-// import Web3 from "web3";
 
 export function App() {
 

@@ -8,6 +8,7 @@ import { loadContractData } from "../store/contract/contract.action.js";
 import { web3 } from "../services/web3.service.js";
 import { NftList } from "../components/nft/NftList.jsx";
 import { Loader } from "../components/common/Loader.jsx";
+import { FAQ } from "../components/util/FAQ.jsx"
 import NFT from "../assets/NFT.mp4";
 //Img
 import HeroImg from "../assets/img/FullLogo.png";
@@ -248,6 +249,12 @@ export function Home() {
             </p>
           </div>
         </div>
+      </section>
+      <section className="faq-section">
+          <FAQ q='wooww' a='trtrtrtr'></FAQ>
+          <FAQ q='loremmm' a='fffff'></FAQ>
+          <FAQ q='whaat is meta' a='hhh'></FAQ>
+          <FAQ q='whaat is meta' a='blabla'></FAQ>
       </section>
     </div>
   );

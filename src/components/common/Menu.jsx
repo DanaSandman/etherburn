@@ -69,24 +69,45 @@ export const MENU_ITEMS = [
     type: PRIMARY_ITEM,
     // path: `${BASE_ETHERBURN_APP_URL}/#/`,
     path: "/",
+    duration: scroller.scrollTo("hero-section", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+})
   },
   {
     title: "Collection",
     type: PRIMARY_ITEM,
     // path: `${BASE_ETHERBURN_APP_URL}/#/collection`,
     path: "/collection",
+    duration:  scroller.scrollTo("filter-collection", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+})
   },
   {
     title: "Roadmap",
     type: PRIMARY_ITEM,
     // path: `${BASE_ETHERBURN_APP_URL}/#/`,
     path: "/",
+    duration: scroller.scrollTo("road-map-section", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    })
+  
   },
   {
     title: "Team",
     type: PRIMARY_ITEM,
     // path: `${BASE_ETHERBURN_APP_URL}/#/`,
     path: "/",
+    duration: scroller.scrollTo("team-section", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    })
   },
   {
     type: ICON_ITEMS,
@@ -108,11 +129,10 @@ export const MENU_ITEMS = [
 ];
 const Menu = ({ open, setOpen }) => {
   const move = (item) => {
-    console.log("menu item", item);
     switch (item) {
     case "About":
         return(
-            scroller.scrollTo("hero-section", {
+        scroller.scrollTo("hero-section", {
               duration: 800,
               delay: 0,
               smooth: "easeInOutQuart",
@@ -132,12 +152,12 @@ const Menu = ({ open, setOpen }) => {
           smooth: "easeInOutQuart",
         }))
         case "Collection":
-            return(
-            scroller.scrollTo("filter-collection", {
+        return(
+        scroller.scrollTo("filter-collection", {
               duration: 800,
               delay: 0,
               smooth: "easeInOutQuart",
-            }))
+        }))
     default:
         return(
         scroller.scrollTo("hero-section", {
@@ -146,13 +166,14 @@ const Menu = ({ open, setOpen }) => {
             smooth: "easeInOutQuart",
       }))
     }
-  };
+  }
 
   const renderMenuItem = (item, index) => {
     switch (item.type) {
       case PRIMARY_ITEM:
         return (
-          <Link id={index} to={item.path} onClick={()=> move(item.title)}>
+       
+          <Link id={index} to={item.path}  duration={item.duration}  >
             {item.title}
           </Link>
         );
