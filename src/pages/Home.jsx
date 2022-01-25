@@ -8,7 +8,7 @@ import { loadContractData } from "../store/contract/contract.action.js";
 import { web3 } from "../services/web3.service.js";
 import { NftList } from "../components/nft/NftList.jsx";
 import { Loader } from "../components/common/Loader.jsx";
-import { FAQ } from "../components/util/FAQ.jsx"
+import { FAQ } from "../components/util/FAQ.jsx";
 import NFT from "../assets/NFT.mp4";
 //Img
 import HeroImg from "../assets/img/FullLogo.png";
@@ -161,31 +161,44 @@ export function Home() {
           iure aliquid!
         </p>
         <div className="road-map">
-          <div className="q1 flex">
-            <img className="img" src={HeroImg} alt="hero-image" />
+          <div className="q1 flex column">
+            <img className="img" src={anniversary} alt="hero-image" />
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore
               quae exercitationem, odio nesciunt laboriosam commodi in nisi ad
               ex, perspiciatis debitis omnis voluptatibus ipsam, eaque sequi
-              numquam? Iusto, aliquid vero!
+              numquam? Iusto, aliquid vero!On the first of every month, on
+              00:00:00 UTC a unique piece of history is documented, a minted NFT
+              recording forever the amount of Ether that was burned on this
+              month. The NFT is algorithmically illustrated based on the
+              Ethereum blocks’ activity during the documented month. Only one
+              copy is minted per month (12 unique pieces only per year).
+              numquam? Iusto, aliquid vero!On the first of every month, on
+              00:00:00 UTC a unique piece of history is documented, a minted NFT
+              recording forever the amount of Ether that was burned on this
+              month. The NFT is algorithmically illustrated based on the
+              Ethereum blocks’ activity during the documented month. Only one
+              copy is minted per month (12 unique pieces only per year).
             </p>
           </div>
-          <div className="q2 flex">
-            <img className="img" src={HeroImg} alt="hero-image" />
+          <div className="q2 flex column">
+            <img className="img" src={anniversary} alt="hero-image" />
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore
               quae exercitationem, odio nesciunt laboriosam commodi in nisi ad
               ex, perspiciatis debitis omnis voluptatibus ipsam, eaque sequi
-              numquam? Iusto, aliquid vero!
-            </p>
-          </div>
-          <div className="q3 flex">
-            <img className="img" src={HeroImg} alt="hero-image" />
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore
-              quae exercitationem, odio nesciunt laboriosam commodi in nisi ad
-              ex, perspiciatis debitis omnis voluptatibus ipsam, eaque sequi
-              numquam? Iusto, aliquid vero!
+              numquam? Iusto, aliquid vero!On the first of every month, on
+              00:00:00 UTC a unique piece of history is documented, a minted NFT
+              recording forever the amount of Ether that was burned on this
+              month. The NFT is algorithmically illustrated based on the
+              Ethereum blocks’ activity during the documented month. Only one
+              copy is minted per month (12 unique pieces only per year).
+              numquam? Iusto, aliquid vero!On the first of every month, on
+              00:00:00 UTC a unique piece of history is documented, a minted NFT
+              recording forever the amount of Ether that was burned on this
+              month. The NFT is algorithmically illustrated based on the
+              Ethereum blocks’ activity during the documented month. Only one
+              copy is minted per month (12 unique pieces only per year).
             </p>
           </div>
         </div>
@@ -251,10 +264,27 @@ export function Home() {
         </div>
       </section>
       <section className="faq-section">
-          <FAQ q='wooww' a='trtrtrtr'></FAQ>
-          <FAQ q='loremmm' a='fffff'></FAQ>
-          <FAQ q='whaat is meta' a='hhh'></FAQ>
-          <FAQ q='whaat is meta' a='blabla'></FAQ>
+      <h2>frequently questioned answers</h2>
+        <FAQ
+          q="wooww?"
+          a="numquam? Iusto, aliquid vero!On the first of every month, on 00:00:00 UTC a unique piece of history is documented, a minted NFT recording forever the amount of Ether that was burned on this month. The NFT is algorithmically illustrated based on the Ethereum blocks’ activity during the documented month. Only one copy is minted per month (12 unique pieces only per year).
+"
+        ></FAQ>
+        <FAQ
+          q="loremmm?"
+          a="numquam? Iusto, aliquid vero!On the first of every month, on 00:00:00 UTC a unique piece of history is documented, a minted NFT recording forever the amount of Ether that was burned on this month. The NFT is algorithmically illustrated based on the Ethereum blocks’ activity during the documented month. Only one copy is minted per month (12 unique pieces only per year).
+"
+        ></FAQ>
+        <FAQ
+          q="whaat is meta?"
+          a="numquam? Iusto, aliquid vero!On the first of every month, on 00:00:00 UTC a unique piece of history is documented, a minted NFT recording forever the amount of Ether that was burned on this month. The NFT is algorithmically illustrated based on the Ethereum blocks’ activity during the documented month. Only one copy is minted per month (12 unique pieces only per year).
+"
+        ></FAQ>
+        <FAQ
+          q="whaat is meta?"
+          a="numquam? Iusto, aliquid vero!On the first of every month, on 00:00:00 UTC a unique piece of history is documented, a minted NFT recording forever the amount of Ether that was burned on this month. The NFT is algorithmically illustrated based on the Ethereum blocks’ activity during the documented month. Only one copy is minted per month (12 unique pieces only per year).
+"
+        ></FAQ>
       </section>
     </div>
   );

@@ -78,7 +78,7 @@ export function FAQ({q, a}) {
                   px: 3,
                   pt: 2.5,
                   pb: open ? 0 : 2.5,
-                  '&:hover, &:focus': { '& svg': { opacity: open ? 1 : 0 } },
+                  '&:focus': { '& svg': { opacity: open ? 1 : 0 } },
                 }}
               >
                 <ListItemText
@@ -86,14 +86,14 @@ export function FAQ({q, a}) {
                   primaryTypographyProps={{
                     fontSize: 15,
                     fontWeight: 'medium',
-                    lineHeight: '20px',
+                    lineHeight: '50px',
                     mb: '2px',
                   }}
                   // secondary="Authentication, Firestore Database, Realtime Database, Storage, Hosting, Functions, and Machine Learning"
                   secondaryTypographyProps={{
                     noWrap: true,
                     fontSize: 12,
-                    lineHeight: '16px',
+                    lineHeight: '35px',
                     color: open ? 'rgba(0,0,0,0)' : 'rgba(255,255,255,0.5)',
                   }}
                   sx={{ my: 0 }}
@@ -103,11 +103,10 @@ export function FAQ({q, a}) {
                      primary={<KeyboardArrowDown
                       sx={{
                         ml: 10,
-                        // opacity: 0,
                       }}
                      />}
                      primaryTypographyProps={{
-                       fontSize: 15,
+                       fontSize: 30,
                        fontWeight: 'medium',
                        lineHeight: '20px',
                        mb: '5px',
@@ -124,7 +123,7 @@ export function FAQ({q, a}) {
                 />
               </ListItemButton>
               {open &&
-              <h5>{a}</h5>
+              <span>{a}</span>
               }
             </Box>
           </FireNav>

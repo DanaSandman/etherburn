@@ -88,7 +88,7 @@ footer{
       }
    }
    }
-   @include for-tablet-layout{
+   @include for-tablet-layout {
       footer{
         width:49.5rem;
       }
@@ -96,7 +96,7 @@ footer{
       .main-footer{
                flex-direction: column;
                width: 41.5rem;
-               height: 62rem;
+               // height: 62rem;
             .footer-main-contant{
              p{
                height: 5rem;
@@ -111,9 +111,26 @@ footer{
       } 
    }
    @include for-narrow-layout {
-      .main-footer{
-         height: auto;
-      }
+      footer{
+         width:49.5rem;
+       }
+       margin: 0px;
+       .main-footer{
+                flex-direction: column;
+                width: 41.5rem;
+                // height: 62rem;
+             .footer-main-contant{
+              p{
+                height: 5rem;
+              }
+             }
+             .footer-social-media-links{
+                margin-bottom: 1.25rem;
+                h6{
+                   margin-bottom: 1.6rem;
+                }
+             }
+       } 
    }
    @include for-mobile-layout{
       *{
@@ -124,7 +141,7 @@ footer{
       .main-footer{
         flex-direction: column;
          width: 20rem;
-         height: 58rem;
+         // height: 58rem;
          margin: 0px;
          div{
            width: 365px;
@@ -132,7 +149,7 @@ footer{
             .footer-main-contant{
                p{
                   width: 365px;
-                  margin:0 0 2rem 1.5rem;
+                  margin:0 0 4rem 1.5rem;
                   text-align: center;
                 }
                 img{
@@ -141,18 +158,20 @@ footer{
                 }
             }
             .footer-social-media-links{
-               margin: 2rem;
+               margin-left: 3rem;
                h6{
                   font-size: 18px; 
                }
                .social-links{
                   width: 19.7rem;
                }
-               // .discord-footer-link,
                .twitter-footer-link,
                .instegram-footer-link{
                  width: 4rem;
                  height: 4rem;
+               }
+               .join-our-discord-btn{
+                  margin-right: 18px;
                }
             }
         }
