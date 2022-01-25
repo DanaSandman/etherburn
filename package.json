@@ -21,6 +21,7 @@
     "bnc-onboard": "^1.36.0",
     "font-awesome": "^4.7.0",
     "fortmatic": "^2.2.1",
+    "framer-motion": "^4.1.17",
     "http": "^0.0.1-security",
     "react": "^17.0.2",
     "react-alice-carousel": "^2.5.1",

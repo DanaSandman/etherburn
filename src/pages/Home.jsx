@@ -24,6 +24,10 @@ import yearly from "../assets/img/items_types/yearly.png";
 import million from "../assets/img/items_types/million.png";
 import anniversary from "../assets/img/items_types/billion.png";
 
+import {motion} from 'framer-motion/dist/es/index';
+// import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
+
+
 export function Home() {
   const dispatch = useDispatch();
   const nfts = useSelector((state) => state.nftModule.nfts);
@@ -48,19 +52,24 @@ export function Home() {
       </div>
     );
   return (
-    <div className="home-page">
+    <motion.div className="home-page" animate={{ opacity: [0,1] }} transition={{ duration: 3 }}>
       <section className="hero-section flex">
         <img className="hero-img" src={HeroImg} alt="hero-image" />
-        <div className="content-hero flex column">
-          <h1>
+        <div className="content-hero flex column"
+        >
+          <motion.h1 animate={{ opacity: [0, 1], y: [100, 100, 0] }}
+            transition={{ ease: 'easeOut', duration: 1  }}
+          >
             Own the burn<br></br>of Ether
-          </h1>
-          <p>
+          </motion.h1>
+          <motion.p animate={{ opacity: [0, 1], y: [150, 0] }}
+          transition={{ ease: 'easeOut', delay: 0.7 }}
+          >
             EtherBurn is an NFT collection produced from the Ethereum blockchain
             burnt fees. Each NFT is a unique 3d plot collectible generated from
             an algorithmic combination of the timestamps, blocks, base fee and
             gas used. Once you’ve minted it, no one else can get it.
-          </p>
+          </motion.p>
         </div>
       </section>
       <section className="cards-carousel-section flex column">
@@ -76,12 +85,15 @@ export function Home() {
         </Link>
       </section>
       <section className="eco-system-section flex column">
-        <h2>Eco System</h2>
-        <p className="p-description">
+        <motion.h2 animate={{ opacity: [0, 1], y: [100, 100, 0] }}
+            transition={{ ease: 'easeOut', duration: 1  }}>Eco System</motion.h2>
+             <motion.p className="p-description" animate={{ opacity: [0, 1], y: [150, 0] }}
+          transition={{ ease: 'easeOut', delay: 0.7 }}
+          >
           Whether it's daily, monthly or yearly burn collectible, you can now
           own, buy and sell a piece of Ethereum history. mark pivotal moments in
           Ethereum history will be pre-minted and put up for auction.
-        </p>
+          </motion.p>
         <div className="item-types">
           <div className="daily flex column">
             <img className="img" src={daily} alt="hero-image" />
@@ -153,13 +165,16 @@ export function Home() {
         </div>
       </section>
       <section className="road-map-section flex column">
-        <h2>Road Map</h2>
-        <p className="p-description">
+      <motion.h2 animate={{ opacity: [0, 1], y: [100, 100, 0] }}
+            transition={{ ease: 'easeOut', duration: 1  }}>Road Map</motion.h2>
+             <motion.p className="p-description" animate={{ opacity: [0, 1], y: [150, 0] }}
+          transition={{ ease: 'easeOut', delay: 0.7 }}
+          >
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas
           eveniet error tenetur odit facilis, fuga ipsum eos dignissimos quam
           mollitia corporis quos inventore voluptatem natus maiores quas placeat
           iure aliquid!
-        </p>
+          </motion.p>
         <div className="road-map">
           <div className="q1 flex column">
             <img className="img" src={anniversary} alt="hero-image" />
@@ -206,10 +221,14 @@ export function Home() {
       <section className="team-section flex column">
         <div className="content-area-team flex justify-center ">
           <div className="title">
-            <h2>OUR TEAM</h2>
-            <p>
+          <motion.h2 animate={{ opacity: [0, 1], y: [100, 100, 0] }}
+            transition={{ ease: 'easeOut', duration: 1  }}>OUR TEAM</motion.h2>
+
+            <motion.p className="p-description" animate={{ opacity: [0, 1], y: [150, 0] }}
+          transition={{ ease: 'easeOut', delay: 0.7 }}
+          >
               We are lorem ipsum dolor sit<br></br> amet, consectetur
-            </p>
+             </motion.p>
           </div>
           {/* <button className="btn-team-about-us">
             <div className="btn-content">about us</div>
@@ -286,6 +305,6 @@ export function Home() {
 "
         ></FAQ>
       </section>
-    </div>
+    </motion.div>
   );
 }
