@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 //Store
@@ -24,21 +24,44 @@ import yearly from "../assets/img/items_types/yearly.png";
 import million from "../assets/img/items_types/million.png";
 import anniversary from "../assets/img/items_types/billion.png";
 
-import {motion} from 'framer-motion/dist/es/index';
-// import {AnimatePresence, motion} from 'framer-motion/dist/framer-motion'
-
+import { useAnimation, motion } from "framer-motion/dist/es/index";
+import { useInView } from "react-intersection-observer";
 
 export function Home() {
   const dispatch = useDispatch();
   const nfts = useSelector((state) => state.nftModule.nfts);
+  const { ref, inView } = useInView();
+  const { ref1, inView1 } = useInView();
+  const { ref2, inView2 } = useInView();
+
+  // const animation = useAnimation();
   const linkedinTeamPath = {
     IsraelPerez: "https://www.linkedin.com/in/israel-perez-84b69322/",
     DanaSandman: "https://www.linkedin.com/in/dana-sandman-451a2b168/",
     MeirZach: "https://www.linkedin.com/in/meir-zach-a2565a17/",
   };
+  useEffect(() => {
+    console.log("use effect in view=", inView);
+    console.log("use effect in view=", inView1);
+    console.log("use effect in view=", inView2);
+    // if (inView) {
+    //   console.log("inviewwww");
+    //   animation.start({
+    //     opacity: [0, 1],
+    //     y: [100, 100, 0],
+    //     transition: {
+    //       type: "spring",
+    //       duration: 1,
+    //       bounce: 0.3,
+    //     },
+    //   });
+    // }
+    // if (!inView) {
+    //   animation.start({ x: "-100vw" });
+    // }
+  }, [inView, inView1, inView2 ]);
 
   useEffect(() => {
-    // window.scrollTo(0, 0);
     dispatch(loadNfts());
     dispatch(loadContractData());
     web3.eth.getBlockNumber().then((num) => console.log("web3 block num", num));
@@ -52,18 +75,23 @@ export function Home() {
       </div>
     );
   return (
-    <motion.div className="home-page" animate={{ opacity: [0,1] }} transition={{ duration: 3 }}>
+    <motion.div
+      className="home-page"
+      animate={{ opacity: [0, 1] }}
+      transition={{ duration: 3 }}
+    >
       <section className="hero-section flex">
         <img className="hero-img" src={HeroImg} alt="hero-image" />
-        <div className="content-hero flex column"
-        >
-          <motion.h1 animate={{ opacity: [0, 1], y: [100, 100, 0] }}
-            transition={{ ease: 'easeOut', duration: 1  }}
+        <div className="content-hero flex column">
+          <motion.h1
+            animate={{ opacity: [0, 1], y: [100, 100, 0] }}
+            transition={{ ease: "easeOut", duration: 1 }}
           >
             Own the burn<br></br>of Ether
           </motion.h1>
-          <motion.p animate={{ opacity: [0, 1], y: [150, 0] }}
-          transition={{ ease: 'easeOut', delay: 0.7 }}
+          <motion.p
+            animate={{ opacity: [0, 1], y: [150, 0] }}
+            transition={{ ease: "easeOut", delay: 0.7 }}
           >
             EtherBurn is an NFT collection produced from the Ethereum blockchain
             burnt fees. Each NFT is a unique 3d plot collectible generated from
@@ -84,16 +112,27 @@ export function Home() {
           ALL COLLECTION
         </Link>
       </section>
-      <section className="eco-system-section flex column">
-        <motion.h2 animate={{ opacity: [0, 1], y: [100, 100, 0] }}
-            transition={{ ease: 'easeOut', duration: 1  }}>Eco System</motion.h2>
-             <motion.p className="p-description" animate={{ opacity: [0, 1], y: [150, 0] }}
-          transition={{ ease: 'easeOut', delay: 0.7 }}
-          >
-          Whether it's daily, monthly or yearly burn collectible, you can now
-          own, buy and sell a piece of Ethereum history. mark pivotal moments in
-          Ethereum history will be pre-minted and put up for auction.
-          </motion.p>
+      <section ref={ref} className="eco-system-section flex column">
+        {inView && (
+          <>
+            <motion.h2
+              animate={{ opacity: [0, 1], y: [150, 0] }}
+              transition={{ ease: "easeOut", delay: 0.5 }}
+            >
+              Eco System
+            </motion.h2>
+            <motion.p
+              className="p-description"
+              animate={{ opacity: [0, 1], y: [150, 0] }}
+              transition={{ ease: "easeOut", delay: 0.5 }}
+            >
+              Whether it's daily, monthly or yearly burn collectible, you can
+              now own, buy and sell a piece of Ethereum history. mark pivotal
+              moments in Ethereum history will be pre-minted and put up for
+              auction.
+            </motion.p>
+          </>
+        )}
         <div className="item-types">
           <div className="daily flex column">
             <img className="img" src={daily} alt="hero-image" />
@@ -164,17 +203,27 @@ export function Home() {
           </div>
         </div>
       </section>
-      <section className="road-map-section flex column">
-      <motion.h2 animate={{ opacity: [0, 1], y: [100, 100, 0] }}
-            transition={{ ease: 'easeOut', duration: 1  }}>Road Map</motion.h2>
-             <motion.p className="p-description" animate={{ opacity: [0, 1], y: [150, 0] }}
-          transition={{ ease: 'easeOut', delay: 0.7 }}
-          >
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas
-          eveniet error tenetur odit facilis, fuga ipsum eos dignissimos quam
-          mollitia corporis quos inventore voluptatem natus maiores quas placeat
-          iure aliquid!
-          </motion.p>
+      <section ref={ref1} className="road-map-section flex column">
+        {inView1 && (
+          <>
+            <motion.h2
+              animate={{ opacity: [0, 1], y: [100, 100, 0] }}
+              transition={{ ease: "easeOut", duration: 1 }}
+            >
+              Road Map
+            </motion.h2>
+            <motion.p
+              className="p-description"
+              animate={{ opacity: [0, 1], y: [150, 0] }}
+              transition={{ ease: "easeOut", delay: 0.7 }}
+            >
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas
+              eveniet error tenetur odit facilis, fuga ipsum eos dignissimos
+              quam mollitia corporis quos inventore voluptatem natus maiores
+              quas placeat iure aliquid!
+            </motion.p>
+          </>
+        )}
         <div className="road-map">
           <div className="q1 flex column">
             <img className="img" src={anniversary} alt="hero-image" />
@@ -218,21 +267,27 @@ export function Home() {
           </div>
         </div>
       </section>
-      <section className="team-section flex column">
+      <section ref={ref2} className="team-section flex column">
         <div className="content-area-team flex justify-center ">
           <div className="title">
-          <motion.h2 animate={{ opacity: [0, 1], y: [100, 100, 0] }}
-            transition={{ ease: 'easeOut', duration: 1  }}>OUR TEAM</motion.h2>
-
-            <motion.p className="p-description" animate={{ opacity: [0, 1], y: [150, 0] }}
-          transition={{ ease: 'easeOut', delay: 0.7 }}
-          >
-              We are lorem ipsum dolor sit<br></br> amet, consectetur
-             </motion.p>
+            {inView2 && (
+              <>
+                <motion.h2
+                  animate={{ opacity: [0, 1], y: [100, 100, 0] }}
+                  transition={{ ease: "easeOut", duration: 1 }}
+                >
+                  OUR TEAM
+                </motion.h2>
+                <motion.p
+                  className="p-description"
+                  animate={{ opacity: [0, 1], y: [150, 0] }}
+                  transition={{ ease: "easeOut", delay: 0.7 }}
+                >
+                  We are lorem ipsum dolor sit<br></br> amet, consectetur
+                </motion.p>
+              </>
+            )}
           </div>
-          {/* <button className="btn-team-about-us">
-            <div className="btn-content">about us</div>
-          </button> */}
         </div>
         <div className="members flex space-between">
           <div className="member1">
@@ -283,7 +338,7 @@ export function Home() {
         </div>
       </section>
       <section className="faq-section">
-      <h2>frequently questioned answers</h2>
+        <h2>frequently questioned answers</h2>
         <FAQ
           q="wooww?"
           a="numquam? Iusto, aliquid vero!On the first of every month, on 00:00:00 UTC a unique piece of history is documented, a minted NFT recording forever the amount of Ether that was burned on this month. The NFT is algorithmically illustrated based on the Ethereum blocks’ activity during the documented month. Only one copy is minted per month (12 unique pieces only per year).
