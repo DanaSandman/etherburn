@@ -33,14 +33,21 @@ export function Home() {
   const nfts = useSelector((state) => state.nftModule.nfts);
   const ref = useRef();
   const [inViewRef, inView] = useInView();
+  const [inViewRef1, inView1] = useInView();
   const [inViewRef2, inView2] = useInView();
-  const [inViewRef3, inView3] = useInView()
+  const [inViewRef3, inView3] = useInView();
   
   const setRefs = useCallback((node) => {
       ref.current = node;
       inViewRef(node);
     },
     [inViewRef],
+  );
+  const setRefs1 = useCallback((node) => {
+    ref.current = node;
+    inViewRef1(node);
+  },
+  [inViewRef1],
   );
   const setRefs2 = useCallback((node) => {
     ref.current = node;
@@ -78,9 +85,11 @@ export function Home() {
       animate={{ opacity: [0, 1] }}
       transition={{ duration: 3 }}
     >
-      <section className="hero-section flex">
+      <section ref={setRefs} className="hero-section flex">
         <img className="hero-img" src={HeroImg} alt="hero-image" />
         <div className="content-hero flex column">
+        {inView && (
+          <>
           <motion.h1
             animate={{ opacity: [0, 1], y: [100, 100, 0] }}
             transition={{ ease: "easeOut", duration: 1 }}
@@ -96,6 +105,8 @@ export function Home() {
             an algorithmic combination of the timestamps, blocks, base fee and
             gas used. Once you’ve minted it, no one else can get it.
           </motion.p>
+          </>
+           )} 
         </div>
       </section>
       <section className="cards-carousel-section flex column">
@@ -110,8 +121,8 @@ export function Home() {
           ALL COLLECTION
         </Link>
       </section>
-      <section ref={setRefs} className="eco-system-section flex column">
-        {inView && (
+      <section ref={setRefs1} className="eco-system-section flex column">
+        {inView1 && (
           <>
         <motion.h2
             animate={{ opacity: [0, 1], y: [150, 0] }}

@@ -1,8 +1,9 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { scroller } from "react-scroll";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faDiscord } from "@fortawesome/free-brands-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDiscord } from "@fortawesome/free-brands-svg-icons";
+import { motion } from "framer-motion/dist/es/index";
 
 const StyledMenu = styled.nav`
   display: flex;
@@ -73,18 +74,18 @@ export const MENU_ITEMS = [
       duration: 800,
       delay: 0,
       smooth: "easeInOutQuart",
-})
+    }),
   },
   {
     title: "Collection",
     type: PRIMARY_ITEM,
     // path: `${BASE_ETHERBURN_APP_URL}/#/collection`,
     path: "/collection",
-    duration:  scroller.scrollTo("filter-collection", {
+    duration: scroller.scrollTo("filter-collection", {
       duration: 800,
       delay: 0,
       smooth: "easeInOutQuart",
-})
+    }),
   },
   {
     title: "Roadmap",
@@ -95,8 +96,7 @@ export const MENU_ITEMS = [
       duration: 800,
       delay: 0,
       smooth: "easeInOutQuart",
-    })
-  
+    }),
   },
   {
     title: "Team",
@@ -107,7 +107,7 @@ export const MENU_ITEMS = [
       duration: 800,
       delay: 0,
       smooth: "easeInOutQuart",
-    })
+    }),
   },
   {
     type: ICON_ITEMS,
@@ -128,52 +128,46 @@ export const MENU_ITEMS = [
   },
 ];
 const Menu = ({ open, setOpen }) => {
+  
   const move = (item) => {
     switch (item) {
-    case "About":
-        return(
-        scroller.scrollTo("hero-section", {
-              duration: 800,
-              delay: 0,
-              smooth: "easeInOutQuart",
-        }))
+      case "About":
+        return scroller.scrollTo("hero-section", {
+          duration: 800,
+          delay: 0,
+          smooth: "easeInOutQuart",
+        });
       case "Roadmap":
-        return(
-        scroller.scrollTo("road-map-section", {
+        return scroller.scrollTo("road-map-section", {
           duration: 800,
           delay: 0,
           smooth: "easeInOutQuart",
-        }))
+        });
       case "Team":
-        return(
-        scroller.scrollTo("team-section", {
+        return scroller.scrollTo("team-section", {
           duration: 800,
           delay: 0,
           smooth: "easeInOutQuart",
-        }))
-        case "Collection":
-        return(
-        scroller.scrollTo("filter-collection", {
-              duration: 800,
-              delay: 0,
-              smooth: "easeInOutQuart",
-        }))
-    default:
-        return(
-        scroller.scrollTo("hero-section", {
-            duration: 800,
-            delay: 0,
-            smooth: "easeInOutQuart",
-      }))
+        });
+      case "Collection":
+        return scroller.scrollTo("filter-collection", {
+          duration: 800,
+          delay: 0,
+          smooth: "easeInOutQuart",
+        });
+      default:
+        return scroller.scrollTo("hero-section", {
+          duration: 800,
+          delay: 0,
+          smooth: "easeInOutQuart",
+        });
     }
-  }
-
+  };
   const renderMenuItem = (item, index) => {
     switch (item.type) {
       case PRIMARY_ITEM:
         return (
-       
-          <Link id={index} to={item.path}  duration={item.duration}  >
+          <Link id={index} to={item.path} duration={item.duration}>
             {item.title}
           </Link>
         );
@@ -192,7 +186,17 @@ const Menu = ({ open, setOpen }) => {
 
   return (
     <StyledMenu onClick={() => setOpen(!open)} open={open}>
-      {MENU_ITEMS.map(renderMenuItem)}
+      {open && (
+        <>
+          <motion.div
+            className="flex column"
+            animate={{ opacity: [0, 1], y: [100, 100, 0] }}
+            transition={{ ease: "easeOut", delay: 0.5 }}
+          >
+            {MENU_ITEMS.map(renderMenuItem)}
+          </motion.div>
+        </>
+      )}
     </StyledMenu>
   );
 };

@@ -30,7 +30,14 @@
         color: rgb(255, 0, 174)
     }
 }
-
+nav {
+    div{
+        position: relative !important;
+    }
+}
+.fpphMm{
+    padding-top: 95% !important;
+}
 @include for-mobile-layout{
     .header{
         grid-template-columns: 10.5rem minmax(auto, 1200px) 7rem;
