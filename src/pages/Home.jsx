@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 //Store
@@ -23,44 +23,42 @@ import monthly from "../assets/img/items_types/monthly.png";
 import yearly from "../assets/img/items_types/yearly.png";
 import million from "../assets/img/items_types/million.png";
 import anniversary from "../assets/img/items_types/billion.png";
-
-import { useAnimation, motion } from "framer-motion/dist/es/index";
+//framer-motion
+import { motion } from "framer-motion/dist/es/index";
 import { useInView } from "react-intersection-observer";
 
 export function Home() {
+
   const dispatch = useDispatch();
   const nfts = useSelector((state) => state.nftModule.nfts);
-  const { ref, inView } = useInView();
-  const { ref1, inView1 } = useInView();
-  const { ref2, inView2 } = useInView();
-
-  // const animation = useAnimation();
+  const ref = useRef();
+  const [inViewRef, inView] = useInView();
+  const [inViewRef2, inView2] = useInView();
+  const [inViewRef3, inView3] = useInView()
+  
+  const setRefs = useCallback((node) => {
+      ref.current = node;
+      inViewRef(node);
+    },
+    [inViewRef],
+  );
+  const setRefs2 = useCallback((node) => {
+    ref.current = node;
+    inViewRef2(node);
+  },
+  [inViewRef2],
+  );
+  const setRefs3 = useCallback((node) => {
+    ref.current = node;
+    inViewRef3(node);
+  },
+  [inViewRef3],
+  );
   const linkedinTeamPath = {
     IsraelPerez: "https://www.linkedin.com/in/israel-perez-84b69322/",
     DanaSandman: "https://www.linkedin.com/in/dana-sandman-451a2b168/",
     MeirZach: "https://www.linkedin.com/in/meir-zach-a2565a17/",
   };
-  useEffect(() => {
-    console.log("use effect in view=", inView);
-    console.log("use effect in view=", inView1);
-    console.log("use effect in view=", inView2);
-    // if (inView) {
-    //   console.log("inviewwww");
-    //   animation.start({
-    //     opacity: [0, 1],
-    //     y: [100, 100, 0],
-    //     transition: {
-    //       type: "spring",
-    //       duration: 1,
-    //       bounce: 0.3,
-    //     },
-    //   });
-    // }
-    // if (!inView) {
-    //   animation.start({ x: "-100vw" });
-    // }
-  }, [inView, inView1, inView2 ]);
-
   useEffect(() => {
     dispatch(loadNfts());
     dispatch(loadContractData());
@@ -112,27 +110,26 @@ export function Home() {
           ALL COLLECTION
         </Link>
       </section>
-      <section ref={ref} className="eco-system-section flex column">
+      <section ref={setRefs} className="eco-system-section flex column">
         {inView && (
           <>
-            <motion.h2
-              animate={{ opacity: [0, 1], y: [150, 0] }}
-              transition={{ ease: "easeOut", delay: 0.5 }}
-            >
-              Eco System
-            </motion.h2>
-            <motion.p
-              className="p-description"
-              animate={{ opacity: [0, 1], y: [150, 0] }}
-              transition={{ ease: "easeOut", delay: 0.5 }}
-            >
-              Whether it's daily, monthly or yearly burn collectible, you can
-              now own, buy and sell a piece of Ethereum history. mark pivotal
-              moments in Ethereum history will be pre-minted and put up for
-              auction.
-            </motion.p>
-          </>
-        )}
+        <motion.h2
+            animate={{ opacity: [0, 1], y: [150, 0] }}
+            transition={{ ease: "easeOut", delay: 0.5 }}
+          >
+            Eco System
+          </motion.h2>
+        <motion.p
+          className="p-description"
+          animate={{ opacity: [0, 1], y: [150, 0] }}
+          transition={{ ease: "easeOut", delay: 0.5 }}
+        >
+          Whether it's daily, monthly or yearly burn collectible, you can now
+          own, buy and sell a piece of Ethereum history. mark pivotal moments in
+          Ethereum history will be pre-minted and put up for auction.
+        </motion.p> 
+        </>
+           )}    
         <div className="item-types">
           <div className="daily flex column">
             <img className="img" src={daily} alt="hero-image" />
@@ -203,27 +200,27 @@ export function Home() {
           </div>
         </div>
       </section>
-      <section ref={ref1} className="road-map-section flex column">
-        {inView1 && (
+      <section ref={setRefs2} className="road-map-section flex column">
+      {inView2 && (
           <>
-            <motion.h2
-              animate={{ opacity: [0, 1], y: [100, 100, 0] }}
-              transition={{ ease: "easeOut", duration: 1 }}
-            >
-              Road Map
-            </motion.h2>
-            <motion.p
-              className="p-description"
-              animate={{ opacity: [0, 1], y: [150, 0] }}
-              transition={{ ease: "easeOut", delay: 0.7 }}
-            >
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas
-              eveniet error tenetur odit facilis, fuga ipsum eos dignissimos
-              quam mollitia corporis quos inventore voluptatem natus maiores
-              quas placeat iure aliquid!
-            </motion.p>
-          </>
-        )}
+        <motion.h2
+          animate={{ opacity: [0, 1], y: [100, 100, 0] }}
+          transition={{ ease: "easeOut", delay: 0.5 }}
+        >
+          Road Map
+        </motion.h2>
+        <motion.p
+          className="p-description"
+          animate={{ opacity: [0, 1], y: [150, 0] }}
+          transition={{ ease: "easeOut", delay: 0.7 }}
+        >
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas
+          eveniet error tenetur odit facilis, fuga ipsum eos dignissimos quam
+          mollitia corporis quos inventore voluptatem natus maiores quas placeat
+          iure aliquid!
+        </motion.p>
+        </>
+           )}
         <div className="road-map">
           <div className="q1 flex column">
             <img className="img" src={anniversary} alt="hero-image" />
@@ -267,26 +264,26 @@ export function Home() {
           </div>
         </div>
       </section>
-      <section ref={ref2} className="team-section flex column">
+      <section ref={setRefs3} className="team-section flex column">
         <div className="content-area-team flex justify-center ">
           <div className="title">
-            {inView2 && (
-              <>
-                <motion.h2
-                  animate={{ opacity: [0, 1], y: [100, 100, 0] }}
-                  transition={{ ease: "easeOut", duration: 1 }}
-                >
-                  OUR TEAM
-                </motion.h2>
-                <motion.p
-                  className="p-description"
-                  animate={{ opacity: [0, 1], y: [150, 0] }}
-                  transition={{ ease: "easeOut", delay: 0.7 }}
-                >
-                  We are lorem ipsum dolor sit<br></br> amet, consectetur
-                </motion.p>
-              </>
-            )}
+          {inView3 && (
+          <>
+            <motion.h2
+              animate={{ opacity: [0, 1], y: [100, 100, 0] }}
+              transition={{ ease: "easeOut", duration: 1 }}
+            >
+              OUR TEAM
+            </motion.h2>
+            <motion.p
+              className="p-description"
+              animate={{ opacity: [0, 1], y: [150, 0] }}
+              transition={{ ease: "easeOut", delay: 0.7 }}
+            >
+              We are lorem ipsum dolor sit<br></br> amet, consectetur
+            </motion.p>
+            </>
+           )}
           </div>
         </div>
         <div className="members flex space-between">
