@@ -47,7 +47,7 @@ export function Home() {
     dispatch(loadNfts());
     dispatch(loadContractData());
     web3.eth.getBlockNumber().then((num) => console.log("web3 block num", num));
-    
+
   }, []);
 
   const setRefs = useCallback((node) => {
@@ -87,8 +87,7 @@ export function Home() {
     <motion.div
       className="home-page"
       animate={{ opacity: [0, 1] }}
-      transition={{ duration: 3 }}
-    >
+      transition={{ duration: 3 }}>
       <section ref={setRefs} className="hero-section flex">
         <img className="hero-img" src={HeroImg} alt="hero-image" />
         <div className="content-hero flex column">
