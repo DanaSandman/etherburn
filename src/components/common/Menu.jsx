@@ -4,6 +4,7 @@ import { scroller } from "react-scroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiscord } from "@fortawesome/free-brands-svg-icons";
 import { motion } from "framer-motion/dist/es/index";
+import { useLocation } from "react-router-dom";
 
 const StyledMenu = styled.nav`
   display: flex;
@@ -63,51 +64,30 @@ export const DOCUMENTATION_URL =
 export const PRIMARY_ITEM = "primary";
 export const SUB_ITEMS = "sub";
 export const ICON_ITEMS = "icon";
-
 export const MENU_ITEMS = [
   {
     title: "About",
     type: PRIMARY_ITEM,
     // path: `${BASE_ETHERBURN_APP_URL}/#/`,
     path: "/",
-    duration: scroller.scrollTo("hero-section", {
-      duration: 800,
-      delay: 0,
-      smooth: "easeInOutQuart",
-    }),
   },
   {
     title: "Collection",
     type: PRIMARY_ITEM,
     // path: `${BASE_ETHERBURN_APP_URL}/#/collection`,
     path: "/collection",
-    duration: scroller.scrollTo("filter-collection", {
-      duration: 800,
-      delay: 0,
-      smooth: "easeInOutQuart",
-    }),
   },
   {
     title: "Roadmap",
     type: PRIMARY_ITEM,
     // path: `${BASE_ETHERBURN_APP_URL}/#/`,
     path: "/",
-    duration: scroller.scrollTo("road-map-section", {
-      duration: 800,
-      delay: 0,
-      smooth: "easeInOutQuart",
-    }),
   },
   {
     title: "Team",
     type: PRIMARY_ITEM,
     // path: `${BASE_ETHERBURN_APP_URL}/#/`,
     path: "/",
-    duration: scroller.scrollTo("team-section", {
-      duration: 800,
-      delay: 0,
-      smooth: "easeInOutQuart",
-    }),
   },
   {
     type: ICON_ITEMS,
@@ -129,8 +109,12 @@ export const MENU_ITEMS = [
 ];
 const Menu = ({ open, setOpen }) => {
   
+  const { pathname } = useLocation();
+
   const move = (item) => {
-    switch (item) {
+    console.log('pathname',pathname);
+      // ev.preventDefault();
+    switch (item.title) {
       case "About":
         return scroller.scrollTo("hero-section", {
           duration: 800,
@@ -138,7 +122,7 @@ const Menu = ({ open, setOpen }) => {
           smooth: "easeInOutQuart",
         });
       case "Roadmap":
-        return scroller.scrollTo("road-map-section", {
+          return scroller.scrollTo("road-map-section", {
           duration: 800,
           delay: 0,
           smooth: "easeInOutQuart",
@@ -167,7 +151,7 @@ const Menu = ({ open, setOpen }) => {
     switch (item.type) {
       case PRIMARY_ITEM:
         return (
-          <Link id={index} to={item.path} duration={item.duration}>
+          <Link id={index} to={item.path}  onClick={() => move(item)}>
             {item.title}
           </Link>
         );

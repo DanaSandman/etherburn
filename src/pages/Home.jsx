@@ -36,12 +36,26 @@ export function Home() {
   const [inViewRef1, inView1] = useInView();
   const [inViewRef2, inView2] = useInView();
   const [inViewRef3, inView3] = useInView();
+  const linkedinTeamPath = {
+    IsraelPerez: "https://www.linkedin.com/in/israel-perez-84b69322/",
+    DanaSandman: "https://www.linkedin.com/in/dana-sandman-451a2b168/",
+    MeirZach: "https://www.linkedin.com/in/meir-zach-a2565a17/",
+  };
   
+  useEffect(() => {
+
+    dispatch(loadNfts());
+    dispatch(loadContractData());
+    web3.eth.getBlockNumber().then((num) => console.log("web3 block num", num));
+    
+  }, []);
+
   const setRefs = useCallback((node) => {
       ref.current = node;
       inViewRef(node);
+      inViewRef1(node);
     },
-    [inViewRef],
+    [inViewRef, inViewRef1],
   );
   const setRefs1 = useCallback((node) => {
     ref.current = node;
@@ -61,16 +75,6 @@ export function Home() {
   },
   [inViewRef3],
   );
-  const linkedinTeamPath = {
-    IsraelPerez: "https://www.linkedin.com/in/israel-perez-84b69322/",
-    DanaSandman: "https://www.linkedin.com/in/dana-sandman-451a2b168/",
-    MeirZach: "https://www.linkedin.com/in/meir-zach-a2565a17/",
-  };
-  useEffect(() => {
-    dispatch(loadNfts());
-    dispatch(loadContractData());
-    web3.eth.getBlockNumber().then((num) => console.log("web3 block num", num));
-  }, []);
 
   if (!nfts)
     return (
