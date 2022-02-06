@@ -43,3 +43,8 @@ button {
   text-align: center;
   margin-bottom: 200px;
 }
+@include for-mobile-layout{
+  p{
+    font-size: large;
+  }
+}
