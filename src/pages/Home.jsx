@@ -132,14 +132,14 @@ export function Home() {
           <>
             <motion.h2
               animate={{ opacity: [0, 1], y: [150, 0] }}
-              transition={{ ease: "easeOut", delay: 0.5 }}
+              transition={{ ease: "easeOut", delay: 0.3 }}
             >
               eco system
             </motion.h2>
             <motion.p
               className="p-description"
               animate={{ opacity: [0, 1], y: [150, 0] }}
-              transition={{ ease: "easeOut", delay: 0.5 }}
+              transition={{ ease: "easeOut", delay: 0.4 }}
             >
               Whether composed of daily, weekly, monthly or yearly burnt
               metadata, you can now own, buy and sell a piece of Ethereum
@@ -257,7 +257,7 @@ export function Home() {
           <>
             <motion.h2
               animate={{ opacity: [0, 1], y: [100, 100, 0] }}
-              transition={{ ease: "easeOut", delay: 0.5 }}
+              transition={{ ease: "easeOut", delay: 0.3 }}
             >
               Road Map
             </motion.h2>
@@ -434,8 +434,9 @@ export function Home() {
       </section>
       <section className="faq-section">
         <h2>frequently questioned answers</h2>
+        <div className="faq">
         <FAQ
-          q="What is EtherBurn?"
+          q="What is EtherBurn? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
           a="EtherBurn is an NFT collection capturing astounding digital collectibles produced using Ethereum burnt fee metadata.
 "
         ></FAQ>
@@ -455,7 +456,7 @@ export function Home() {
 "
         ></FAQ>
         <FAQ
-          q="What can I vote for?"
+          q="What can I vote for? &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
           a="EtherBurn’s Monthly, Yearly, Millionth and Anniversary NFTs will be pre-minted and put up for an auction, with 60% of auction revenues donated to charities. Stakers will be invited to vote on the charitable organizations that will receive donations.
 "
         ></FAQ>
@@ -490,6 +491,7 @@ export function Home() {
           *Since 1 Millionth ETH burnt fees is an estimation, minor changes to a certain collection’s total number may occur e.g. the 1 Millionth collection could end up as 13 items at the expense of the Daily collection, which could drop from 1,311 to 1,310 items.          
 "
         ></FAQ>
+      </div>
       </section>
     </motion.div>
   );

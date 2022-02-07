@@ -57,18 +57,19 @@ export function FAQ({q, a}) {
           },
           palette: {
             mode: 'dark',
-            primary: { main: 'rgb(102, 157, 246)' },
-            background: { paper: 'rgb(5, 30, 52)' },
+            primary: { main: 'rgb(43,42,42)' },
+            background: { paper: 'rgb(29,29,29)' },
           },
         })}
       >
-        <Paper elevation={0} sx={{ maxWidth: 200 }}>
+        <Paper elevation={0} sx={{ maxWidth: 1200, fontSize: 18 , paddingRight: 1.5 }}>
           <FireNav component="nav" disablePadding>
             <Divider />
             <Box
               sx={{
                 bgcolor: open ? 'rgba(71, 98, 130, 0.2)' : null,
                 pb: open ? 2 : 0,
+                padding: 1.5,
               }}
             >
               <ListItemButton
@@ -84,9 +85,9 @@ export function FAQ({q, a}) {
                 <ListItemText
                   primary={q}
                   primaryTypographyProps={{
-                    fontSize: 15,
+                    fontSize: 20,
                     fontWeight: 'medium',
-                    lineHeight: '50px',
+                    // lineHeight: '50px',
                     mb: '2px',
                   }}
                   // secondary="Authentication, Firestore Database, Realtime Database, Storage, Hosting, Functions, and Machine Learning"
@@ -108,7 +109,7 @@ export function FAQ({q, a}) {
                      primaryTypographyProps={{
                        fontSize: 30,
                        fontWeight: 'medium',
-                       lineHeight: '20px',
+                       lineHeight: '15px',
                        mb: '5px',
                      }}
                      />
@@ -123,7 +124,7 @@ export function FAQ({q, a}) {
                 />
               </ListItemButton>
               {open &&
-              <span>{a}</span>
+              <span className="a">{a}</span>
               }
             </Box>
           </FireNav>
