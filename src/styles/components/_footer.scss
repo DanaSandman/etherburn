@@ -34,7 +34,7 @@ footer{
       }
    }
    .footer-social-media-links{
-     margin-top: 11.56rem;
+     margin-top: 8.56rem;
      width: 250px;
       .discord-footer-link,
       .twitter-footer-link,
@@ -128,9 +128,12 @@ footer{
               }
              }
              .footer-social-media-links{
-                margin-bottom: 1.25rem;
+                margin-top: 10.56rem;
                 h6{
                    margin-bottom: 1.6rem;
+                }
+                span{
+                   margin-top: 80px;
                 }
              }
        } 
