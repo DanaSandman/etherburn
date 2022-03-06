@@ -62,7 +62,7 @@ export function FAQ({q, a}) {
           },
         })}
       >
-        <Paper elevation={0} sx={{ maxWidth: 1200, fontSize: 18 , paddingRight: 1.5 }}>
+        <Paper elevation={0} sx={{ width: 1190, maxWidth: 1200, fontSize: 18 , paddingRight: 1.5 }}>
           <FireNav component="nav" disablePadding>
             <Divider />
             <Box

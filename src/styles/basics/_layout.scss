@@ -1,7 +1,7 @@
 .home-page{
     display: grid;
     grid-template-columns: 8.5rem minmax( auto, $desktop-breakpoint ) 8.5rem;
-    grid-template-rows: 580px 720px 2100px 1750px 700px;
+    grid-template-rows: 580px 620px 2580px 1540px 797px;
     section{
         grid-column: 2/3;
     };
@@ -32,7 +32,7 @@
     3.75rem;
     }
     .home-page{
-        grid-template-rows: 620px 700px 2150px 1750px 580px
+        grid-template-rows: 620px 650px 2600px 1600px 720px
     }
 }
 @include for-tablet-layout {
@@ -43,7 +43,7 @@
         2.75rem;
     }
     .home-page{
-        grid-template-rows: 860px 720px 2400px 2000px 1100px;
+        grid-template-rows: 1100px 630px 2800px 1850px 1130px;
     }
 }
 @include for-narrow-layout{
@@ -51,7 +51,7 @@
         grid-template-columns: 1.5rem minmax(auto, 31rem) 1.5rem;
     }
     .home-page{
-        grid-template-rows:  820px 690px 2650px 2300px 1100px;
+        grid-template-rows:  1020px 750px 2850px 2180px 1200px;
     }
 }
 @include for-mobile-layout {
@@ -61,7 +61,7 @@
     }
     .home-page{
         padding: 0%;
-        grid-template-rows: 900px 750px 3950px 2680px 1500px;
+        grid-template-rows: 1130px 800px 4080px 2400px 1600px;
     }
     .collection-page{
         grid-template-rows: 255px 2fr;

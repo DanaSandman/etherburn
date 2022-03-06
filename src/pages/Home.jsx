@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useCallback } from "react";
+import ReactDOM from "react-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 //Store
@@ -11,7 +12,9 @@ import { Loader } from "../components/common/Loader.jsx";
 import { FAQ } from "../components/util/FAQ.jsx";
 import NFT from "../assets/NFT.mp4";
 //Img
-import HeroImg from "../assets/img/FullLogo.png";
+// import HeroImg from "../assets/img/FullLogo.png";
+import { svg }  from "../assets/img/hero/heroSvg.js";
+import hero from "../image.svg";
 //imgs team
 import TeamImg1 from "../assets/img/team/TeamImg1.png";
 import TeamImg2 from "../assets/img/team/TeamImg2.jpeg";
@@ -26,6 +29,19 @@ import anniversary from "../assets/img/items_types/billion.png";
 //framer-motion
 import { motion } from "framer-motion/dist/es/index";
 import { useInView } from "react-intersection-observer";
+
+// const loadSVG = container => {
+//   var dataURL = svg.HeroImg
+//   var xhr = new XMLHttpRequest();
+//   xhr.open("GET", dataURL);
+//   xhr.addEventListener("load", function(ev) {
+//     var xml = ev.target.response;
+//     var dom = new DOMParser();
+//     var svg = dom.parseFromString(xml, "image/svg+xml");
+//     container.appendChild(svg.rootElement);
+//   });
+//   xhr.send(null);
+// };
 
 export function Home() {
   const dispatch = useDispatch();
@@ -44,9 +60,10 @@ export function Home() {
   useEffect(() => {
     dispatch(loadNfts());
     dispatch(loadContractData());
+    // loadSVG(refContainer.current);
     web3.eth.getBlockNumber().then((num) => console.log("web3 block num", num));
   }, []);
-
+  const refContainer = React.useRef(null);
   const setRefs = useCallback(
     (node) => {
       ref.current = node;
@@ -91,7 +108,8 @@ export function Home() {
       transition={{ duration: 3 }}
     >
       <section ref={setRefs} className="hero-section flex">
-        <img className="hero-img" src={HeroImg} alt="hero-image" />
+        <img className="hero-img" src={hero} alt="hero-image" />
+        {/* <div className="hero-img" ref={refContainer} /> */}
         <div className="content-hero flex column">
           {inView && (
             <>
@@ -130,12 +148,13 @@ export function Home() {
       <section ref={setRefs1} className="eco-system-section flex column">
         {inView1 && (
           <>
-            <motion.h2
+            <motion.h1
               animate={{ opacity: [0, 1], y: [150, 0] }}
               transition={{ ease: "easeOut", delay: 0.3 }}
+              className="gradient-color"
             >
               eco system
-            </motion.h2>
+            </motion.h1>
             <motion.p
               className="p-description"
               animate={{ opacity: [0, 1], y: [150, 0] }}
@@ -158,12 +177,13 @@ export function Home() {
               era of history alike.
               <br /> <br />
             </motion.p>
-            <motion.h2
+            <motion.h1
               animate={{ opacity: [0, 1], y: [150, 0] }}
               transition={{ ease: "easeOut", delay: 0.7 }}
+              className="gradient-color"
             >
               NFT Variants
-            </motion.h2>
+            </motion.h1>
           </>
         )}
         <div className="item-types">
@@ -255,12 +275,13 @@ export function Home() {
       <section ref={setRefs2} className="road-map-section flex column">
         {inView2 && (
           <>
-            <motion.h2
+            <motion.h1
               animate={{ opacity: [0, 1], y: [100, 100, 0] }}
               transition={{ ease: "easeOut", delay: 0.3 }}
+              className="gradient-color"
             >
               Road Map
-            </motion.h2>
+            </motion.h1>
             {/* <motion.p
               className="p-description"
               animate={{ opacity: [0, 1], y: [150, 0] }}
@@ -275,9 +296,9 @@ export function Home() {
         )}
         <div className="road-map">
           <div className="q1 flex column">
-            <img className="img" src={anniversary} alt="hero-image" />
+            {/* <img className="img" src={anniversary} alt="hero-image" /> */}
             <p>
-              <h4>Genesis Minting</h4>
+              <h2>Genesis Minting</h2>
               <br />
               Every EtherBurn NFT produced between the Genesis Burn Date (August
               5, 2021) and Presale End Date (Feb 1, 2022) will be sold to
@@ -306,9 +327,9 @@ export function Home() {
             </p>
           </div>
           <div className="q2 flex column">
-            <img className="img" src={anniversary} alt="hero-image" />
+            {/* <img className="img" src={anniversary} alt="hero-image" /> */}
             <p>
-              <h4>Ongoing Minting</h4>
+              <h2>Ongoing Minting</h2>
               <br />
               As soon as the EtherBurn NFT presale ends, items will be minted as
               follows:
@@ -334,9 +355,9 @@ export function Home() {
             </p>
           </div>
           <div className="q3 flex column">
-            <img className="img" src={anniversary} alt="hero-image" />
+            {/* <img className="img" src={anniversary} alt="hero-image" /> */}
             <p>
-              <h4>Club 1559</h4>
+              <h2>Club 1559</h2>
               <br />
               <h4>1559 items collection</h4>
               The total EtherBurn NFT supply will be limited to 1,559 exclusive
@@ -367,12 +388,13 @@ export function Home() {
           <div className="title">
             {inView3 && (
               <>
-                <motion.h2
+                <motion.h1
                   animate={{ opacity: [0, 1], y: [100, 100, 0] }}
                   transition={{ ease: "easeOut", duration: 1 }}
+                  className="gradient-color"
                 >
                   OUR TEAM
-                </motion.h2>
+                </motion.h1>
                 <motion.p
                   className="p-description"
                   animate={{ opacity: [0, 1], y: [150, 0] }}
@@ -433,7 +455,7 @@ export function Home() {
         </div>
       </section>
       <section className="faq-section">
-        <h2>frequently questioned answers</h2>
+        <h1 className="gradient-color" >FAQ</h1>
         <div className="faq">
         <FAQ
           q="What is EtherBurn? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"

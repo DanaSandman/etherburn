@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 //assets
-import FullLogo from "../../assets/img/FullLogo.png";
+import Logo from "../../assets/img/Logo.png";
 //FontAwesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDiscord } from "@fortawesome/free-brands-svg-icons";
@@ -16,7 +16,7 @@ export function Footer() {
       <div className="main-footer flex space-between">
         <div className="footer-main-contant">
           <img
-            src={FullLogo}
+            src={Logo}
             alt="footer-logo-img"
             className="footer-logo"
           ></img>

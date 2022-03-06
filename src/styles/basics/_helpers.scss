@@ -27,3 +27,10 @@
 .margin-zero{
     margin: 0px;
 }
+// GRADIENT COLOR
+.gradient-color{
+    background: -webkit-linear-gradient(#d223a6, #e88c51, #f7c926);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }

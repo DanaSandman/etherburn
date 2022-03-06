@@ -8,7 +8,6 @@
         letter-spacing: 20%;
         font-weight: 400;
         margin-top: 3.25rem;
-        margin-left: -10.25rem;
         color: $text-color;
         opacity: 0.9;
     }
@@ -23,7 +22,7 @@
         }
         .hero-img{
             margin: auto;
-            width: 35.5rem;
+            // width: 250px;
         }
         .content-hero{
             text-align: start;
@@ -32,9 +31,6 @@
             align-items: center;
             p{
                 padding: .625rem;
-            }
-            h1{
-                margin-right: -.625rem;
             }
         }
     }
@@ -58,8 +54,7 @@
     .eco-system-section{
         justify-content: center;
         .p-description{
-            margin-left: 15rem;
-            margin-right: 15rem;
+            margin: 0 15rem 10rem 15rem;
         }
         .item-types{
             justify-content: center;
@@ -103,14 +98,6 @@
     .team-section{
         .title{
             max-width: 1201px;
-        h2{
-            letter-spacing: 0.2em;
-            // font-family:TacticSans-Reg;
-            font-size: 20px;
-            letter-spacing: 20%;
-            color: $text-color;
-            opacity: 0.6;
-        }
         p{
             margin-bottom: 0px;
         }
@@ -176,7 +163,7 @@
     }
     .faq-section{
         margin-bottom: 10rem;
-        h2{
+        h1{
             margin-bottom: 3.5rem;
         }
     }
@@ -193,9 +180,10 @@
                 margin-top: 12px;
             }
             .content-hero{
+                margin-left: 50px;
                 h1{
                     margin-left: 1rem;
-                    font-size: 50px;
+                    // font-size: 50px;
                 }
                 p{
                     margin-top: 0px;
@@ -242,13 +230,13 @@
         justify-content: center;
         .hero-section{
           flex-direction: column;
-          h2, p {
+          h1, p {
               text-align: center;
               width: 80%;
           }
           img{
-            width: 30.5rem !important;
-            margin-top: 0px !important;
+            width: 28.5rem !important;
+            margin-top: 10px !important;
             margin-bottom: 0px !important;
           }
           h1{
@@ -272,6 +260,9 @@
         .eco-system-section{
             .p-description{
                 margin: 1.25rem 0 1.25rem 0 ;
+            }
+            h1{
+                margin-top: 8.25rem;
             }
         }
         .road-map-section{
@@ -310,8 +301,10 @@
         justify-content: center;
         .hero-section{
           flex-direction: column;
+          align-items: center;
           img{
-            width: 29.5rem !important;
+            width: 27.5rem !important;
+            margin: 15px 0 40px 0 !important;
           }
           .content-hero{
               h1{
@@ -374,14 +367,20 @@
             .content-hero{
                 width: auto;
                 text-align: center;
+                margin-top: 45px;
                 h1{
                     margin: 0px;
-                    font-size: 40px;
+                    font-size: 50px !important;
                 }
             }
             .hero-img{
                 width: 20rem;
                 margin: auto;
+                align-items: center;
+                svg{
+                    width: 345px;
+                    margin-left: -12px;
+                }
             }
             p{
                 width: 18.2rem;

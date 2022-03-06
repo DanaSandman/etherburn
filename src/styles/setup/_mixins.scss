@@ -24,7 +24,7 @@
         @content;
     }
 }
-//75rem until end
+//75rem (or 1200px) until end
 @mixin for-wide-layout {
     @media (min-width: $desktop-breakpoint) {
         @content;
