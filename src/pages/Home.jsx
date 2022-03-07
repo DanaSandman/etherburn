@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useCallback } from "react";
-import ReactDOM from "react-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+// import ReactDOM from "react-dom";
 //Store
 import { loadNfts } from "../store/nft/nft.action.js";
 import { loadContractData } from "../store/contract/contract.action.js";
@@ -12,9 +12,9 @@ import { Loader } from "../components/common/Loader.jsx";
 import { FAQ } from "../components/util/FAQ.jsx";
 import NFT from "../assets/NFT.mp4";
 //Img
+import heroCard from "../assets/img/hero/heroCard.svg";
 // import HeroImg from "../assets/img/FullLogo.png";
-import { svg }  from "../assets/img/hero/heroSvg.js";
-import hero from "../image.svg";
+// import { svg }  from "../assets/img/hero/heroSvg.js";
 //imgs team
 import TeamImg1 from "../assets/img/team/TeamImg1.png";
 import TeamImg2 from "../assets/img/team/TeamImg2.jpeg";
@@ -63,7 +63,7 @@ export function Home() {
     // loadSVG(refContainer.current);
     web3.eth.getBlockNumber().then((num) => console.log("web3 block num", num));
   }, []);
-  const refContainer = React.useRef(null);
+  // const refContainer = React.useRef(null);
   const setRefs = useCallback(
     (node) => {
       ref.current = node;
@@ -108,7 +108,7 @@ export function Home() {
       transition={{ duration: 3 }}
     >
       <section ref={setRefs} className="hero-section flex">
-        <img className="hero-img" src={hero} alt="hero-image" />
+        <img className="hero-img" src={heroCard} alt="hero-image" />
         {/* <div className="hero-img" ref={refContainer} /> */}
         <div className="content-hero flex column">
           {inView && (
@@ -458,7 +458,7 @@ export function Home() {
         <h1 className="gradient-color" >FAQ</h1>
         <div className="faq">
         <FAQ
-          q="What is EtherBurn? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+          q="What is EtherBurn? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
           a="EtherBurn is an NFT collection capturing astounding digital collectibles produced using Ethereum burnt fee metadata.
 "
         ></FAQ>
