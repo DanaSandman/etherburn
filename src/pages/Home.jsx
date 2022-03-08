@@ -139,7 +139,7 @@ export function Home() {
             <NftList nfts={nfts} page="home" />
           </div>
         ) : (
-          <h1>loding</h1>
+         <Loader />
         )}
         <Link to="/collection" className="collection-link-main primery-btn">
           ALL COLLECTION

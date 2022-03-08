@@ -41,6 +41,7 @@ export function PreviewModal({ nft, page }) {
                 preload="auto"
                 playsinline
                 muted
+                // poster={nft.video}
               >
                 <source src={nft.video} type="video/mp4" />
               </video>
