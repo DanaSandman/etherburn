@@ -7,9 +7,9 @@ import { faDiscord } from "@fortawesome/free-brands-svg-icons";
 
 export function Footer() {
   const socialPath = {
-    linkedin: "https://www.linkedin.com/company/flype-protocol/",
+    linkedin: "https://www.linkedin.com/company/etherburn/",
     twitter: "https://twitter.com/EtherBurnNFT",
-    instegram: "https://flype-website.herokuapp.com/#/home",
+    instegram: "https://www.instagram.com/etherburn.io/",
   };
   return (
     <Fragment>

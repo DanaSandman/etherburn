@@ -94,15 +94,15 @@ export const MENU_ITEMS = [
     children: [
       {
         icon: <i className="fa fa-twitter" />,
-        path: "https://twitter.com/units_protocol",
+        path: "https://twitter.com/EtherBurnNFT",
       },
       {
         icon: <i className="fa fa-instagram" />,
-        path: "https://t.me/joinchat/rTmvLN5Egqo0Nzhk",
+        path: "https://www.instagram.com/etherburn.io/",
       },
       {
         icon: <FontAwesomeIcon icon={faDiscord} />,
-        path: "https://github.com/Units-DAO",
+        path: "https://www.linkedin.com/company/etherburn/",
       },
     ],
   },
