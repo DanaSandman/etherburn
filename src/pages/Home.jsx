@@ -94,13 +94,13 @@ export function Home() {
     [inViewRef3]
   );
 
-  if (!nfts)
-    return (
-      <div>
-        {" "}
-        <Loader />
-      </div>
-    );
+  // if (!nfts)
+  //   return (
+  //     <div>
+  //       {" "}
+  //       <Loader />
+  //     </div>
+  //   );
   return (
     <motion.div
       className="home-page"
@@ -188,7 +188,8 @@ export function Home() {
         )}
         <div className="item-types">
           <div className="daily flex column">
-            <img className="img" src={daily} alt="hero-image" />
+            {/* <img className="img" src={daily} alt="hero-image" /> */}
+            <h4 className="variant">DAILY</h4>
             <p>
               <h4>When?</h4>Every day at 15:00:00 UTC <br />
               <br /> <h4>What is captured?</h4> The amount of Ether burnt the
@@ -201,7 +202,8 @@ export function Home() {
             </p>
           </div>
           <div className="weekly flex column">
-            <img className="img" src={weekly} alt="hero-image" />
+            {/* <img className="img" src={weekly} alt="hero-image" /> */}
+            <h4 className="variant">WEEKLY</h4>
             <p>
               <h4>When?</h4> Every week on Monday at 15:00:00 UTC <br />
               <br />
@@ -214,7 +216,8 @@ export function Home() {
             </p>
           </div>
           <div className="monthly flex column">
-            <img className="img" src={monthly} alt="hero-image" />
+            {/* <img className="img" src={monthly} alt="hero-image" /> */}
+            <h4 className="variant">MONTHLY</h4>
             <p>
               <h4> When? </h4>On the first of every month at 15:00:00 UTC <br />
               <br /> <h4>What is captured?</h4> The amount of Ether burnt the
@@ -225,7 +228,8 @@ export function Home() {
             </p>
           </div>
           <div className="million flex column">
-            <img className="img" src={million} alt="hero-image" />
+            {/* <img className="img" src={million} alt="hero-image" /> */}
+            <h4 className="variant">MILLION</h4>
             <p>
               <h4> When?</h4> Each time the EtherBurn counter hits a 1 million
               total Ether burnt landmark, the NFT is captured the following day
@@ -240,7 +244,8 @@ export function Home() {
             </p>
           </div>
           <div className="yearly flex column">
-            <img className="img" src={yearly} alt="hero-image" />
+            {/* <img className="img" src={yearly} alt="hero-image" /> */}
+            <h4 className="variant">YEARLY</h4>
             <p>
               <h4> When? </h4>January 1st, 2022-24 at 15:00:00 UTC <br />
               <br /> <h4>What is captured? </h4>The amount of Ether burnt the
@@ -252,7 +257,8 @@ export function Home() {
             </p>
           </div>
           <div className="anniversary flex column">
-            <img className="img" src={anniversary} alt="hero-image" />
+            {/* <img className="img" src={anniversary} alt="hero-image" /> */}
+            <h4 className="variant">ANNIVERSARY</h4>
             <p>
               <h4>When? </h4> Every August 5, on the anniversary of the first
               Ether burnt.
@@ -298,7 +304,7 @@ export function Home() {
           <div className="q1 flex column">
             {/* <img className="img" src={anniversary} alt="hero-image" /> */}
             <p>
-              <h2>Genesis Minting</h2>
+              <h4 className="variant">Genesis Minting</h4>
               <br />
               Every EtherBurn NFT produced between the Genesis Burn Date (August
               5, 2021) and Presale End Date (Feb 1, 2022) will be sold to
@@ -329,7 +335,7 @@ export function Home() {
           <div className="q2 flex column">
             {/* <img className="img" src={anniversary} alt="hero-image" /> */}
             <p>
-              <h2>Ongoing Minting</h2>
+              <h4 className="variant">Ongoing Minting</h4>
               <br />
               As soon as the EtherBurn NFT presale ends, items will be minted as
               follows:
@@ -357,7 +363,7 @@ export function Home() {
           <div className="q3 flex column">
             {/* <img className="img" src={anniversary} alt="hero-image" /> */}
             <p>
-              <h2>Club 1559</h2>
+              <h4 className="variant">Club 1559</h4>
               <br />
               <h4>1559 items collection</h4>
               The total EtherBurn NFT supply will be limited to 1,559 exclusive

@@ -28,7 +28,6 @@
             text-align: start;
             margin: auto;
             width: 45rem;
-            align-items: center;
             p{
                 padding: .625rem;
             }
@@ -75,6 +74,10 @@
                 }
             }
         }
+        .variant{
+            font-size: 38px;
+            color: #e2e2e2;
+        }
     }
     .road-map-section{
         .p-description{
@@ -92,6 +95,11 @@
                 img{
                     width: 15rem;
                 } 
+            }
+            .variant{
+                font-size: 38px;
+                // color: #fcfcfc !important;
+                opacity: 100% !important;
             }
         }
     }
