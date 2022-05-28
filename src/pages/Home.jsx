@@ -138,8 +138,7 @@ export function Home() {
           <div className="home-carousel">
             <NftList nfts={nfts} page="home" />
           </div>
-        ) : (
-         <Loader />
+        ) : ( <Loader />
         )}
         <Link to="/collection" className="collection-link-main primery-btn">
           ALL COLLECTION
@@ -188,7 +187,8 @@ export function Home() {
         )}
         <div className="item-types">
           <div className="daily flex column">
-            <img className="img" src={daily} alt="hero-image" />
+            {/* <img className="img" src={daily} alt="hero-image" /> */}
+            <h2>Daily</h2>
             <p>
               <h4>When?</h4>Every day at 15:00:00 UTC <br />
               <br /> <h4>What is captured?</h4> The amount of Ether burnt the
@@ -201,7 +201,8 @@ export function Home() {
             </p>
           </div>
           <div className="weekly flex column">
-            <img className="img" src={weekly} alt="hero-image" />
+            {/* <img className="img" src={weekly} alt="hero-image" /> */}
+            <h2>Weekly</h2>
             <p>
               <h4>When?</h4> Every week on Monday at 15:00:00 UTC <br />
               <br />
@@ -214,7 +215,8 @@ export function Home() {
             </p>
           </div>
           <div className="monthly flex column">
-            <img className="img" src={monthly} alt="hero-image" />
+            {/* <img className="img" src={monthly} alt="hero-image" /> */}
+            <h2>Monthly</h2>
             <p>
               <h4> When? </h4>On the first of every month at 15:00:00 UTC <br />
               <br /> <h4>What is captured?</h4> The amount of Ether burnt the
@@ -225,7 +227,8 @@ export function Home() {
             </p>
           </div>
           <div className="million flex column">
-            <img className="img" src={million} alt="hero-image" />
+            {/* <img className="img" src={million} alt="hero-image" /> */}
+            <h2>Million</h2>
             <p>
               <h4> When?</h4> Each time the EtherBurn counter hits a 1 million
               total Ether burnt landmark, the NFT is captured the following day
@@ -240,7 +243,8 @@ export function Home() {
             </p>
           </div>
           <div className="yearly flex column">
-            <img className="img" src={yearly} alt="hero-image" />
+            {/* <img className="img" src={yearly} alt="hero-image" /> */}
+            <h2>Yearly</h2>
             <p>
               <h4> When? </h4>January 1st, 2022-24 at 15:00:00 UTC <br />
               <br /> <h4>What is captured? </h4>The amount of Ether burnt the
@@ -252,7 +256,8 @@ export function Home() {
             </p>
           </div>
           <div className="anniversary flex column">
-            <img className="img" src={anniversary} alt="hero-image" />
+            {/* <img className="img" src={anniversary} alt="hero-image" /> */}
+            <h2>Anniversary</h2>
             <p>
               <h4>When? </h4> Every August 5, on the anniversary of the first
               Ether burnt.
