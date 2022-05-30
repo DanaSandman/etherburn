@@ -1,9 +1,9 @@
+import React, { useState } from "react";
 import logo from "../../assets/img/Logo.png";
 import { Link } from "react-router-dom";
 import { scroller } from "react-scroll";
 import UserWallet from "../util/UserWallet.jsx";
 //Menu&Burger
-import React, { useState } from "react";
 import Burger from "./Burger";
 import Menu from "./Menu";
  

@@ -5,7 +5,9 @@ async function query(filterBy = {}) {
     criteria = _buildCriteria(filterBy)
     try {
         const collection = await dbService.getCollection('nft')
+        console.log('criteria',criteria)
         const nfts = await collection.find(criteria).toArray()
+        console.log('nfts server service',nfts)
         return nfts
     } catch (err) {
         // logger.error('cannot find toys', err)

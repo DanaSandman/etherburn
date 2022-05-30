@@ -20,7 +20,6 @@ const abi = require('../service/abi.json');
     }
     };
 
-
     // myContract.events.MyEvent({})
     //     .on('Transfer', async function(event){
     //         console.log(event.returnValues, 'event.returnValues');

@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-// import ReactDOM from "react-dom";
 //Store
 import { loadNfts } from "../store/nft/nft.action.js";
 import { loadContractData } from "../store/contract/contract.action.js";
@@ -13,35 +12,13 @@ import { FAQ } from "../components/util/FAQ.jsx";
 import NFT from "../assets/NFT.mp4";
 //Img
 import heroCard from "../assets/img/hero/heroCard.svg";
-// import HeroImg from "../assets/img/FullLogo.png";
-// import { svg }  from "../assets/img/hero/heroSvg.js";
 //imgs team
-import TeamImg1 from "../assets/img/team/TeamImg1.png";
-import TeamImg2 from "../assets/img/team/TeamImg2.jpeg";
-import TeamImg3 from "../assets/img/team/TeamImg3.png";
-//items-types
-import daily from "../assets/img/items_types/daily.png";
-import weekly from "../assets/img/items_types/weekly.png";
-import monthly from "../assets/img/items_types/monthly.png";
-import yearly from "../assets/img/items_types/yearly.png";
-import million from "../assets/img/items_types/million.png";
-import anniversary from "../assets/img/items_types/billion.png";
+import TeamImg1 from "../assets/img/team/Israel-Perez.jpg";
+import TeamImg2 from "../assets/img/team/Dana-Sandman.jpg";
+import TeamImg3 from "../assets/img/team/Mayer-Zach.jpg";
 //framer-motion
 import { motion } from "framer-motion/dist/es/index";
 import { useInView } from "react-intersection-observer";
-
-// const loadSVG = container => {
-//   var dataURL = svg.HeroImg
-//   var xhr = new XMLHttpRequest();
-//   xhr.open("GET", dataURL);
-//   xhr.addEventListener("load", function(ev) {
-//     var xml = ev.target.response;
-//     var dom = new DOMParser();
-//     var svg = dom.parseFromString(xml, "image/svg+xml");
-//     container.appendChild(svg.rootElement);
-//   });
-//   xhr.send(null);
-// };
 
 export function Home() {
   const dispatch = useDispatch();
@@ -60,10 +37,8 @@ export function Home() {
   useEffect(() => {
     dispatch(loadNfts());
     dispatch(loadContractData());
-    // loadSVG(refContainer.current);
     web3.eth.getBlockNumber().then((num) => console.log("web3 block num", num));
   }, []);
-  // const refContainer = React.useRef(null);
   const setRefs = useCallback(
     (node) => {
       ref.current = node;
@@ -94,13 +69,6 @@ export function Home() {
     [inViewRef3]
   );
 
-  // if (!nfts)
-  //   return (
-  //     <div>
-  //       {" "}
-  //       <Loader />
-  //     </div>
-  //   );
   return (
     <motion.div
       className="home-page"
@@ -109,7 +77,6 @@ export function Home() {
     >
       <section ref={setRefs} className="hero-section flex">
         <img className="hero-img" src={heroCard} alt="hero-image" />
-        {/* <div className="hero-img" ref={refContainer} /> */}
         <div className="content-hero flex column">
           {inView && (
             <>
@@ -302,9 +269,8 @@ export function Home() {
         )}
         <div className="road-map">
           <div className="q1 flex column">
-            {/* <img className="img" src={anniversary} alt="hero-image" /> */}
             <p>
-              <h4 className="variant">Genesis Minting</h4>
+              <h4 className="road-map-q">Genesis Minting</h4>
               <br />
               Every EtherBurn NFT produced between the Genesis Burn Date (August
               5, 2021) and Presale End Date (Feb 1, 2022) will be sold to
@@ -333,9 +299,8 @@ export function Home() {
             </p>
           </div>
           <div className="q2 flex column">
-            {/* <img className="img" src={anniversary} alt="hero-image" /> */}
             <p>
-              <h4 className="variant">Ongoing Minting</h4>
+              <h4 className="road-map-q">Ongoing Minting</h4>
               <br />
               As soon as the EtherBurn NFT presale ends, items will be minted as
               follows:
@@ -361,9 +326,8 @@ export function Home() {
             </p>
           </div>
           <div className="q3 flex column">
-            {/* <img className="img" src={anniversary} alt="hero-image" /> */}
             <p>
-              <h4 className="variant">Club 1559</h4>
+              <h4 className="road-map-q">Club 1559</h4>
               <br />
               <h4>1559 items collection</h4>
               The total EtherBurn NFT supply will be limited to 1,559 exclusive
@@ -406,7 +370,7 @@ export function Home() {
                   animate={{ opacity: [0, 1], y: [150, 0] }}
                   transition={{ ease: "easeOut", delay: 0.7 }}
                 >
-                  We are lorem ipsum dolor sit<br></br> amet, consectetur
+                  Meet the team behind EtherBurn
                 </motion.p>
               </>
             )}
@@ -421,12 +385,10 @@ export function Home() {
                 className="linkedin-team-link"
               ></a>
             </div>
-            <h3>israel perez</h3>
+            <h3>Israel Perez</h3>
             <h4>The Crypto Guy</h4>
             <p>
-              Entrepreneur, Founder, programer and Product designer with more
-              than 10 years of experience.
-            </p>
+            Entrepreneur, founder, programer, product architect, and DeFi Advisor, with more than 10 years of experience.            </p>
           </div>
           <div className="member2">
             <div className="member-img">
@@ -436,11 +398,10 @@ export function Home() {
                 className="linkedin-team-link"
               ></a>
             </div>
-            <h3>dana sandman</h3>
-            <h4>Programming Lady</h4>
+            <h3>Dana Sandman</h3>
+            <h4>The Programming Lady</h4>
             <p>
-              Entrepreneur, Founder, programer and Product designer with more
-              than 10 years of experience.
+            Full Stack developer, Frontend specialist with industry deep experience in Web3 Blockchain interactions.
             </p>
           </div>
           <div className="member3">
@@ -451,11 +412,10 @@ export function Home() {
                 className="linkedin-team-link linkedin-team3"
               ></a>
             </div>
-            <h3>meir zach</h3>
-            <h4>Financial Guru</h4>
+            <h3>Mayer Zach</h3>
+            <h4>The Financial GURU</h4>
             <p>
-              Entrepreneur, Founder, programer and Product designer with more
-              than 10 years of experience.
+            Financial analyst, blockchain specialist, and cryptocurrency enthusiast with industry deep experience in finance.
             </p>
           </div>
         </div>

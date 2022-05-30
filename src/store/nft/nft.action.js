@@ -7,7 +7,6 @@ export function loadNfts(filterBy) {
     if (!filterBy) {
         filterBy = '{}';
     }
-    console.log('filterBy', filterBy);
     return async dispatch => {
         try {
             const nfts = await nftService.loadNfts(filterBy);
@@ -25,9 +24,7 @@ export function loadNfts(filterBy) {
 export function setSelectedNft(tokenId) {
     return async dispatch => {
         try {
-            console.log('action tokenId', tokenId);
             const nft = await nftService.getById(tokenId);
-            console.log('action nft res', nft);
             dispatch({ type: 'SET_NFT', nft });
         } catch (err) {
             console.log('nft Actions: err in selected nft', err);
