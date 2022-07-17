@@ -63,7 +63,6 @@ export function Home() {
     // loadSVG(refContainer.current);
     web3.eth.getBlockNumber().then((num) => console.log("web3 block num", num));
   }, []);
-  // const refContainer = React.useRef(null);
   const setRefs = useCallback(
     (node) => {
       ref.current = node;
@@ -138,7 +137,8 @@ export function Home() {
           <div className="home-carousel">
             <NftList nfts={nfts} page="home" />
           </div>
-        ) : ( <Loader />
+        ) : (
+          <Loader />
         )}
         <Link to="/collection" className="collection-link-main primery-btn">
           ALL COLLECTION
@@ -188,11 +188,7 @@ export function Home() {
         <div className="item-types">
           <div className="daily flex column">
             {/* <img className="img" src={daily} alt="hero-image" /> */}
-<<<<<<< HEAD
-            <h2>Daily</h2>
-=======
             <h4 className="variant">DAILY</h4>
->>>>>>> 44463c0850e669a26a767f6d594c0cb630ec2754
             <p>
               <h4>When?</h4>Every day at 15:00:00 UTC <br />
               <br /> <h4>What is captured?</h4> The amount of Ether burnt the
@@ -206,11 +202,7 @@ export function Home() {
           </div>
           <div className="weekly flex column">
             {/* <img className="img" src={weekly} alt="hero-image" /> */}
-<<<<<<< HEAD
-            <h2>Weekly</h2>
-=======
             <h4 className="variant">WEEKLY</h4>
->>>>>>> 44463c0850e669a26a767f6d594c0cb630ec2754
             <p>
               <h4>When?</h4> Every week on Monday at 15:00:00 UTC <br />
               <br />
@@ -224,11 +216,7 @@ export function Home() {
           </div>
           <div className="monthly flex column">
             {/* <img className="img" src={monthly} alt="hero-image" /> */}
-<<<<<<< HEAD
-            <h2>Monthly</h2>
-=======
             <h4 className="variant">MONTHLY</h4>
->>>>>>> 44463c0850e669a26a767f6d594c0cb630ec2754
             <p>
               <h4> When? </h4>On the first of every month at 15:00:00 UTC <br />
               <br /> <h4>What is captured?</h4> The amount of Ether burnt the
@@ -240,11 +228,7 @@ export function Home() {
           </div>
           <div className="million flex column">
             {/* <img className="img" src={million} alt="hero-image" /> */}
-<<<<<<< HEAD
-            <h2>Million</h2>
-=======
             <h4 className="variant">MILLION</h4>
->>>>>>> 44463c0850e669a26a767f6d594c0cb630ec2754
             <p>
               <h4> When?</h4> Each time the EtherBurn counter hits a 1 million
               total Ether burnt landmark, the NFT is captured the following day
@@ -260,11 +244,7 @@ export function Home() {
           </div>
           <div className="yearly flex column">
             {/* <img className="img" src={yearly} alt="hero-image" /> */}
-<<<<<<< HEAD
-            <h2>Yearly</h2>
-=======
             <h4 className="variant">YEARLY</h4>
->>>>>>> 44463c0850e669a26a767f6d594c0cb630ec2754
             <p>
               <h4> When? </h4>January 1st, 2022-24 at 15:00:00 UTC <br />
               <br /> <h4>What is captured? </h4>The amount of Ether burnt the
@@ -277,11 +257,7 @@ export function Home() {
           </div>
           <div className="anniversary flex column">
             {/* <img className="img" src={anniversary} alt="hero-image" /> */}
-<<<<<<< HEAD
-            <h2>Anniversary</h2>
-=======
             <h4 className="variant">ANNIVERSARY</h4>
->>>>>>> 44463c0850e669a26a767f6d594c0cb630ec2754
             <p>
               <h4>When? </h4> Every August 5, on the anniversary of the first
               Ether burnt.
@@ -392,7 +368,8 @@ export function Home() {
               The total EtherBurn NFT supply will be limited to 1,559 exclusive
               items. This supply limit is a symbolic amount representing
               Ethereum’s revolutionary EIP-1559 London Fork proposal.
-              <br /><br />
+              <br />
+              <br />
               <h4>Stake-to-win!</h4>
               Two items will be raffled off to stakers as follows:
               <ul>
@@ -484,51 +461,51 @@ export function Home() {
         </div>
       </section>
       <section className="faq-section">
-        <h1 className="gradient-color" >FAQ</h1>
+        <h1 className="gradient-color">FAQ</h1>
         <div className="faq">
-        <FAQ
-          q="What is EtherBurn? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
-          a="EtherBurn is an NFT collection capturing astounding digital collectibles produced using Ethereum burnt fee metadata.
+          <FAQ
+            q="What is EtherBurn? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+            a="EtherBurn is an NFT collection capturing astounding digital collectibles produced using Ethereum burnt fee metadata.
 "
-        ></FAQ>
-        <FAQ
-          q="What makes each item one of a kind?"
-          a="Each NFT features a unique 3D design generated from an algorithmic combination of timestamps, blocks and burnt fee data within a specified time range. Only one EtherBurn NFT shall ever represent a specific time range, so they are truly one of a kind. Once you’ve minted it, no one else can get it.
+          ></FAQ>
+          <FAQ
+            q="What makes each item one of a kind?"
+            a="Each NFT features a unique 3D design generated from an algorithmic combination of timestamps, blocks and burnt fee data within a specified time range. Only one EtherBurn NFT shall ever represent a specific time range, so they are truly one of a kind. Once you’ve minted it, no one else can get it.
 "
-        ></FAQ>
-        <FAQ
-          q="How do I become a Club 1559 member?"
-          a="Easy! Just stake an EtherBurn NFT in a secure vault and you will obtain a free ticket for the monthly Club 1559 raffle - as well as unlock many more exciting utilities as the EtherBurn NFT project grows.
+          ></FAQ>
+          <FAQ
+            q="How do I become a Club 1559 member?"
+            a="Easy! Just stake an EtherBurn NFT in a secure vault and you will obtain a free ticket for the monthly Club 1559 raffle - as well as unlock many more exciting utilities as the EtherBurn NFT project grows.
 "
-        ></FAQ>
-        <FAQ
-          q="What is the Club 1559 monthly raffle?"
-          a="The first Weekly NFT of every month will be raffled off to stakers. Each staked EtherBurn NFT will generate a participation ticket for its holder. There is no limit to the number of items you can stake and raffle tickets you can gain..
+          ></FAQ>
+          <FAQ
+            q="What is the Club 1559 monthly raffle?"
+            a="The first Weekly NFT of every month will be raffled off to stakers. Each staked EtherBurn NFT will generate a participation ticket for its holder. There is no limit to the number of items you can stake and raffle tickets you can gain..
 "
-        ></FAQ>
-        <FAQ
-          q="What can I vote for? &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
-          a="EtherBurn’s Monthly, Yearly, Millionth and Anniversary NFTs will be pre-minted and put up for an auction, with 60% of auction revenues donated to charities. Stakers will be invited to vote on the charitable organizations that will receive donations.
+          ></FAQ>
+          <FAQ
+            q="What can I vote for? &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+            a="EtherBurn’s Monthly, Yearly, Millionth and Anniversary NFTs will be pre-minted and put up for an auction, with 60% of auction revenues donated to charities. Stakers will be invited to vote on the charitable organizations that will receive donations.
 "
-        ></FAQ>
-        <FAQ
-          q="Are there royalties from secondary sales?"
-          a="Yes! Anytime a piece is resold, a 7.5% royalty will be sent directly to the EtherBurn DAO wallet.
+          ></FAQ>
+          <FAQ
+            q="Are there royalties from secondary sales?"
+            a="Yes! Anytime a piece is resold, a 7.5% royalty will be sent directly to the EtherBurn DAO wallet.
 "
-        ></FAQ>
-        <FAQ
-          q="How many items can I mint during presale?"
-          a="Whitelisted members will be able to mint one item per wallet. Public sale participants will be able to mint five items.
+          ></FAQ>
+          <FAQ
+            q="How many items can I mint during presale?"
+            a="Whitelisted members will be able to mint one item per wallet. Public sale participants will be able to mint five items.
 "
-        ></FAQ>
-        <FAQ
-          q="When will I be able to start minting EtherBrun?"
-          a="The EtherBurn Presale Event officially starts on February 15th, 2022. The EtherBurn Public Sale Event will launch on the _________. Both events will take place at 9:00 PM (21:00) GMT/UTC
+          ></FAQ>
+          <FAQ
+            q="When will I be able to start minting EtherBrun?"
+            a="The EtherBurn Presale Event officially starts on February 15th, 2022. The EtherBurn Public Sale Event will launch on the _________. Both events will take place at 9:00 PM (21:00) GMT/UTC
 "
-        ></FAQ>
-        <FAQ
-          q="What is the number of items per collection?"
-          a="The total supply of EtherBurn NFTs is limited to 1,559 items. This limitation is symbolic of Ethereum’s historic EIP-1559 London Fork proposal. 
+          ></FAQ>
+          <FAQ
+            q="What is the number of items per collection?"
+            a="The total supply of EtherBurn NFTs is limited to 1,559 items. This limitation is symbolic of Ethereum’s historic EIP-1559 London Fork proposal. 
 
           The 1,559 EtherBurn NFTs will be distributed among the various collections as follows:
           
@@ -541,8 +518,8 @@ export function Home() {
           
           *Since 1 Millionth ETH burnt fees is an estimation, minor changes to a certain collection’s total number may occur e.g. the 1 Millionth collection could end up as 13 items at the expense of the Daily collection, which could drop from 1,311 to 1,310 items.          
 "
-        ></FAQ>
-      </div>
+          ></FAQ>
+        </div>
       </section>
     </motion.div>
   );
