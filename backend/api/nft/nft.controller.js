@@ -14,6 +14,7 @@ async function getNfts(req, res) {
     const category = obj[Object.keys(obj)[0]];
     try {
         const nfts = await nftService.query(category)
+        console.log('nfts server controller',nfts)
         res.send(nfts)
     } catch (err) {
         res.status(500).send({
