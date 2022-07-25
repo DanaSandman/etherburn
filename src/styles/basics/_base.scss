@@ -42,7 +42,8 @@ button {
 
 .loader{
   text-align: center;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
+  margin-top: -200px;
 }
 @include for-mobile-layout{
   p{

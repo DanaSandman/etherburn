@@ -4,7 +4,7 @@ export function loadContractData() {
     return async dispatch => {
         try {
             const contractData = await read();
-            console.log('action', contractData);
+            // console.log('action', contractData);
             dispatch({
                 type: 'SET_CONTRACT_DATA',
                 contractData
